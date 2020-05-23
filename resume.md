@@ -1,81 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<html>
-	<head>
-        <meta charset="utf-8">
-        <link rel="icon" href="/favicon.ico?v=2" />
-		<title>Nico Courts :: CV</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous"> 
-        <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/zenburn.css">
-        <link rel="stylesheet" href="/assets/css/styles.css">
-        <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Nico Courts :: CV</title>
-<meta name="generator" content="Jekyll v4.0.1" />
-<meta property="og:title" content="Nico Courts :: CV" />
-<meta property="og:locale" content="en_US" />
-<script type="application/ld+json">
-{"headline":"Nico Courts :: CV","@type":"WebPage","url":"/resume.html","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-	</head>
-	<body>
-		<div id="content-wrapper">
-			<div id="header">
-				<div class="stack" onclick="window.location='/'">
-                    <h2>Nico Courts</h2><em>ncourts@uw.edu</em>
-                </div>
-				<div class="stack-right">
-                    Mathematics student<br />Computer science enthusiast<br />Admirer of nature and of the human condition
-                </div>
-            </div>
-            <div id="content">
-                <div id="navbar">
-    <ul class='nav'>
-        
-        <li class="nav">
-            
-            <a class="nav" href="/" >
-                <span class="nav"><strong>Home</strong></span>
-            </a>
-        </li>
-        
-        <li class="nav">
-            
-            <a class="nav" href="/resume" style="color: #cc3f13;">
-                <span class="nav"><strong>Resume/CV</strong></span>
-            </a>
-        </li>
-        
-        <li class="nav">
-            
-            <a class="nav" href="/blog" >
-                <span class="nav"><strong>Blog</strong></span>
-            </a>
-        </li>
-        
-        <li class="nav">
-            
-            <a class="nav" href="/courses" >
-                <span class="nav"><strong>Coursework</strong></span>
-            </a>
-        </li>
-        
-        <li class="nav">
-            
-            <a class="nav" href="/links" >
-                <span class="nav"><strong>Links/Writing</strong></span>
-            </a>
-        </li>
-        
-    </ul>
-</div>
-                <div class="wrapper" style="margin:15px">
-                    <div class="wrap">
-  <div class="section">
-      <div class="contact">
+---
+layout: default
+title: "Nico Courts :: CV"
+---
+<div class='wrap'>
+  <div class='section'>
+      <div class='contact'>
         <strong>Nico Courts</strong><br />
         University of Washington<br />
         Department of Mathematics<br />
@@ -83,21 +12,21 @@
         Seattle, WA 98195-4350
       </div>
   </div>  
-  <div class="section">
-      <div class="title"><h3>Objective</h3></div>
-      <div class="content"><span>To pursue my passion for mathematics and to understand how to better the world through its proliferation and application.</span></div>
+  <div class='section'>
+      <div class='title'><h3>Objective</h3></div>
+      <div class='content'><span>To pursue my passion for mathematics and to understand how to better the world through its proliferation and application.</span></div>
   </div>
-  <div class="section">
-      <div class="title"><h3>Research<br /> Interests</h3></div>
-      <div class="content"><span>I am a student of <a href="https://sites.math.washington.edu/~julia/">Julia Pevtsova</a> studying the <a href="https://en.wikipedia.org/wiki/Representation_theory">representation theory</a>
+  <div class='section'>
+      <div class='title'><h3>Research<br /> Interests</h3></div>
+      <div class='content'><span>I am a student of <a href="https://sites.math.washington.edu/~julia/">Julia Pevtsova</a> studying the <a href="https://en.wikipedia.org/wiki/Representation_theory">representation theory</a>
       of <a href="https://ncatlab.org/nlab/show/algebraic+group">algebraic groups</a> and <a href="https://ncatlab.org/nlab/show/quantum+group">quantum groups</a> (in the sense of rigid braided monoidal categories).</span></div>
   </div>
-  <div class="section">
-    <div class="title"><h3>Education<br />History</h3></div>
-    <div class="content">
+  <div class='section'>
+    <div class='title'><h3>Education<br />History</h3></div>
+    <div class='content'>
       <p><strong>Ph.D in Mathematics</strong> University of Washington, Seattle</p>
         <p>Spring 2022 (expected)</p>
-        <p>See <a routerlink="/courses">this page</a> for a list of my graduate coursework.</p><br />
+        <p>See <a routerLink='/courses'>this page</a> for a list of my graduate coursework.</p><br />
         <p><strong>Masters of Science in Mathematics</strong> University of Washington, Seattle</p>
         <p><em>Exam Topic:</em> Schur Duality and Strict Polynomial Functors (<a href="https://github.com/NicoCourts/General-Exam-Paper">view paper</a>)</p>
         <p>Winter 2020</p><br />
@@ -112,9 +41,9 @@
         <p>Spring 2013</p>
       </div>
   </div>
-  <div class="section">
-      <div class="title"><h3>Teaching<br /> History</h3></div>
-      <div class="content">
+  <div class='section'>
+      <div class='title'><h3>Teaching<br /> History</h3></div>
+      <div class='content'>
         <p><em>Graduate Teaching Assistant</em></p>
         <p>University of Washington, Seattle, WA</p>
         <p>Autumn 2016 - Present</p>
@@ -193,7 +122,7 @@
       </div>
   </div>
   <div class="section">
-    <div class="title"><h3>Leadership &amp;<br /> Service</h3></div>
+    <div class="title"><h3>Leadership &amp;<br> Service</h3></div>
     <div class="content">
       <p><em>Graduate Student Representative</em></p>
       <p>UW Math Department</p>
@@ -209,7 +138,7 @@
         </li>
       </ul><br />
       <p><em>(Unpaid) Organizer and Mentor</em></p>
-      <p><a href="https://sites.uw.edu/wdrp/">Washington Directed Reading Program</a></p>
+      <p><a href='https://sites.uw.edu/wdrp/'>Washington Directed Reading Program</a></p>
       <p>2019-2020 Academic Year</p>
       <ul>
         <li>
@@ -224,9 +153,9 @@
       </ul>
     </div>
   </div>
-  <div class="section">
-    <div class="title"><h3>Conferences &amp;<br /> Workshops<br /> Attended</h3></div>
-    <div class="content">
+  <div class='section'>
+    <div class='title'><h3>Conferences &amp;<br /> Workshops<br /> Attended</h3></div>
+    <div class='content'>
       <p><em><a href="http://tianyuan.scu.edu.cn/portal/article/index/id/283/pid/13/cid/30.html">Conference on Lie and Jordan Algebras, Their Representations and Applications</a></em></p>
       <p>January 6-11, 2020</p>
       <p>Sichuan University, Chengdu, P. R. China</p><br />
@@ -244,9 +173,9 @@
       <p>University of Washington, Seattle</p>
     </div>
   </div>
-  <div class="section">
-      <div class="title"><h3>Skills &amp;<br />Hobbies</h3></div>
-      <div class="content">
+  <div class='section'>
+      <div class='title'><h3>Skills &amp;<br />Hobbies</h3></div>
+      <div class='content'>
         <em>Languages known:</em>
         <ul>
           <li><strong>English</strong> This is my native language.</li>
@@ -260,35 +189,3 @@
       </div>
   </div>
 </div>
-
-                </div>
-                <div id='footer'>
-                    All code and content &copy; Nico Courts<br />
-                    <span id="creditSpan" onclick="swap_modal()">Except where otherwise noted.</span>
-                </div>
-            </div>
-        </div>
-        
-		<div id="overlay" onclick="swap_modal()" class="hidden"></div>
-        <div id="credits" class="hidden">
-            <h3>Thanks to the following for their contributions to this site:</h3>
-            <ul>
-                <li>Background: <em>"What the Hex"</em> - <a href="https://www.toptal.com/designers/subtlepatterns/what-the-hex/">Angel Micevski</a></li>
-                <li>Website fonts (unicode fonts based on Donald Knuth's <em>Computer Modern</em> font family) provided by <a href="http://cm-unicode.sourceforge.net">Andrey V. Panov</a></li>
-            </ul>
-        </div>
-        <script type="text/javascript">
-            function swap_modal() {
-                var overlay = document.getElementById('overlay');
-                var modal = document.getElementById('credits');
-                if (overlay.className == 'hidden'){
-                    overlay.className = 'show';
-                    modal.className = 'show';
-                } else {
-                    overlay.className = 'hidden';
-                    modal.className = 'hidden';
-                }
-            }
-        </script>
-	</body>
-</html>

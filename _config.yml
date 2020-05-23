@@ -1,0 +1,14 @@
+plugins:
+  - jekyll-katex
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+exclude: [vendor]
+
+defaults:
+  - 
+    scope:
+      path: "/share/*"
+    values:
+      sitemap: false
