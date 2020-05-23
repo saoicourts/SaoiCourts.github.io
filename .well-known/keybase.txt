@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/nicocourts
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://nicocourts.com
+  * I am nicocourts (https://keybase.io/nicocourts) on keybase.
+  * I have a public key ASBPaFzuHn0uG6tBUKXCdXWxh06Y5hYYr_VbEKrR-5webQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010135c2298425b10ae3183fa74485d60fe5449e2e9513344e48363f0957d372a4800a",
+      "host": "keybase.io",
+      "kid": "01204f685cee1e7d2e1bab4150a5c27575b1874e98e61618aff55b10aad1fb9c1e6d0a",
+      "uid": "01d065575f03e14ac563440c6a09eb00",
+      "username": "nicocourts"
+    },
+    "merkle_root": {
+      "ctime": 1546541822,
+      "hash": "56a77a651ac6a1c6b321ba627af8005b109379187648aa0676f3f171d71709e857d805629c67d10f8aff4a91e310dd77b43c37f0d1878734e6ec0fa1ec33caea",
+      "hash_meta": "c0d2666fee93441b49be1d677f8a746a26c4211117d7569a3b3c3ff47ca99539",
+      "seqno": 4226743
+    },
+    "service": {
+      "entropy": "9+brJgxRFLmcs09lw2+xQXdU",
+      "hostname": "nicocourts.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.13.0"
+  },
+  "ctime": 1546541836,
+  "expire_in": 504576000,
+  "prev": "04a55008325751da5d1b8e3e517c1bb6361cb72d4adda2b5a5d0c940c43999c2",
+  "seqno": 51,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgT2hc7h59LhurQVClwnV1sYdOmOYWGK/1WxCq0fucHm0Kp3BheWxvYWTESpcCM8QgBKVQCDJXUdpdG44+UXwbtjYcty1K3aK1pdDJQMQ5mcLEIITIo/NvDQH9RcXom1ql+x+VTnulhYhHYZ+QQU/6FIISAgHCo3NpZ8RAqxQrl1rm58IPotk7xjTay+uXAErOrb0akADlg1NpC9vrQqYf5R4C9jCoyNxgOLYW/1kvm42NJOx8YH8K6ZIfA6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIDuLYP7fTUl+oFqAcXlXI2LJzlvR32oN8XIL5A989pggo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nicocourts
+
+==================================================================
