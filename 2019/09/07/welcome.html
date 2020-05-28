@@ -146,6 +146,88 @@ Tagged:
     
 </div>
 
+<hr />
+<hr />
+<form class="js-form form" method="post" action="https://api.4n1.co/v2/entry/NicoCourts/jekyll-website/master/comments" autocomplete="off">
+    <input type="hidden" name="options[origin]" value="/2019/09/07/welcome.html" />
+    <input type="hidden" name="options[parent]" value="/2019/09/07/welcome.html" />
+    <input type="hidden" id="comment-replying-to" name="fields[replying_to]" value="" />
+    <input type="hidden" name="options[slug]" value="" />
+    <input type="hidden" name="options[reCaptcha][siteKey]" value="6LdjH_0UAAAAAKAv0pN3g1lmE8CyuL85o6RNh9-F" />
+    <input type="hidden" name="options[reCaptcha][secret]" value="A/ASVNi/XSKJdE6EcMUzyHpj5bMCFbWi+5ao7+SZbWtpMUwYT1prR5wZqlasbFM0KK2K/2Nu3YVopRf0kgcWT2bWP9lEJjmtQKAamQrVvGXdOk9f371oFuM8w/Y/MeYEGAWBA9L3a47wzPaZGjo52IWTfbQ6gHp6VkBSj/d1F9GxlPlr70EeVAreKndrVeNBmtmC8P+EfxcF4c3IhHJqmRXetyqTztlWrGRVXdrED9whnljZMo8OQ7w+wZfhyHywygCrMtKrV/6Evh6Lj7RehNkEsHGio3gcjcLza1HH0/mluPu3u36R7TdduyT9ApMI0/Pey/UAv4VQs9h1ZHoZ0Kt3bppsvsDrhTji0V7fMebr16IUJFYZoN4V46vX02FpsopX4hFH5TDNKflSvTTPwfE+DU2PecaFH5tbfckOzZ7l/g4jK2CME0fy3315rKpZgEywJdxqvGHs4UsNr35b8N/WU9ZzsrUT7NtqQ65kyTL0JNEEWlHph/0L119jyZ3ORzgpeyTrvVbSyN4XnHUifsUZyh+WVkmcgdn5G4qlSRiEDXLndFKOzWFBKgh6xzUTD7XTULg7GmjAt/+2L/uQLWqtgn8REpubljw+Ml+AQH6YopPgeOAEor11rRIdBpq4YYZVWmVNP6peFr7JBMvNsUUbX6nvmjfYrK1rFN/x0ok=" />
+  
+    <fieldset>
+    <div class="textfield">
+      <label for="comment-form-message"><h2>Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2019/09/07/welcome.html#respond" style="display:none;">(cancel reply)</a></small></h2>
+        <textarea class="textfield__input" name="fields[message]" type="text" id="comment-form-message"></textarea>
+      </label>
+    </div>
+    </fieldset>
+  
+    <fieldset>
+      <div class="textfield">
+        <label for="comment-form-name">Name
+          <input class="textfield__input" name="fields[name]" type="text" id="comment-form-name" placeholder="Your name" />
+        </label>
+      </div>
+    </fieldset>
+  
+    <fieldset>
+      <div class="textfield">
+        <label for="comment-form-email">E-mail
+          <input class="textfield__input" name="fields[email]" type="email" id="comment-form-email" placeholder="Your email (optional, used only to send comments.)" />
+        </label>
+      </div>
+    </fieldset>
+  
+    <fieldset>
+      <div class="notify-me">
+        <label for="comment-form-reply">
+          <input type="checkbox" id="comment-form-reply" name="options[subscribe]" value="email" />
+        </label>
+        Send me an email when someone comments.
+      </div>
+    </fieldset>
+  
+      <fieldset>
+      <div class="textfield">
+        <label for="hp">
+          <input class="textfield__input" name="fields[hp]" id="hp" type="text" placeholder="Leave blank" />
+        </label>
+      </div>
+    </fieldset>
+  
+    <fieldset>
+      <!--div class="g-recaptcha" data-sitekey="6LdjH_0UAAAAAKAv0pN3g1lmE8CyuL85o6RNh9-F" data-theme="dark"></div-->
+      <div id="reCaptcha"></div>
+    </fieldset>
+  
+    <fieldset>
+      <button class="button" id="comment-form-submit"> <!-- add id for Spinner -->
+        Submit
+      </button>
+    </fieldset>
+  
+  </form>
+
+<p><br />
+  <small></small></p>
+<p>Comments are held for moderation. There will be a delay before they appear.<br />
+  Comments may include <a href="https://commonmark.org/help/" rel="nofollow"><strong>Markdown</strong></a>.<br />
+  To share something privately: <a href="mailto:willy@spinningnumbers.org">Contact me</a>.</p>
+<p>&lt;/small&gt;</p>
+
+<script>
+  function showReCaptcha() {
+    var node = document.createElement("div");
+    node.setAttribute('class', 'g-recaptcha');
+    node.setAttribute('data-sitekey', '6LdjH_0UAAAAAKAv0pN3g1lmE8CyuL85o6RNh9-F');
+    node.setAttribute('data-theme', localStorage.theme);
+    document.getElementById("reCaptcha").appendChild(node);
+  }
+  showReCaptcha();
+  </script>
+
 <p><a href="/blog">Back to blog</a></p>
 
                 </div>
