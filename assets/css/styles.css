@@ -124,6 +124,26 @@ div.wrap { padding: 15px; display: flex; justify-content: center; flex-direction
 
 div.smolp p { margin: 0; }
 
+div.smolp em { font-size: 12pt; color: darkslategray; }
+
+#postlist { list-style: none; padding: 0 15px; }
+
 #postlist h3 { margin: 20px 0 0 0; }
+
+h4 { margin: 5px 0; }
+
+.footnotes { font-size: 12pt; }
+
+.footnotes p { margin: 5px 0; }
+
+.footnotes ol { margin: 0; }
+
+#tags { font-size: 11pt; }
+
+span.tag { border-radius: 7px; border-style: solid; border-width: 1px; border-color: #CC3F13; background-color: #ffe9c7; padding: 0 4px 1px 4px; }
+
+#pagination { margin: 3px; padding: 0; }
+
+#pagination li { margin: 5px 2px; display: inline; }
 
 /*# sourceMappingURL=styles.css.map */

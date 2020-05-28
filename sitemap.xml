@@ -12,9 +12,6 @@
 <loc>/404</loc>
 </url>
 <url>
-<loc>/blog.html</loc>
-</url>
-<url>
 <loc>/courses.html</loc>
 </url>
 <url>
@@ -25,5 +22,14 @@
 </url>
 <url>
 <loc>/resume.html</loc>
+</url>
+<url>
+<loc>/tag/coding/</loc>
+</url>
+<url>
+<loc>/tag/diversity/</loc>
+</url>
+<url>
+<loc>/tag/math/</loc>
 </url>
 </urlset>
