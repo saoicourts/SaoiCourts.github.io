@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/assets/css/zenburn.css">
         <link rel="stylesheet" href="/assets/css/styles.css">
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Welcome to My Blog</title>
 <meta name="generator" content="Jekyll v4.0.1" />
@@ -146,8 +147,7 @@ Tagged:
     
 </div>
 
-<hr />
-<hr />
+<p><br /></p>
 <form class="js-form form" method="post" action="https://api.4n1.co/v2/entry/NicoCourts/jekyll-website/master/comments" autocomplete="off">
     <input type="hidden" name="options[origin]" value="/2019/09/07/welcome.html" />
     <input type="hidden" name="options[parent]" value="/2019/09/07/welcome.html" />
@@ -170,36 +170,9 @@ Tagged:
           <input class="textfield__input" name="fields[name]" type="text" id="comment-form-name" placeholder="Your name" />
         </label>
       </div>
-    </fieldset>
-  
+    </fieldset>  
     <fieldset>
-      <div class="textfield">
-        <label for="comment-form-email">E-mail
-          <input class="textfield__input" name="fields[email]" type="email" id="comment-form-email" placeholder="Your email (optional, used only to send comments.)" />
-        </label>
-      </div>
-    </fieldset>
-  
-    <fieldset>
-      <div class="notify-me">
-        <label for="comment-form-reply">
-          <input type="checkbox" id="comment-form-reply" name="options[subscribe]" value="email" />
-        </label>
-        Send me an email when someone comments.
-      </div>
-    </fieldset>
-  
-      <fieldset>
-      <div class="textfield">
-        <label for="hp">
-          <input class="textfield__input" name="fields[hp]" id="hp" type="text" placeholder="Leave blank" />
-        </label>
-      </div>
-    </fieldset>
-  
-    <fieldset>
-      <!--div class="g-recaptcha" data-sitekey="6LdjH_0UAAAAAKAv0pN3g1lmE8CyuL85o6RNh9-F" data-theme="dark"></div-->
-      <div id="reCaptcha"></div>
+      <div class="g-recaptcha" data-sitekey="6LdjH_0UAAAAAKAv0pN3g1lmE8CyuL85o6RNh9-F"></div>
     </fieldset>
   
     <fieldset>
@@ -207,26 +180,8 @@ Tagged:
         Submit
       </button>
     </fieldset>
-  
+
   </form>
-
-<p><br />
-  <small></small></p>
-<p>Comments are held for moderation. There will be a delay before they appear.<br />
-  Comments may include <a href="https://commonmark.org/help/" rel="nofollow"><strong>Markdown</strong></a>.<br />
-  To share something privately: <a href="mailto:willy@spinningnumbers.org">Contact me</a>.</p>
-<p>&lt;/small&gt;</p>
-
-<script>
-  function showReCaptcha() {
-    var node = document.createElement("div");
-    node.setAttribute('class', 'g-recaptcha');
-    node.setAttribute('data-sitekey', '6LdjH_0UAAAAAKAv0pN3g1lmE8CyuL85o6RNh9-F');
-    node.setAttribute('data-theme', localStorage.theme);
-    document.getElementById("reCaptcha").appendChild(node);
-  }
-  showReCaptcha();
-  </script>
 
 <p><a href="/blog">Back to blog</a></p>
 
