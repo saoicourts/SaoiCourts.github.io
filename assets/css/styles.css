@@ -58,7 +58,7 @@ div.flexbox { display: flex; flex-direction: row; justify-content: space-between
 
 #overlay { position: fixed; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 2; cursor: pointer; }
 
-#credits { position: absolute; margin: auto; background-color: white; top: 0; right: 0; bottom: 0; left: 0; width: 50%; height: 20%; z-index: 3; padding: 10px 20px; border-radius: 5px; }
+#credits { position: fixed; margin: auto; background-color: white; top: 0; right: 0; bottom: 0; left: 0; width: 50%; height: 20%; z-index: 3; padding: 10px 20px; border-radius: 5px; }
 
 div.prediv { margin: auto; max-width: 600px; background-color: #EEE; padding: 15px 25px; overflow-x: scroll; font-size: 10pt; }
 
@@ -168,10 +168,16 @@ fieldset { border: none; }
 
 .textfield__input { border-width: 0 0 2px 0; height: 15px; font-family: "EB Garamond"; font-size: 12pt; }
 
-#respond { max-width: 620px; width: 90%; margin: auto; padding: 0 0 15px; box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 #f5ac46; }
+#respond { position: relative; max-width: 620px; width: 90%; margin: auto; padding: 0 0 15px; box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 #f5ac46; }
 
-article.modal { background-color: #fac5b5; width: 80%; overflow: wrap; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2); margin: auto; padding: 10px; font-size: 10pt; }
+article.modal { position: absolute; z-index: 3; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(80, 80, 80, 0.192); overflow: wrap; margin: auto; font-size: 12pt; }
 
 article.modal h3 { margin: 0; }
+
+article.modal .text { background-color: white; position: static; width: 50%; margin: 10% auto; padding: 10px; }
+
+article.modal .close-modal { margin: 10px auto; }
+
+.disabled input, .disabled textarea { pointer-events: none; background-color: #CCC; }
 
 /*# sourceMappingURL=styles.css.map */
