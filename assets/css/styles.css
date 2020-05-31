@@ -146,4 +146,32 @@ span.tag { border-radius: 7px; border-style: solid; border-width: 1px; border-co
 
 #pagination li { margin: 5px 2px; display: inline; }
 
+span.small { font-size: smaller; }
+
+article.comment { padding: 5px; }
+
+.comment__reply-link { font-size: 12pt; color: #CC3F13; }
+
+.comment__reply-link:hover { cursor: pointer; }
+
+.comment__author { color: #666666; font-size: 12pt; }
+
+.comment__date { font-size: 12pt; }
+
+.comment__body { margin: 0 0 0 10px; }
+
+fieldset { border: none; }
+
+#comment-form-message { width: 100%; }
+
+.textfield__input { border-width: 0 0 2px 0; height: 15px; font-family: "EB Garamond"; font-size: 12pt; }
+
+#respond { max-width: 620px; width: 90%; margin: auto; padding: 0 0 15px; box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 #f5ac46; }
+
+article.modal { background-color: #fac5b5; width: 80%; overflow: wrap; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2); margin: auto; padding: 10px; font-size: 10pt; }
+
+article.modal h3 { margin: 0; }
+
+.comment.child { margin: 0 0 0 30px; }
+
 /*# sourceMappingURL=styles.css.map */
