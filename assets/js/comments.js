@@ -34,6 +34,8 @@ $(function () {
   
           $(form)[0].reset();
           $(form).removeClass('disabled');
+          $(form).css('display','none');
+          $('#leave-comment').css('display','');
           grecaptcha.reset();
         },
         error: function (err) {
