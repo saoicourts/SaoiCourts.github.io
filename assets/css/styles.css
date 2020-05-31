@@ -148,7 +148,9 @@ span.tag { border-radius: 7px; border-style: solid; border-width: 1px; border-co
 
 span.small { font-size: smaller; }
 
-article.comment { padding: 5px; }
+.comment { padding: 5px; background-color: #EEE; margin: 10px 0; }
+
+.comment.child { margin-left: 30px; }
 
 .comment__reply-link { font-size: 12pt; color: #CC3F13; }
 
@@ -171,7 +173,5 @@ fieldset { border: none; }
 article.modal { background-color: #fac5b5; width: 80%; overflow: wrap; box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2); margin: auto; padding: 10px; font-size: 10pt; }
 
 article.modal h3 { margin: 0; }
-
-.comment.child { margin: 0 0 0 30px; }
 
 /*# sourceMappingURL=styles.css.map */
