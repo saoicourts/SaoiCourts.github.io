@@ -10,7 +10,9 @@ body { background-image: url("/assets/images/what-the-hex.png"); }
 
 div.container { box-sizing: border-box; width: 50%; margin: 10px 10px 10px 0; float: left; }
 
-@media only screen and (max-width: 800px) { div.wrapper { flex-direction: column; } div.container { width: auto; } }
+div.wrapper { margin: 15px 25px; }
+
+.post { width: 80%; margin: auto; line-height: 2; }
 
 h2 { margin: 0; }
 
@@ -104,8 +106,6 @@ ul.nav { margin: 3px; padding: 0; }
 
 a.nav { text-decoration: none; color: #000; }
 
-@media only screen and (max-width: 800px) { div#navbar { flex-direction: column; } li.nav { display: block; text-align: center; } div.postBody-short { max-width: 100%; } .wrap .section { flex-direction: column; } .wrap .title { text-align: center; } .wrap ul { padding-left: 5px; } }
-
 div.wrap { padding: 15px; display: flex; justify-content: center; flex-direction: column; }
 
 .wrap .contact { text-align: center; }
@@ -179,5 +179,9 @@ article.modal .text { background-color: white; position: static; width: 50%; mar
 article.modal .close-modal { margin: 10px auto; }
 
 .disabled input, .disabled textarea { pointer-events: none; background-color: #CCC; }
+
+blockquote { line-height: normal; }
+
+@media only screen and (max-width: 800px) { div#navbar { flex-direction: column; } li.nav { display: block; text-align: center; } div.postBody-short { max-width: 100%; } .wrap .section { flex-direction: column; } .wrap .title { text-align: center; } .wrap ul { padding-left: 5px; } div.wrapper { flex-direction: column; margin: 10px; } div.container { width: auto; } .post { width: auto; line-height: 1.8; } }
 
 /*# sourceMappingURL=styles.css.map */
