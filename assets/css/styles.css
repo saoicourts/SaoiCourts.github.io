@@ -12,7 +12,7 @@ div.container { box-sizing: border-box; width: 50%; margin: 10px 10px 10px 0; fl
 
 div.wrapper { margin: 15px 25px; }
 
-.post { width: 80%; margin: auto; line-height: 2; }
+.post { width: 80%; margin: auto; line-height: 1.8; }
 
 h2 { margin: 0; }
 
@@ -181,6 +181,8 @@ article.modal .close-modal { margin: 10px auto; }
 .disabled input, .disabled textarea { pointer-events: none; background-color: #CCC; }
 
 blockquote { line-height: normal; }
+
+ol.bibliography { font-size: 12pt; padding-left: 22px; text-indent: -22px; list-style: none; }
 
 @media only screen and (max-width: 800px) { div#navbar { flex-direction: column; } li.nav { display: block; text-align: center; } div.postBody-short { max-width: 100%; } .wrap .section { flex-direction: column; } .wrap .title { text-align: center; } .wrap ul { padding-left: 5px; } div.wrapper { flex-direction: column; margin: 10px; } div.container { width: auto; } .post { width: auto; line-height: 1.8; } }
 

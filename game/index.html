@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<head>
+    <title>The Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="/assets/css/game.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .ui-popup-container {
+            background-color: #f9f9f9;
+        }
+        .capitalize {
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <!-- Start of first page -->
+    <div data-role="page" id="welcome">
+
+        <div data-role="header">
+            <h1>The Game</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <p>Welcome to the game calculator! To start, pick the players you want to 
+                play. When you are ready to begin click the button at the bottom of the page to 
+                start playing!
+            </p>
+            <br />
+            <a href="#modal" data-transition="slidedown" class="ui-btn ui-corner-all ui-shadow">Click here to add players</a>
+            <center><p>You currently have <span id="playerCount">0</span> players selected.</p></center>
+            <br />
+
+            <a href="#scores" class="ui-btn ui-corner-all ui-shadow">Click here to enter scores!</a>
+            <div style="position:fixed;width:100%;height:40px;bottom:0px;"><a id='reset-link' href="#">Reset players</a></div>
+        </div><!-- /content -->
+
+    </div><!-- /page -->
+
+    <!-- Start of second page -->
+    <div data-role="page" id="scores">
+
+        <div data-role="header">
+            <h1>Score Sheet</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <p><a href="#welcome">Back to player selection</a></p>
+            <div data-role="tabs" id="tabs">
+                <div data-role="navbar">
+                  <ul>
+                    <li><a href="#greenies" id="greenieLink" data-ajax="false">Greenies</a></li>
+                    <li><a href="#medal" data-ajax="false">Medals</a></li>
+                    <li><a href="#skins" data-ajax="false">Skins</a></li>
+                    <li><a href="#totals" data-ajax="false">Totals</a></li>
+                  </ul>
+                </div>
+                <div id="greenies" class="ui-body-d ui-content">
+                    <form id="greenie-form">
+                        <div class="ui-field-contain">
+                            <label for="select-native-2">Hole 2: (<a href='javascript:void(0);' id='toggle-hole-2'>single</a>)</label>
+                            <select name="select-native-2" id="greenie-hole-2" data-native-menu="false" data-mini="true">
+                                <option value="1"><em>Choose...</em></option>
+                            </select>
+                        </div>
+                        <div class="ui-field-contain">
+                            <label for="select-native-7">Hole 7: (<a href='javascript:void(0);' id='toggle-hole-7'>single</a>)</label>
+                            <select name="select-native-7" id="greenie-hole-7" data-native-menu="false" data-mini="true">
+                                <option value="1"><em>Choose...</em></option>
+                            </select>
+                        </div>
+                        <div class="ui-field-contain">
+                            <label for="select-native-13">Hole 13: (<a href='javascript:void(0);' id='toggle-hole-13'>single</a>)</label>
+                            <select name="select-native-13" id="greenie-hole-13" data-native-menu="false" data-mini="true">
+                                <option value="1"><em>Choose...</em></option>
+                            </select>
+                        </div>
+                        <div class="ui-field-contain">
+                            <label for="select-native-15">Hole 15: (<a href='javascript:void(0);' id='toggle-hole-15'>single</a>)</label>
+                            <select name="select-native-15" id="greenie-hole-15" data-native-menu="false" data-mini="true">
+                                <option value="1"><em>Choose...</em></option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div id="medal" class="ui-body-d ui-content">
+                    <div id="info"></div>
+                    <form id='medalsForm'>
+                        <div id='collSet' data-role="collapsibleset" data-mini="true">
+                            <div id="medals-first" data-role="collapsible"></div>
+                            <div id="medals-second" data-role="collapsible"></div>
+                            <div id="medals-third" data-role="collapsible"></div>
+                        </div>
+                    </form>
+                </div>
+                <div id="skins" class="ui-body-d ui-content">
+                    <label for="slider-1">Slider with tooltip:</label>
+                    <input type="range" name="slider-1" id="slider-1" min="0" max="5" value="0" data-popup-enabled="true">
+                </div>
+                <div id="totals" class="ui-body-d ui-content">
+                    <table data-role="table" id="data-table" data-mode="reflow" class="ui-responsive table-stroke">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Total pot: <span id="total-pot" style="color:green;">$100</span></td>
+                            </tr>
+                            <tr>
+                                <td>Total payout: <span id="total-payout" style="color:red;">$85</span></td>
+                            </tr>
+                            <tr>
+                                <td>Bartender tip:<span id="bartender-tip" style="font-weight:bold;">$15</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="player-lineup" data-role="collapsibleset" data-content-theme="a"></div>
+                </div>
+              </div>
+        </div><!-- /content -->
+
+    </div><!-- /page -->
+
+    <div data-role="page" data-dialog="true" data-close-btn="right" id="modal">
+        <div data-role="header">
+            <h1>Player Select</h1>
+        </div><!-- /header -->
+
+        <div id="playerMain" role="main" class="ui-content">
+            <form id="players">
+                <fieldset data-role="controlgroup"></fieldset>
+            </form>
+            <p><a href="#" id="editPlayers">Edit player list</a></p>
+        </div><!-- /content -->
+    </div>
+    
+    <script>
+        // Default settings.
+        var score_defaults = {
+            'greenies' : {
+                '2' : 'choose-one',
+                '7' : 'choose-one',
+                '13': 'choose-one',
+                '15': 'choose-one',
+            },
+            'dblGreenie' : {
+                '2' : false,
+                '7' : false,
+                '13': false,
+                '15': false,
+            },
+            'medals' : {
+                'first' : [],
+                'second': [],
+                'third' : [],
+            },
+            'skins' : {},
+        }
+        var state_defaults = {
+            players : ["Jeff", "Todd", "Danny"],
+            activated : [],
+            medals : {
+                "first" : 1,
+                "second" : 1,
+                "third" : 1,
+            },
+            scores : score_defaults,
+        }
+        var state;
+
+        // Read off the old state of the page, if any.
+        // Otherwise save away the default state
+        $(document).ready(function() {
+                if (!localStorage.hasOwnProperty("state")) {
+                    localStorage.setItem("state",JSON.stringify(state_defaults));
+                    state = state_defaults;
+                } else {
+                    state = JSON.parse(localStorage.getItem("state"));
+                }
+
+                // Populate player form
+                resetPlayersForm();
+            }
+        );
+
+        // Reset everything
+        $('#reset-link').click(function() {
+            state = state_defaults;
+            localStorage.setItem("state",JSON.stringify(state_defaults));
+
+            // Trigger form resets
+            resetPlayersForm();
+            //resetScoreForm();
+        })
+
+        function addMedalHandler(place) {
+            // Change state 
+            if (place == 'first') {
+                state.medals.first = 2;
+                state.scores.medals.first = ['choose-one','choose-one']
+                state.medals.second = 0;
+                state.scores.medals.second = []
+            } else {
+                state.medals.second = 2;
+                state.scores.medals.second = ['choose-one','choose-one']
+                state.medals.third = 0;
+                state.scores.medals.third = []
+            }
+
+            saveState();
+
+            // Rebuild form
+            resetMedals();
+        }
+        function removeMedalHandler() {
+            // Change state 
+            state.medals = {
+                "first" : 1,
+                "second" : 1,
+                "third" : 1,
+            }
+            state.scores.medals = {
+                "first" : ['choose-one'],
+                "second" : ['choose-one'],
+                "third" : ['choose-one'],
+            }
+            saveState();
+
+            // Rebuild form
+            resetMedals();
+        }
+
+        function resetSkins() {
+            $('#skins').html('');
+
+            for (player of state.activated) {
+                $('#skins').append('<label for="slider-' + player + '"><span class="capitalize">' + player + '</label>');
+                $('#skins').append('<input type="range" name="slider-' + player + '" id="slider-' + player + '" min="0" max="5" value="0" data-popup-enabled="true">');
+            }
+
+            $('#skins').trigger("create");
+
+            // Add listeners and use saved values
+            for (player of state.activated) {
+                if (state.scores.skins[player]){
+                    $('#slider-' + player).val(state.scores.skins[player]).slider("refresh")
+                }
+
+                $('#slider-' + player).change(function() {
+                    var player = this.id.split('-')[1];
+                    state.scores.skins[player] = this.value
+                    saveState();
+                })
+            }
+        }
+
+        function resetMedals() {
+            // create the options to populate
+            var collapse = $('<div data-role="collapsibleset" data-mini="true"></div>');
+            var selector = $('<select name="select-native-15" data-native-menu="false" data-mini="true"></select>');
+            selector.append($('<option value="choose-one" data-placeholder="true">Choose one...</option>'));
+            for (p of state.activated) {
+                $('<option value="' + p + '">' + p + '</option>').appendTo(selector);
+            }
+            
+
+            // Put our options in the dropdowns
+            for (place in state.medals) {
+                var newDiv = $('<div data-role="collapsible"></div>');
+                newDiv.append($('<h4 class="capitalize">' + place + ' Place</h4>'))
+                
+                for (i=0; i<state.medals[place]; i++){
+                    var s = selector.clone();
+                    s.prop('id','medal-' + place + '-' + i);
+                    newDiv.append(s);
+                }
+
+                if (['first','second'].includes(place)){
+                    if (state.medals.first== 1 && state.medals.second == 1) {
+                        $('<a href="#" id="add-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>').appendTo(newDiv);
+                    } else if (state.medals[place] == 2) {
+                        $('<a href="#" id="rem-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>').appendTo(newDiv);
+                    }
+                }
+                
+                collapse.append(newDiv);
+            }
+
+            // Information div
+            var info = '<div><strong>Medals:</strong><p>First: ' 
+                + state.scores.medals.first.filter(w => w != 'choose-one').join(', ')
+                + '<br />Second: '
+                + state.scores.medals.second.filter(w => w != 'choose-one').join(', ')
+                + '<br />Third: '
+                + state.scores.medals.third.filter(w => w != 'choose-one').join(', ')
+                + '</p></div>';
+
+            // Insert everything into the DOM
+            $('#info').html(info);
+            $('#medalsForm').html('');
+            $('#medalsForm').append(collapse);
+            $('#medalsForm').collapsibleset().trigger("create");
+            $('#add-medal-first').click(function() {addMedalHandler('first')});
+            $('#add-medal-second').click(function() {addMedalHandler('second')});
+            $('#rem-medal-first, #rem-medal-second').click(removeMedalHandler);
+
+            // Add individual listeners for dropdowns and set current values
+            for (place in state.medals) {
+                for (i=0; i<state.medals[place]; i++) {
+                    //listener
+                    $('#medal-' + place + '-' + i).change(function() {
+                        // get the place of this element
+                        var place = this.id.split('-')[1];
+
+                        // get all people currently with this medal
+                        // for now just stick in 'choose-one' and decide how to handle the display
+                        for (j=0; j<state.medals[place]; j++) {
+                            state.scores.medals[place][j] = $('#medal-' + place + '-' + j)[0].value;                    
+                        }
+
+                        //update state
+                        saveState();
+
+                        //update display
+                        resetMedals();
+                    })
+
+                    // Set value
+                    $('#medal-' + place + '-' + i).val(state.scores.medals[place][i]).selectmenu("refresh");
+                }
+            }
+        }
+
+        // Edit player list
+        function editPlayers() {
+            // Basically do the same as the reset function except make them editable fields
+            var form = $('<form id="players"></form>');
+
+            // Now put in all players
+            for (p of state['players']) {
+                $('<input type="text" name="text-' + p + '" id="text-' + p + '" value="' + p + '">').appendTo(form);
+            }
+
+            // pop everything in place
+            $('<a href="#" id="addText" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>').appendTo(form);
+            $('<p><a href="#" id="doneAdding">Done adding players</a></p>').appendTo(form);
+
+            $('#playerMain').html(form).trigger( "create" );
+
+            // Attach the listeners
+            $('#doneAdding').click(function() {
+                // Parse the inputs
+                var players = []
+                form.children().children('input').each(function(n,e) {
+                    var val = e.value
+                    if (val.replace(/\s+/g, '') != '') {
+                        players.push(val.trim());
+                    }
+                })
+
+                // Update the state
+                state.players = players;
+                saveState();
+
+                // Go back to checkboxes
+                resetPlayersForm();
+            });
+            $('#addText').click(function() {
+                $('<input type="text">').insertBefore('#addText');
+                $('#playerMain').trigger( "create" );
+            });
+        }
+
+        function populateFields() {
+            // create the options to populate
+            var dummy = ['<option value="choose-one" data-placeholder="true">Choose one...</option>'];
+            for (p of state.activated) {
+                dummy.push('<option value="' + p + '">' + p + '</option>');
+            }
+
+            // Put our options in the dropdowns
+            for (hole of ['hole-2','hole-7','hole-13','hole-15']) {
+                $('#greenie-' + hole).html('');
+                for (opt of dummy) {
+                    $('#greenie-' + hole).append(opt);
+                }
+                $('#greenie-' + hole).selectmenu();
+                $('#greenie-' + hole).selectmenu("refresh");
+            }
+
+            // Update values from old state
+            for (hole of ['2','7','13','15']) {
+                $('#greenie-hole-' + hole).val(state.scores.greenies[hole]).selectmenu("refresh");
+            }
+
+            // Attach listeners
+            $('#greenie-hole-2, #greenie-hole-7, #greenie-hole-13, #greenie-hole-15').change(function() {
+                var hole = this.id.split('-')[2];
+                var val = this.value;
+                
+                state.scores.greenies[hole] = val;
+                saveState();
+            });
+            $('#toggle-hole-2, #toggle-hole-7, #toggle-hole-13, #toggle-hole-15').click(function(evt) {
+                evt.stopImmediatePropagation();
+                
+                var hole = this.id.split('-')[2];
+                if (state.scores.dblGreenie[hole]) {
+                    // change to single
+                    this.innerHTML = 'single';
+                    state.scores.dblGreenie[hole] = false;
+                } else {
+                    // change to double
+                    this.innerHTML = 'double';
+                    state.scores.dblGreenie[hole] = true;
+                }
+                saveState();
+            })
+
+            resetMedals();
+            resetSkins();
+
+        }
+
+        // Reads the current state variable and populates the players form
+        function resetPlayersForm() {
+            var form = $('<form id="players"></form>');
+            var fs = $('<fieldset data-role="controlgroup"></fieldset>');
+
+            // Put in the legend
+            fs.append('<legend>Select who you want to play:</legend>');
+
+            // Now put in all players
+            for (p of state['players']) {
+                $('<label for="checkbox-' + p + '">' + p + '</label>').appendTo(fs);
+                $('<input type="checkbox" name="checkbox-' + p + '" id="checkbox-' + p + '" ' + (state.activated.includes(p) ? 'checked="true"' : '') + '>').appendTo(fs);
+            }
+
+            // pop everything in place
+            $('<p><a href="#" id="editPlayers">Edit player list</a></p>').appendTo(fs);
+            fs.appendTo(form);
+            $('#playerMain').html(form).trigger( "create" );
+
+            // Attach the listeners
+            $('.ui-checkbox input').change(function() {
+                setTimeout(function(){$('.ui-checkbox input').first().trigger('updated')}, 100);
+                
+            });
+            $('.ui-checkbox input').first().on('updated', function() {
+                $('#playerCount').html($('#playerMain').find('input:checked').length);
+                state.activated = []
+                $('#playerMain').find('input:checked').each(function(i,val) {
+                    var name = val.id.split('-')[1];
+                    state.activated.push(name);
+                })
+                trimPlayers();
+                saveState();
+                populateFields();
+            });
+            $('#editPlayers').click(editPlayers);
+
+            // Set state for doubles
+            for (hole of ['2','7','13','15']) {
+                $('#toggle-hole-' + hole).html(state.scores.dblGreenie[hole] ? 'double' : 'single')
+            }
+
+            // Players (may) have changed. First make sure values are only taken in activated players
+            trimPlayers();
+            // Save our changes
+            saveState();
+            // Propagate changes through the score page
+            populateFields();
+
+
+
+            // Trigger an event so the count updates
+            $('.ui-checkbox input').first().trigger( "change" );
+        }
+
+        function trimPlayers() {
+            // First greenies
+            for (hole in state.scores.greenies) {
+                if (state.scores.greenies[hole] != 'choose-one' && !state.activated.includes(state.scores.greenies[hole])){
+                    console.log('Trimming removed player ' + state.scores.greenies[hole] + ' from greenies hole ' + hole)
+                    state.scores.greenies[hole] = 'choose-one';
+                }
+            }
+            // Then medals
+            for (place of ['first','second','third']) {
+                for (i=0; i<state.medals[place]; i++) {
+                    if (state.scores.medals[place][i] != 'choose-one' && !state.activated.includes(state.scores.medals[place][i])) {
+                        console.log('Trimming removed player ' + state.scores.medals[place][i] + ' from medals');
+                        state.scores.medals[place][i] = 'choose-one'
+                    }
+                }
+            }
+            // Finally skins
+            for (p in state.scores.skins) {
+                if (!state.activated.includes(p)) {
+                    console.log('Trimming removed player ' + p + ' from skins');
+                    delete state.scores.skins[p];
+                }
+            }
+        }
+
+        // Save everything!
+        function saveState() {
+            updateTotals();
+            localStorage.setItem("state",JSON.stringify(state));
+        }
+
+
+        // Some helper functions for scoring
+        function valueGreenie() {
+            var numGreenies = 0
+            for (val in state.scores.greenies) {
+                if (state.scores.greenies[val] != 'choose-one') {
+                    numGreenies += 1;
+                }
+            }
+
+            return 5*Math.floor(20*state.activated.length/(5*numGreenies))
+        }
+
+        function valueMedal(p) {
+            var medals = {'first':0,'second':0,'third':0}
+            for (place in medals) {
+                for (val in state.scores.medals[place]) {
+                    if (state.scores.medals[place] != 'choose-one'){
+                        medals[place] += 1;
+                    }
+                }
+            }
+            var numMedals = medals.first + medals.second + medals.third
+
+            var mults = {}
+            mults.first = numMedals == 3 ? 0.5/medals.first : 0.7/medals.first;
+            mults.second = medals.second == 0 ? 0 : 0.3/medals.second;
+            mults.third = medals.third == 0 ? 0 : 0.2
+
+            return mults[p]*50*state.activated.length
+        }
+
+        function valueSkin() {
+            var numSkins = 0
+            for (player in state.scores.skins) {
+                numSkins += parseInt(state.scores.skins[player])
+            }
+
+            return numSkins == 0 ? 0 : 5*Math.floor(20*state.activated.length/(5*numSkins))
+        }
+
+        function playerStats(player) {
+            var stats = {
+                'money' : {'in' : 0, 'out' : 0, 'net' : 0},
+                'greenies' : {'numWon' : 0, 'valueWon' : 0, 'holes' : []},
+                'dblGreenies' : {'numWon' : 0, 'valueWon':0, 'valueLost':0,'holes' : []},
+                'medals' : {'place' : [], 'valueWon' : 0},
+                'skins' : {'numWon' : 0, 'valueWon':0},
+            } 
+
+            // Greenies
+            for (hole of ['2','7','13','15']) {
+                if (state.scores.greenies[hole] == player) {
+                    stats.greenies.numWon += 1;
+                    stats.greenies.valueWon += valueGreenie();
+                    stats.greenies.holes.push(hole);
+                }
+            }
+
+            // Double Greenies
+            for (hole of ['2','7','13','15']) {
+                if (state.scores.dblGreenie[hole]) {
+                    if (stats.greenies.holes.includes(hole)) {
+                        stats.dblGreenies.numWon += 1;
+                        stats.dblGreenies.valueWon += 5*(state.activated.length - 1);
+                        stats.dblGreenies.holes.push(hole);
+                    } else {
+                        stats.dblGreenies.valueLost += 5;
+                    }
+                };
+            }
+
+            // Medals
+            if (state.scores.medals.first.includes(player)) {
+                stats.medals.place.push('first');
+                stats.medals.valueWon += valueMedal('first');
+            } else if (state.scores.medals.second.includes(player)) {
+                stats.medals.place.push('second');
+                stats.medals.valueWon += valueMedal('second');
+            } else if (state.scores.medals.third.includes(player)) {
+                stats.medals.place.push('third');
+                stats.medals.valueWon += valueMedal('third');
+            }
+
+            // Skins
+            stats.skins.numWon = state.scores.skins[player] ? state.scores.skins[player] : 0;
+            stats.skins.valueWon = valueSkin()*stats.skins.numWon;
+
+            // Sum up everything
+            stats.money.in = stats.greenies.valueWon + stats.dblGreenies.valueWon 
+                                + stats.medals.valueWon + stats.skins.valueWon;
+            stats.money.out = 90 + stats.dblGreenies.valueLost;
+            stats.money.net = stats.money.in - stats.money.out
+
+            return stats
+        }
+
+        function overallSummary() {
+            var ret = {'totals' : {}, 'players' : {}};
+
+            // populate players and snag totals
+            var inward = 0; 
+            var outward = 0;
+            var net = 0;
+            for (p of state.activated) {
+                ret.players[p] = playerStats(p);
+                inward += parseInt(ret.players[p].money.out)
+                outward += parseInt(ret.players[p].money.in)
+                net -= parseInt(ret.players[p].money.net)
+            }
+
+            // set the totals
+            ret.totals = {'in' : inward, "out" : outward, "net": net};
+
+            return ret
+        }
+
+        function updateTotals() {
+            var data = overallSummary();
+
+            // Update the overall totals first
+            $('#total-pot').html("$" + data.totals.in)
+            $('#total-payout').html("$" + data.totals.out)
+            $('#bartender-tip').html("$" + data.totals.net)
+
+            // Populate with collapsibles
+            $('#player-lineup').html('');
+            for (p of state.activated) {
+                var newDiv = $('<div data-role="collapsible" id="summary-' + p +'" data-collapsed="true"></div>');
+                if (data.players[p].money.net == 0) {
+                    newDiv.append($('<h3>' + p + ' broke even</h3>'))
+                } else {
+                    var getsPaid = data.players[p].money.net >= 0
+                    newDiv.append($('<h3>' + p + (getsPaid ? ' won ' : ' owes ') + '<span style="color:' + (getsPaid ? 'green' : 'red') + '">$' + Math.abs(data.players[p].money.net) + '</span>'));
+                }
+
+                sentences = [p + ' bought in for <span style="color:red">$90</span>.']
+                if (data.players[p].greenies.numWon > 0) {
+                    sentences.push('They won ' + data.players[p].greenies.numWon + ' ' + (data.players[p].greenies.numWon == 1 ? 'greenie' : 'greenies') + ', giving them <span style="color:green">$' + data.players[p].greenies.valueWon + '</span>.');
+                }
+                if (data.players[p].dblGreenies.numWon > 0) {
+                    sentences.push(data.players[p].dblGreenies.numWon + ' of those ' + (data.players[p].dblGreenies.numWon == 1 ? 'was' : 'were') +' double greenies, adding an additional <span style="color:green">$' + data.players[p].dblGreenies.valueWon + '</span>.');
+                }
+                if (data.players[p].dblGreenies.valueLost > 0) {
+                    sentences.push('They lost <span style="color:red">$' + data.players[p].dblGreenies.valueLost + '</span> to others\' double greenies.')
+                }
+                if (data.players[p].medals.place.length != 0) {
+                    sentences.push('They got a ' + data.players[p].medals.place[0] + ' place medal, giving them <span style="color:green">$' + data.players[p].medals.valueWon + '</span>.')
+                }
+                if (data.players[p].skins.numWon > 0) {
+                    sentences.push('Finally, they picked up <span style="color:green">$' + data.players[p].skins.valueWon + '</span> for winning ' + data.players[p].skins.numWon + ' skin' + (data.players[p].skins.numWon == 1 ? '' : 's') +'.')
+                }
+                
+                $('<p>' + sentences.join('<br /> ') + '</p>').appendTo(newDiv);
+                $('#player-lineup').append(newDiv);
+            }
+            $('#player-lineup').collapsibleset();
+            $('#player-lineup').collapsibleset('refresh');
+        }
+    </script>
+    
+</body>
