@@ -89,11 +89,9 @@
                 <div id="medal" class="ui-body-d ui-content">
                     <div id="info"></div>
                     <form id='medalsForm'>
-                        <div id='collSet' data-role="collapsibleset" data-mini="true">
-                            <div id="medals-first" data-role="collapsible"></div>
-                            <div id="medals-second" data-role="collapsible"></div>
-                            <div id="medals-third" data-role="collapsible"></div>
-                        </div>
+                        <div id="first-place-div"></div>
+                        <div id="second-place-div"></div>
+                        <div id="third-place-div"></div>
                     </form>
                 </div>
                 <div id="skins" class="ui-body-d ui-content">
@@ -259,7 +257,7 @@
 
         function resetMedals() {
             // create the options to populate
-            var collapse = $('<div data-role="collapsibleset" data-mini="true"></div>');
+            //var collapse = $('<div data-role="collapsibleset" data-mini="true"></div>');
             var selector = $('<select name="select-native-15" data-native-menu="false" data-mini="true"></select>');
             selector.append($('<option value="choose-one" data-placeholder="true">Choose one...</option>'));
             for (p of state.activated) {
@@ -268,41 +266,43 @@
             
 
             // Put our options in the dropdowns
-            for (place in state.medals) {
-                var newDiv = $('<div data-role="collapsible"></div>');
-                newDiv.append($('<h4 class="capitalize">' + place + ' Place</h4>'))
+            for (place of ['first','second','third']) {
+                //var newDiv = $('<div data-role="collapsible"></div>');
+                $('#' + place + '-place-div').html('');
+                $('#' + place + '-place-div').append($('<h4 class="capitalize">' + place + ' Place</h4>'))
                 
                 for (i=0; i<state.medals[place]; i++){
                     var s = selector.clone();
                     s.prop('id','medal-' + place + '-' + i);
-                    newDiv.append(s);
+                    $('#' + place + '-place-div').append(s);
                 }
 
                 if (['first','second'].includes(place)){
                     if (state.medals.first== 1 && state.medals.second == 1) {
-                        $('<a href="#" id="add-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>').appendTo(newDiv);
+                        $('#' + place + '-place-div').append($('<a href="#" id="add-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>'));
                     } else if (state.medals[place] == 2) {
-                        $('<a href="#" id="rem-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>').appendTo(newDiv);
+                        $('#' + place + '-place-div').append($('<a href="#" id="rem-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>'));
                     }
                 }
                 
-                collapse.append(newDiv);
+                //collapse.append(newDiv);
+                
             }
 
             // Information div
-            var info = '<div><strong>Medals:</strong><p>First: ' 
-                + state.scores.medals.first.filter(w => w != 'choose-one').join(', ')
-                + '<br />Second: '
-                + state.scores.medals.second.filter(w => w != 'choose-one').join(', ')
-                + '<br />Third: '
-                + state.scores.medals.third.filter(w => w != 'choose-one').join(', ')
-                + '</p></div>';
+            //var info = '<strong>Medals:</strong><p>First: ' 
+            //    + state.scores.medals.first.filter(w => w != 'choose-one').join(', ')
+            //    + '<br />Second: '
+            //    + state.scores.medals.second.filter(w => w != 'choose-one').join(', ')
+            //    + '<br />Third: '
+            //    + state.scores.medals.third.filter(w => w != 'choose-one').join(', ')
+            //    + '</p>';
 
             // Insert everything into the DOM
-            $('#info').html(info);
-            $('#medalsForm').html('');
-            $('#medalsForm').append(collapse);
-            $('#medalsForm').collapsibleset().trigger("create");
+            //$('#info').html(info);
+            //$('#medalsForm').html('');
+            //$('#medalsForm').append(collapse);
+            //$('#medalsForm').collapsibleset().trigger("create");
             $('#add-medal-first').click(function() {addMedalHandler('first')});
             $('#add-medal-second').click(function() {addMedalHandler('second')});
             $('#rem-medal-first, #rem-medal-second').click(removeMedalHandler);
@@ -329,6 +329,7 @@
                     })
 
                     // Set value
+                    $('#medal-' + place + '-' + i).selectmenu();
                     $('#medal-' + place + '-' + i).val(state.scores.medals[place][i]).selectmenu("refresh");
                 }
             }
@@ -536,12 +537,39 @@
             }
             var numMedals = medals.first + medals.second + medals.third
 
-            var mults = {}
-            mults.first = numMedals == 3 ? 0.5/medals.first : 0.7/medals.first;
-            mults.second = medals.second == 0 ? 0 : 0.3/medals.second;
-            mults.third = medals.third == 0 ? 0 : 0.2
+            var mults = {'first' : 0, 'second':0, 'third':0}
+            if (medals.first == 1) {
+                if (medals.second == 1) {
+                    if (medals.third == 1) {
+                        // (1,1,1) case
+                        mults.first = 0.5
+                        mults.third = 0.2
+                    } else {
+                        // (1,1,0)
+                        mults.first = 0.7
+                    }
+                    // (1,1,*)
+                    mults.second = 0.3
+                } else {
+                    if (medals.second == 2) {
+                        // (1,2,0)
+                        // only possibility
+                        mults.first = 0.5
+                        mults.second = 0.25
+                    }
+                }
+            } else {
+                if (medals.second == 1) {
+                    // (2,1,0)
+                    mults.first = 0.35
+                    mults.second = 0.3
+                } else {
+                    // (2,0,0)
+                    mults.first = 0.5
+                }
+            }
 
-            return mults[p]*50*state.activated.length
+            return Math.floor(mults[p]*50*state.activated.length)
         }
 
         function valueSkin() {
@@ -653,7 +681,7 @@
                     sentences.push('They won ' + data.players[p].greenies.numWon + ' ' + (data.players[p].greenies.numWon == 1 ? 'greenie' : 'greenies') + ', giving them <span style="color:green">$' + data.players[p].greenies.valueWon + '</span>.');
                 }
                 if (data.players[p].dblGreenies.numWon > 0) {
-                    sentences.push(data.players[p].dblGreenies.numWon + ' of those ' + (data.players[p].dblGreenies.numWon == 1 ? 'was' : 'were') +' double greenies, adding an additional <span style="color:green">$' + data.players[p].dblGreenies.valueWon + '</span>.');
+                    sentences.push(data.players[p].dblGreenies.numWon + ' of those ' + (data.players[p].dblGreenies.numWon == 1 ? 'was a' : 'were') +' double greenie' + (data.players[p].dblGreenies.numWon == 1 ? '' : 's') + ', adding an additional <span style="color:green">$' + data.players[p].dblGreenies.valueWon + '</span>.');
                 }
                 if (data.players[p].dblGreenies.valueLost > 0) {
                     sentences.push('They lost <span style="color:red">$' + data.players[p].dblGreenies.valueLost + '</span> to others\' double greenies.')
