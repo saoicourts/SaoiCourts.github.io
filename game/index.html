@@ -157,14 +157,15 @@
             },
             'skins' : {},
         }
+        var medals_defaults = {
+            "first" : 1,
+            "second" : 1,
+            "third" : 1,
+        }
         var state_defaults = {
             players : ["Jeff", "Todd", "Danny"],
             activated : [],
-            medals : {
-                "first" : 1,
-                "second" : 1,
-                "third" : 1,
-            },
+            medals : medals_defaults,
             scores : score_defaults,
         }
         var state;
@@ -186,12 +187,13 @@
 
         // Reset everything
         $('#reset-link').click(function() {
-            state = state_defaults;
-            localStorage.setItem("state",JSON.stringify(state_defaults));
+            state.scores = score_defaults;
+            state.medals = medals_defaults;
+            state.activated = [];
+            saveState();
 
             // Trigger form resets
             resetPlayersForm();
-            //resetScoreForm();
         })
 
         function addMedalHandler(place) {
@@ -257,7 +259,6 @@
 
         function resetMedals() {
             // create the options to populate
-            //var collapse = $('<div data-role="collapsibleset" data-mini="true"></div>');
             var selector = $('<select name="select-native-15" data-native-menu="false" data-mini="true"></select>');
             selector.append($('<option value="choose-one" data-placeholder="true">Choose one...</option>'));
             for (p of state.activated) {
@@ -267,7 +268,6 @@
 
             // Put our options in the dropdowns
             for (place of ['first','second','third']) {
-                //var newDiv = $('<div data-role="collapsible"></div>');
                 $('#' + place + '-place-div').html('');
                 $('#' + place + '-place-div').append($('<h4 class="capitalize">' + place + ' Place</h4>'))
                 
@@ -283,26 +283,9 @@
                     } else if (state.medals[place] == 2) {
                         $('#' + place + '-place-div').append($('<a href="#" id="rem-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>'));
                     }
-                }
-                
-                //collapse.append(newDiv);
-                
+                }    
             }
-
-            // Information div
-            //var info = '<strong>Medals:</strong><p>First: ' 
-            //    + state.scores.medals.first.filter(w => w != 'choose-one').join(', ')
-            //    + '<br />Second: '
-            //    + state.scores.medals.second.filter(w => w != 'choose-one').join(', ')
-            //    + '<br />Third: '
-            //    + state.scores.medals.third.filter(w => w != 'choose-one').join(', ')
-            //    + '</p>';
-
             // Insert everything into the DOM
-            //$('#info').html(info);
-            //$('#medalsForm').html('');
-            //$('#medalsForm').append(collapse);
-            //$('#medalsForm').collapsibleset().trigger("create");
             $('#add-medal-first').click(function() {addMedalHandler('first')});
             $('#add-medal-second').click(function() {addMedalHandler('second')});
             $('#rem-medal-first, #rem-medal-second').click(removeMedalHandler);
@@ -554,22 +537,22 @@
                     if (medals.second == 2) {
                         // (1,2,0)
                         // only possibility
-                        mults.first = 0.5
-                        mults.second = 0.25
+                        mults.first = 0.7
+                        mults.second = 0.15
                     }
                 }
             } else {
                 if (medals.second == 1) {
-                    // (2,1,0)
-                    mults.first = 0.35
-                    mults.second = 0.3
+                    // (2,0,1)
+                    mults.first = 0.4
+                    mults.third = 0.2
                 } else {
                     // (2,0,0)
                     mults.first = 0.5
                 }
             }
 
-            return Math.floor(mults[p]*50*state.activated.length)
+            return 5*Math.floor(mults[p]*10*state.activated.length)
         }
 
         function valueSkin() {
