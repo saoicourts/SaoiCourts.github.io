@@ -165,9 +165,10 @@
         var state_defaults = {
             players : ["Jeff", "Todd", "Danny"],
             activated : [],
-            medals : medals_defaults,
-            scores : score_defaults,
+            medals : JSON.parse(JSON.stringify(medals_defaults)),
+            scores : JSON.parse(JSON.stringify(score_defaults)),
         }
+
         var state;
 
         // Read off the old state of the page, if any.
@@ -175,7 +176,7 @@
         $(document).ready(function() {
                 if (!localStorage.hasOwnProperty("state")) {
                     localStorage.setItem("state",JSON.stringify(state_defaults));
-                    state = state_defaults;
+                    state = JSON.parse(JSON.stringify(state_defaults));
                 } else {
                     state = JSON.parse(localStorage.getItem("state"));
                 }
@@ -187,9 +188,9 @@
 
         // Reset everything
         $('#reset-link').click(function() {
-            state.scores = score_defaults;
-            state.medals = medals_defaults;
-            state.activated = [];
+            state.scores = JSON.parse(JSON.stringify(score_defaults));
+            state.medals = JSON.parse(JSON.stringify(medals_defaults));
+            //state.activated = [];
             saveState();
 
             // Trigger form resets
