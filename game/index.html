@@ -209,7 +209,6 @@
                 state.medals.third = 0;
                 state.scores.medals.third = []
             }
-
             saveState();
 
             // Rebuild form
@@ -403,10 +402,8 @@
                 }
                 saveState();
             })
-
             resetMedals();
             resetSkins();
-
         }
 
         // Reads the current state variable and populates the players form
@@ -458,8 +455,6 @@
             // Propagate changes through the score page
             populateFields();
 
-
-
             // Trigger an event so the count updates
             $('.ui-checkbox input').first().trigger( "change" );
         }
@@ -495,7 +490,6 @@
             updateTotals();
             localStorage.setItem("state",JSON.stringify(state));
         }
-
 
         // Some helper functions for scoring
         function valueGreenie() {
@@ -542,7 +536,7 @@
                     }
                 }
             } else {
-                if (medals.second == 1) {
+                if (medals.third == 1) {
                     // (2,0,1)
                     mults.first = 0.4
                     mults.third = 0.2
@@ -560,7 +554,6 @@
             for (player in state.scores.skins) {
                 numSkins += parseInt(state.scores.skins[player])
             }
-
             return numSkins == 0 ? 0 : 5*Math.floor(20*state.activated.length/(5*numSkins))
         }
 
