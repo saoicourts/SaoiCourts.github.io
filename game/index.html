@@ -35,7 +35,7 @@
             <br />
 
             <a href="#scores" class="ui-btn ui-corner-all ui-shadow">Click here to enter scores!</a>
-            <div style="position:fixed;width:100%;height:40px;bottom:0px;"><a id='reset-link' href="#">Reset players</a></div>
+            <div style="position:fixed;width:100%;height:40px;bottom:0px;"><a id='reset-link' href="#">Reset scores</a></div>
         </div><!-- /content -->
 
     </div><!-- /page -->
@@ -190,7 +190,7 @@
         $('#reset-link').click(function() {
             state.scores = JSON.parse(JSON.stringify(score_defaults));
             state.medals = JSON.parse(JSON.stringify(medals_defaults));
-            //state.activated = [];
+            state.activated = [];
             saveState();
 
             // Trigger form resets
