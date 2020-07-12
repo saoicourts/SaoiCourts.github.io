@@ -26,16 +26,21 @@
 
         <div role="main" class="ui-content">
             <p>Welcome to the game calculator! To start, pick the players you want to 
-                play. When you are ready to begin click the button at the bottom of the page to 
+                play. Then change the buy-in and pool sizes if you'd like something different. 
+                When you are ready to begin click the button at the bottom of the page to 
                 start playing!
             </p>
             <br />
-            <a href="#modal" data-transition="slidedown" class="ui-btn ui-corner-all ui-shadow">Click here to add players</a>
+            <a href="#modal" data-transition="slidedown" class="ui-btn ui-corner-all ui-shadow">Edit player list</a>
             <center><p>You currently have <span id="playerCount">0</span> players selected.</p></center>
             <br />
 
-            <a href="#scores" class="ui-btn ui-corner-all ui-shadow">Click here to enter scores!</a>
-            <div style="position:fixed;width:100%;height:40px;bottom:0px;"><a id='reset-link' href="#">Reset scores</a></div>
+            <a href="#modal2" data-transition="slidedown" class="ui-btn ui-corner-all ui-shadow">Change buy-in/splits</a>
+            <center><p>Currently: $<span id="buyIn">0</span> buy in with pool sizes $<span id="medalsPool">0</span>/$<span id="greeniesPool">0</span>/$<span id="skinsPool">0</span> (medals/greenies/skins)</p></center>
+            <br />
+
+            <a href="#scores" class="ui-btn ui-corner-all ui-shadow">Start Scoring!</a>
+            
         </div><!-- /content -->
 
     </div><!-- /page -->
@@ -116,13 +121,14 @@
                         </tbody>
                     </table>
                     <div id="player-lineup" data-role="collapsibleset" data-content-theme="a"></div>
+                    <div style="position:fixed;width:inherit;height:40px;bottom:30px;"><a href="#scores" id='reset-link' style="width:100%" class="ui-btn ui-corner-all ui-shadow">Reset Scores</a></div>
                 </div>
               </div>
         </div><!-- /content -->
 
     </div><!-- /page -->
 
-    <div data-role="page" data-dialog="true" data-close-btn="right" id="modal">
+    <div data-role="page" data-dialog="true" data-close-btn="none" id="modal">
         <div data-role="header">
             <h1>Player Select</h1>
         </div><!-- /header -->
@@ -132,6 +138,23 @@
                 <fieldset data-role="controlgroup"></fieldset>
             </form>
             <p><a href="#" id="editPlayers">Edit player list</a></p>
+            <br />
+            <p><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow">Click when done</a></p>
+        </div><!-- /content -->
+    </div>
+
+    <div data-role="page" data-dialog="true" data-close-btn="none" id="modal2">
+        <div data-role="header">
+            <h1>Change Buy-in</h1>
+        </div><!-- /header -->
+
+        <div id="buyInMain" role="main" class="ui-content">
+            <p>First choose the (per player) buy-in amount and then choose how to split it up among the different sub games.</p>
+            <form id="buyInForm">
+                
+            </form>
+            <br />
+            <p><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow">Click when done</a></p>
         </div><!-- /content -->
     </div>
     
@@ -162,11 +185,18 @@
             "second" : 1,
             "third" : 1,
         }
+        var pools_defaults = {
+            "medals" : 50,
+            "skins" : 20,
+            "greenies" : 20,
+        }
         var state_defaults = {
             players : ["Jeff", "Todd", "Danny"],
             activated : [],
+            buyIn : 90,
             medals : JSON.parse(JSON.stringify(medals_defaults)),
             scores : JSON.parse(JSON.stringify(score_defaults)),
+            pools : JSON.parse(JSON.stringify(pools_defaults)),
         }
 
         var state;
@@ -174,17 +204,33 @@
         // Read off the old state of the page, if any.
         // Otherwise save away the default state
         $(document).ready(function() {
-                if (!localStorage.hasOwnProperty("state")) {
-                    localStorage.setItem("state",JSON.stringify(state_defaults));
-                    state = JSON.parse(JSON.stringify(state_defaults));
-                } else {
-                    state = JSON.parse(localStorage.getItem("state"));
+            // Set the default state if the person is new or is missing any of the requisite parameters in their state
+            var reset = false;
+            if (!localStorage.hasOwnProperty("state")) {
+                reset = true;
+            } else {
+                state = JSON.parse(localStorage.getItem("state"));
+                for (param in state_defaults) {
+                    if (!state.hasOwnProperty(param)) {
+                        reset = true;
+                    }
                 }
-
-                // Populate player form
-                resetPlayersForm();
             }
-        );
+
+            // Reset if we found problems
+            if (reset) {
+                localStorage.setItem("state",JSON.stringify(state_defaults));
+                state = JSON.parse(JSON.stringify(state_defaults));
+            }
+
+            // Populate player form
+            resetPlayersForm();
+        });
+
+        $(window).load(function() {
+            // Populate splits form
+            resetSplits();
+        });
 
         // Reset everything
         $('#reset-link').click(function() {
@@ -193,22 +239,114 @@
             state.activated = [];
             saveState();
 
+            // Reset Splits
+            state.pools = JSON.parse(JSON.stringify(pools_defaults))
+            state.buyIn = 90
+            resetSplits();
+
             // Trigger form resets
             resetPlayersForm();
-        })
+        });
+        
+
+        function resetSplits() {
+            // Populate the elements first
+            $('#buyInForm').html('')
+            $('<label for="buyInSlider">Buy-in Amount:</label>').appendTo('#buyInForm');
+            $('<input type="range" name="buyInSlider" id="buyInSlider" step="10" min="10" max="180" value="' + state.buyIn + '" data-popup-enabled="true"><br><hr>')
+                .appendTo('#buyInForm');
+            $('<label for="medalSlider">Medal Pool:</label>').appendTo('#buyInForm');
+            $('<input type="range" name="medalSlider" id="medalSlider" step="1" min="10" max="' + state.buyIn + '" value="' + state.pools.medals + '" data-popup-enabled="true"><br><hr>')
+                .appendTo('#buyInForm')
+            $('<label for="greeniesSlider">Greenies Pool:</label>').appendTo('#buyInForm');
+            $('<input type="range" name="greeniesSlider" id="greeniesSlider" step="1" min="0" max="' + (state.buyIn - state.pools.medals) + '" value="' + state.pools.greenies + '" data-popup-enabled="true">')
+                .appendTo('#buyInForm')
+            $('<label for="skinsSlider">Skins Pool:</label>').appendTo('#buyInForm');
+            $('<input type="range" name="skinsSlider" id="skinsSlider" step="1" min="0" max="' + (state.buyIn - state.pools.medals) + '" value="' + state.pools.skins + '" data-popup-enabled="true">')
+                .appendTo('#buyInForm')
+            
+            $('#buyInForm').trigger('create');
+            $('#buyInSlider').on('slidestop', function() {
+                state.buyIn = $('#buyInSlider').val();
+
+                // Default the medals slider to half
+                $('#medalSlider').attr('max', $('#buyInSlider').val());
+                state.pools.medals = $('#buyInSlider').val()/2;
+                $('#medalSlider').val($('#buyInSlider').val()/2).slider('refresh');
+
+                saveState();
+                updateSplitLabels();
+            });
+            $('#medalSlider').on('slidestop',function() {
+                state.pools.medals = $('#medalSlider').val();
+
+                // Get what we have left over
+                var rest = $('#buyInSlider').val() - $('#medalSlider').val();
+
+                $('#greeniesSlider').attr('max', rest);
+                $('#greeniesSlider').val(Math.ceil(rest/2)).slider('refresh');
+                state.pools.greenies = Math.ceil(rest/2)
+
+                $('#skinsSlider').attr('max',rest);
+                $('#skinsSlider').val(Math.floor(rest/2)).slider('refresh');
+                state.pools.skins = Math.floor(rest/2)
+
+                saveState();
+                updateSplitLabels();
+            });
+            $('#greeniesSlider').on('slidestop',function() {
+                state.pools.greenies = this.value
+
+                // Get what we have left over
+                var rest = $('#buyInSlider').val() - $('#medalSlider').val();
+                $('#skinsSlider').val(rest - this.value).slider('refresh');
+                state.pools.skins = rest - this.value
+
+                saveState();
+                updateSplitLabels();
+            })
+            $('#skinsSlider').on('slidestop',function() {
+                state.pools.skins = this.value
+
+                // Get what we have left over
+                var rest = $('#buyInSlider').val() - $('#medalSlider').val();
+                $('#greeniesSlider').val(rest - this.value).slider('refresh');
+                state.pools.greenies = rest - this.value
+
+                saveState();
+                updateSplitLabels();
+            })
+
+            updateSplitLabels();
+        }
+
+        function updateSplitLabels() {
+            // Update summary
+            $('#buyIn').text(state.buyIn)
+            $('#medalsPool').text(state.pools.medals)
+            $('#greeniesPool').text(state.pools.greenies)
+            $('#skinsPool').text(state.pools.skins)
+        }
 
         function addMedalHandler(place) {
             // Change state 
             if (place == 'first') {
-                state.medals.first = 2;
-                state.scores.medals.first = ['choose-one','choose-one']
-                state.medals.second = 0;
-                state.scores.medals.second = []
+                if (state.medals.first == 1) {
+                    state.medals.first = 2;
+                    state.scores.medals.first = ['choose-one','choose-one'];
+                    state.medals.second = 0;
+                    state.scores.medals.second = [];
+                } else {
+                    state.medals.first = 3;
+                    state.scores.medals.first = ['choose-one','choose-one','choose-one'];
+                    state.medals.third = 0;
+                    state.scores.medals.third = [];
+                }
             } else {
                 state.medals.second = 2;
-                state.scores.medals.second = ['choose-one','choose-one']
+                state.scores.medals.second = ['choose-one','choose-one'];
                 state.medals.third = 0;
-                state.scores.medals.third = []
+                state.scores.medals.third = [];
             }
             saveState();
 
@@ -217,15 +355,24 @@
         }
         function removeMedalHandler() {
             // Change state 
-            state.medals = {
-                "first" : 1,
-                "second" : 1,
-                "third" : 1,
-            }
-            state.scores.medals = {
-                "first" : ['choose-one'],
-                "second" : ['choose-one'],
-                "third" : ['choose-one'],
+            if (state.medals.first == 3) {
+                state.medals.first = 2;
+                state.scores.medals.first = ['choose-one','choose-one'];
+                state.medals.second = 0;
+                state.scores.medals.second = [];
+                state.medals.third = 1;
+                state.scores.medals.third = ['choose-one'];
+            } else {
+                state.medals = {
+                    "first" : 1,
+                    "second" : 1,
+                    "third" : 1,
+                }
+                state.scores.medals = {
+                    "first" : ['choose-one'],
+                    "second" : ['choose-one'],
+                    "third" : ['choose-one'],
+                }
             }
             saveState();
 
@@ -278,9 +425,10 @@
                 }
 
                 if (['first','second'].includes(place)){
-                    if (state.medals.first== 1 && state.medals.second == 1) {
+                    if (state.medals.first == 1 && state.medals.second == 1 || place == 'first' && state.medals.first == 2) {
                         $('#' + place + '-place-div').append($('<a href="#" id="add-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>'));
-                    } else if (state.medals[place] == 2) {
+                    }
+                    if (state.medals[place] > 1) {
                         $('#' + place + '-place-div').append($('<a href="#" id="rem-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>'));
                     }
                 }    
@@ -330,9 +478,9 @@
 
             // pop everything in place
             $('<a href="#" id="addText" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>').appendTo(form);
-            $('<p><a href="#" id="doneAdding">Done adding players</a></p>').appendTo(form);
 
             $('#playerMain').html(form).trigger( "create" );
+            $('<br><a href="#" id="doneAdding" class="ui-btn ui-corner-all ui-shadow">Done adding players</a>').appendTo('#playerMain');
 
             // Attach the listeners
             $('#doneAdding').click(function() {
@@ -421,10 +569,14 @@
                 $('<input type="checkbox" name="checkbox-' + p + '" id="checkbox-' + p + '" ' + (state.activated.includes(p) ? 'checked="true"' : '') + '>').appendTo(fs);
             }
 
-            // pop everything in place
-            $('<p><a href="#" id="editPlayers">Edit player list</a></p>').appendTo(fs);
             fs.appendTo(form);
             $('#playerMain').html(form).trigger( "create" );
+
+            // pop in controls
+            $('<br><a href="#" id="editPlayers" class="ui-btn ui-corner-all ui-shadow">Edit player list</a>').appendTo('#playerMain');
+            $('<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow">Click when done</a>').appendTo('#playerMain');
+            
+            
 
             // Attach the listeners
             $('.ui-checkbox input').change(function() {
@@ -501,7 +653,7 @@
                 }
             }
 
-            return 5*Math.floor(20*state.activated.length/(5*numGreenies))
+            return 5*Math.floor(state.pools.greenies*state.activated.length/(5*numGreenies))
         }
 
         function valueMedal(p) {
@@ -532,11 +684,11 @@
                     if (medals.second == 2) {
                         // (1,2,0)
                         // only possibility
-                        mults.first = 0.7
-                        mults.second = 0.15
+                        mults.first = 0.5
+                        mults.second = 0.25
                     }
                 }
-            } else {
+            } else if (medals.first == 2) {
                 if (medals.third == 1) {
                     // (2,0,1)
                     mults.first = 0.4
@@ -545,9 +697,12 @@
                     // (2,0,0)
                     mults.first = 0.5
                 }
+            } else {
+                // (3,0,0)
+                mults.first = 0.33
             }
 
-            return 5*Math.floor(mults[p]*10*state.activated.length)
+            return 5*Math.floor(mults[p]*state.pools.medals*state.activated.length/5)
         }
 
         function valueSkin() {
@@ -555,7 +710,7 @@
             for (player in state.scores.skins) {
                 numSkins += parseInt(state.scores.skins[player])
             }
-            return numSkins == 0 ? 0 : 5*Math.floor(20*state.activated.length/(5*numSkins))
+            return numSkins == 0 ? 0 : 5*Math.floor(state.pools.skins*state.activated.length/(5*numSkins))
         }
 
         function playerStats(player) {
@@ -606,9 +761,9 @@
             stats.skins.valueWon = valueSkin()*stats.skins.numWon;
 
             // Sum up everything
-            stats.money.in = stats.greenies.valueWon + stats.dblGreenies.valueWon 
-                                + stats.medals.valueWon + stats.skins.valueWon;
-            stats.money.out = 90 + stats.dblGreenies.valueLost;
+            stats.money.in = parseInt(stats.greenies.valueWon) + parseInt(stats.dblGreenies.valueWon) 
+                                + parseInt(stats.medals.valueWon) + parseInt(stats.skins.valueWon);
+            stats.money.out = parseInt(state.buyIn) + parseInt(stats.dblGreenies.valueLost);
             stats.money.net = stats.money.in - stats.money.out
 
             return stats
