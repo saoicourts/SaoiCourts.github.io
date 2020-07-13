@@ -53,7 +53,18 @@
         </div><!-- /header -->
 
         <div role="main" class="ui-content">
-            <p><a href="#welcome">Back to player selection</a></p>
+            <p><a href="#welcome">Back to player selection</a><a href='#popupDialog' data-rel="popup" data-transition="pop" style="float:right" >Reset Scores</a></p>
+            <div data-role="popup" id="popupDialog" style="max-width:400px;">
+                    <div data-role="header" data-theme="a">
+                    <h1>Reset all?</h1>
+                    </div>
+                    <div role="main" class="ui-content">
+                        <h3 class="ui-title">Are you sure you want to reset all your custom settings?</h3>
+                    <p>This will not affect custom players you have entered.</p>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" id='reset-link' data-rel="back" data-transition="flow">Reset</a>
+                    </div>
+                </div>
             <div data-role="tabs" id="tabs">
                 <div data-role="navbar">
                   <ul>
@@ -92,7 +103,7 @@
                     </form>
                 </div>
                 <div id="medal" class="ui-body-d ui-content">
-                    <div id="info"></div>
+                    <div id="medalErrors"></div>
                     <form id='medalsForm'>
                         <div id="first-place-div"></div>
                         <div id="second-place-div"></div>
@@ -120,8 +131,9 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div id="info"><center><span style="color:red">The medals area is incomplete. These values may have errors.</span></center></div>
                     <div id="player-lineup" data-role="collapsibleset" data-content-theme="a"></div>
-                    <div style="position:fixed;width:inherit;height:40px;bottom:30px;"><a href="#scores" id='reset-link' style="width:100%" class="ui-btn ui-corner-all ui-shadow">Reset Scores</a></div>
+                    <div style="position:fixed;width:inherit;height:40px;bottom:30px;"><a href="#scores"  style="width:100%" class="ui-btn ui-corner-all ui-shadow">Reset Scores</a></div>
                 </div>
               </div>
         </div><!-- /content -->
@@ -274,8 +286,7 @@
                 state.pools.medals = $('#buyInSlider').val()/2;
                 $('#medalSlider').val($('#buyInSlider').val()/2).slider('refresh');
 
-                saveState();
-                updateSplitLabels();
+                $('#medalSlider').trigger('slidestop');
             });
             $('#medalSlider').on('slidestop',function() {
                 state.pools.medals = $('#medalSlider').val();
@@ -328,56 +339,58 @@
             $('#skinsPool').text(state.pools.skins)
         }
 
-        function addMedalHandler(place) {
+        function addMedalHandler(e) {
             // Change state 
+            var place = e.target.id.split('-')[2]
+            // Start by doing the direct effect
+            state.medals[place] += 1;
+            state.scores.medals[place].push('choose-one')
+
+            // Propagate down
             if (place == 'first') {
-                if (state.medals.first == 1) {
-                    state.medals.first = 2;
-                    state.scores.medals.first = ['choose-one','choose-one'];
-                    state.medals.second = 0;
-                    state.scores.medals.second = [];
-                } else {
-                    state.medals.first = 3;
-                    state.scores.medals.first = ['choose-one','choose-one','choose-one'];
-                    state.medals.third = 0;
-                    state.scores.medals.third = [];
-                }
-            } else {
-                state.medals.second = 2;
-                state.scores.medals.second = ['choose-one','choose-one'];
-                state.medals.third = 0;
-                state.scores.medals.third = [];
-            }
-            saveState();
-
-            // Rebuild form
-            resetMedals();
-        }
-        function removeMedalHandler() {
-            // Change state 
-            if (state.medals.first == 3) {
-                state.medals.first = 2;
-                state.scores.medals.first = ['choose-one','choose-one'];
                 state.medals.second = 0;
-                state.scores.medals.second = [];
-                state.medals.third = 1;
-                state.scores.medals.third = ['choose-one'];
-            } else {
-                state.medals = {
-                    "first" : 1,
-                    "second" : 1,
-                    "third" : 1,
+                state.scores.medals.second = []
+                if (state.medals.first > 2) {
+                    state.medals.third = 0;
+                    state.scores.medals.third = []
                 }
-                state.scores.medals = {
-                    "first" : ['choose-one'],
-                    "second" : ['choose-one'],
-                    "third" : ['choose-one'],
-                }
+            } else if (place == 'second') {
+                state.medals.third = 0;
+                state.scores.medals.third = []
             }
-            saveState();
 
             // Rebuild form
             resetMedals();
+            
+            saveState();
+        }
+        function removeMedalHandler(e) {
+            // Change state 
+            var place = e.target.id.split('-')[2]
+            state.medals[place] -= 1;
+            state.scores.medals[place].pop()
+
+            // Open up things if we can
+            if (place == 'first' && state.medals.first < 3) {
+                if (state.medals.first == 2) {
+                    state.medals.third = 1;
+                    state.scores.medals.third = ['choose-one']
+                }
+                if (state.medals.first == 1) {
+                    state.medals.second = 1;
+                    state.scores.medals.second = ['choose-one']
+                }
+            } else if (place == 'second') {
+                if (state.medals.second == 1) {
+                    state.medals.third = 1;
+                    state.scores.medals.third = ['choose-one']
+                }
+            }
+
+            // Rebuild form
+            resetMedals();
+            
+            saveState();
         }
 
         function resetSkins() {
@@ -424,19 +437,40 @@
                     $('#' + place + '-place-div').append(s);
                 }
 
-                if (['first','second'].includes(place)){
-                    if (state.medals.first == 1 && state.medals.second == 1 || place == 'first' && state.medals.first == 2) {
+                // Let's handle all the logic separately
+                if (place == 'first') {
+                    // Always can add more
+                    $('#' + place + '-place-div').append($('<a href="#" id="add-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>'));
+
+                    // You can remove one as long as there is more than 1
+                    if (state.medals.first > 1) {
+                        $('#' + place + '-place-div').append($('<a href="#" id="rem-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-notext ui-btn-b ui-btn-inline">Minus</a>'));
+                    }
+                } else if (place == 'second') {
+                    // If you don't have one, the program is saying this place doesn't exist. Otherwise you can add more.
+                    if (state.medals.second > 0) {
                         $('#' + place + '-place-div').append($('<a href="#" id="add-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>'));
                     }
-                    if (state.medals[place] > 1) {
-                        $('#' + place + '-place-div').append($('<a href="#" id="rem-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>'));
+
+                    // Same condition as above
+                    if (state.medals.second > 1) {
+                        $('#' + place + '-place-div').append($('<a href="#" id="rem-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-notext ui-btn-b ui-btn-inline">Minus</a>'));
                     }
-                }    
+                } else {
+                    // If you don't have one, the program is saying this place doesn't exist. Otherwise you can add more.
+                    if (state.medals.third > 0) {
+                        $('#' + place + '-place-div').append($('<a href="#" id="add-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>'));
+                    }
+
+                    // Same condition as above
+                    if (state.medals.third > 1) {
+                        $('#' + place + '-place-div').append($('<a href="#" id="rem-medal-' + place + '" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-notext ui-btn-b ui-btn-inline">Minus</a>'));
+                    }
+                }
             }
-            // Insert everything into the DOM
-            $('#add-medal-first').click(function() {addMedalHandler('first')});
-            $('#add-medal-second').click(function() {addMedalHandler('second')});
-            $('#rem-medal-first, #rem-medal-second').click(removeMedalHandler);
+            // Add add/remove listeners
+            $('#add-medal-first, #add-medal-second, #add-medal-third').click(addMedalHandler);
+            $('#rem-medal-first, #rem-medal-second, #rem-medal-third').click(removeMedalHandler);
 
             // Add individual listeners for dropdowns and set current values
             for (place in state.medals) {
@@ -537,6 +571,7 @@
                 saveState();
             });
             $('#toggle-hole-2, #toggle-hole-7, #toggle-hole-13, #toggle-hole-15').click(function(evt) {
+                // This is a hack but I don't know how to stop double-firing otherwise
                 evt.stopImmediatePropagation();
                 
                 var hole = this.id.split('-')[2];
@@ -667,42 +702,41 @@
             }
             var numMedals = medals.first + medals.second + medals.third
 
-            var mults = {'first' : 0, 'second':0, 'third':0}
-            if (medals.first == 1) {
-                if (medals.second == 1) {
-                    if (medals.third == 1) {
-                        // (1,1,1) case
-                        mults.first = 0.5
-                        mults.third = 0.2
-                    } else {
-                        // (1,1,0)
-                        mults.first = 0.7
-                    }
-                    // (1,1,*)
-                    mults.second = 0.3
-                } else {
-                    if (medals.second == 2) {
-                        // (1,2,0)
-                        // only possibility
-                        mults.first = 0.5
-                        mults.second = 0.25
-                    }
-                }
-            } else if (medals.first == 2) {
-                if (medals.third == 1) {
-                    // (2,0,1)
-                    mults.first = 0.4
-                    mults.third = 0.2
-                } else {
-                    // (2,0,0)
-                    mults.first = 0.5
+            // First pass: how the places split up
+            var pools
+            if (numMedals == 2) {
+                // Two medals means 70/30/0 split
+                pools = {
+                    'first': 0.7*state.pools.medals*state.activated.length,
+                    'second' : 0.3*state.pools.medals*state.activated.length,
+                    'third' : 0,
                 }
             } else {
-                // (3,0,0)
-                mults.first = 0.33
+                // Otherwise it is 50/30/20
+                pools = {
+                    'first': 0.7*state.pools.medals*state.activated.length,
+                    'second' : 0.3*state.pools.medals*state.activated.length,
+                    'third' : 0.2*state.pools.medals*state.activated.length,
+                }
             }
 
-            return 5*Math.floor(mults[p]*state.pools.medals*state.activated.length/5)
+            // Second pass: combine shared prizes
+            if (medals.first > 2) {
+                // Three or more first place people
+                pools.first += pools.second + pools.third
+                pools.second = 0
+                pools.third = 0
+            } else if (medals.first == 2) {
+                // Two first and (possibly) a third
+                pools.first += pools.second
+            }
+            if (medals.second > 1) {
+                // Two or more second (zero third)
+                pools.second += pools.third
+            }
+
+            // Round down to the nearest $5
+            return 5*Math.floor(pools[p]/(5*medals[p]))
         }
 
         function valueSkin() {
@@ -790,6 +824,24 @@
         }
 
         function updateTotals() {
+            var medals = {'first':0,'second':0,'third':0}
+            for (place in medals) {
+                for (val in state.scores.medals[place]) {
+                    if (state.scores.medals[place] != 'choose-one'){
+                        medals[place] += 1;
+                    }
+                }
+            }
+            // Check if medals page passes validation. Remove warning if so.
+            var num_medals = medals.first + medals.second + medals.third
+            var passes = true
+            $('#medalsForm').find('select').each(function (){
+                if (this.value == "choose-one" && (num_medals != 2 || this.id.split('-')[1] != 'third')) {
+                    passes = false
+                }
+            })
+            if (passes) {$('#info').hide()} else {$('#info').show()}
+
             var data = overallSummary();
 
             // Update the overall totals first
