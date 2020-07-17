@@ -859,7 +859,7 @@
                     newDiv.append($('<h3>' + p + (getsPaid ? ' won ' : ' owes ') + '<span style="color:' + (getsPaid ? 'green' : 'red') + '">$' + Math.abs(data.players[p].money.net) + '</span>'));
                 }
 
-                sentences = [p + ' bought in for <span style="color:red">$90</span>.']
+                sentences = [p + ' bought in for <span style="color:red">$' + state.buyIn +'</span>.']
                 if (data.players[p].greenies.numWon > 0) {
                     sentences.push('They won ' + data.players[p].greenies.numWon + ' ' + (data.players[p].greenies.numWon == 1 ? 'greenie' : 'greenies') + ', giving them <span style="color:green">$' + data.players[p].greenies.valueWon + '</span>.');
                 }
