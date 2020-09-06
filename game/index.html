@@ -397,7 +397,7 @@
 
             for (player of state.activated) {
                 $('#skins').append('<label for="slider-' + player + '"><span class="capitalize">' + player + '</label>');
-                $('#skins').append('<input type="range" name="slider-' + player + '" id="slider-' + player + '" min="0" max="5" value="0" data-popup-enabled="true">');
+                $('#skins').append('<input type="range" name="slider-' + player.replace(' ', '_') + '" id="slider-' + player.replace(' ', '_') + '" min="0" max="5" value="0" data-popup-enabled="true">');
             }
 
             $('#skins').trigger("create");
@@ -405,11 +405,12 @@
             // Add listeners and use saved values
             for (player of state.activated) {
                 if (state.scores.skins[player]){
-                    $('#slider-' + player).val(state.scores.skins[player]).slider("refresh")
+                    $('#slider-' + player.replace(' ', '_')).val(state.scores.skins[player]).slider("refresh")
                 }
 
-                $('#slider-' + player).change(function() {
-                    var player = this.id.split('-')[1];
+                $('#slider-' + player.replace(' ', '_')).change(function() {
+                    var player = this.id.split('-')[1].replace('_', ' ');
+                    console.log(player)
                     state.scores.skins[player] = this.value
                     saveState();
                 })
