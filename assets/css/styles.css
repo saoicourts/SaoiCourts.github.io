@@ -186,4 +186,8 @@ ol.bibliography { font-size: 12pt; padding-left: 22px; text-indent: -22px; list-
 
 @media only screen and (max-width: 800px) { div#navbar { flex-direction: column; } li.nav { display: block; text-align: center; } div.postBody-short { max-width: 100%; } .wrap .section { flex-direction: column; } .wrap .title { text-align: center; } .wrap ul { padding-left: 5px; } div.wrapper { flex-direction: column; margin: 10px; } div.container { width: auto; } .post { width: auto; line-height: 1.8; } }
 
+.video-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; }
+
+.video-container iframe, .video-container object, .video-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
 /*# sourceMappingURL=styles.css.map */
