@@ -1,0 +1,200 @@
+---
+layout: default
+title: "Nico Courts :: CV"
+---
+<div class='wrap'>
+  <div class='section'>
+      <div class='contact'>
+        <strong>Nico Courts</strong><br />
+        University of Washington<br />
+        Department of Mathematics<br />
+        Box 354350<br />
+        Seattle, WA 98195-4350
+      </div>
+  </div>  
+  <div class='section'>
+      <div class='title'><h3>Objective</h3></div>
+      <div class='content'><span>To pursue my passion for mathematics and to understand how to better the world through its proliferation and application.</span></div>
+  </div>
+  <div class='section'>
+      <div class='title'><h3>Research<br /> Interests</h3></div>
+      <div class='content'><span>I am a student of <a href="https://sites.math.washington.edu/~julia/">Julia Pevtsova</a> studying the <a href="https://en.wikipedia.org/wiki/Representation_theory">representation theory</a>
+      of <a href="https://ncatlab.org/nlab/show/algebraic+group">algebraic groups</a> and <a href="https://ncatlab.org/nlab/show/quantum+group">quantum groups</a> (in the sense of rigid braided monoidal categories).</span></div>
+  </div>
+  <div class='section'>
+    <div class='title'><h3>Education<br />History</h3></div>
+    <div class='content'>
+      <p><strong>Ph.D in Mathematics</strong> University of Washington, Seattle</p>
+        <p>Spring 2022 (expected)</p>
+        <p>See <a routerLink='/courses'>this page</a> for a list of my graduate coursework.</p><br />
+        <p><strong>Masters of Science in Mathematics</strong> University of Washington, Seattle</p>
+        <p><em>Exam Topic:</em> Schur Duality and Strict Polynomial Functors (<a href="https://github.com/NicoCourts/General-Exam-Paper">view paper</a>)</p>
+        <p>Winter 2020</p><br />
+        <p><strong>Budapest Semesters in Mathematics</strong> Budapest, Hungary</p>
+        <p>Algebraic Topology, Conjecture &amp; Proof, Cryptography, Differential Geometry.</p>
+        <p>Autumn 2015</p><br />
+        <p><strong>Bachelors of Science in Mathematics</strong> University of Southern California</p>
+        <p><em>Magna Cum Laude</em>, Dean's list, Departmental Honors</p>
+        <p>Autumn 2015</p><br />
+        <p><strong>Associates of Science in Mathematics</strong> Citrus College</p>
+        <p>Key of Knowledge, Dean's List, Honors Program</p>
+        <p>Spring 2013</p>
+      </div>
+  </div>
+  <div class='section'>
+      <div class='title'><h3>Teaching<br /> History</h3></div>
+      <div class='content'>
+        <p><em>Graduate Teaching Assistant</em></p>
+        <p>University of Washington, Seattle, WA</p>
+        <p>Autumn 2016 - Present</p>
+        <ul>
+          <li><strong>As an instructor:</strong></li>
+          <ul>
+            <li>
+              <em>Math 124: Calculus I (Summer 2018)</em>
+              <p>I put my own twist on the standard Calc I
+                curriculum  by  deciding  to  focus  on  high-level  understanding  along  with
+                cultivating problem-solving techniques and a mathematical mindset.</p><br />
+                <p>This idea  was  loosely  based  on  that  of  the  flipped  classroom;  students  were
+                encouraged  using  quizzes  to  read  the  textbook  before  any  material  was
+                discussed in class and large portions of contact time with instructors were
+                dedicated to working on challenging problem sets and presenting solutions
+                to the class.</p><br />
+                <p>Technology was used frequently and liberally as a way to both bolster understanding through visual aids and as a means to solicit frequent feedback from students to monitor their understanding and progress.</p>
+            </li><br />
+            <li>
+              <em>Math 308: Matrix Algebra (Spring 2019)</em>
+              <p>
+                My focus during this quarter was on developing the students' ability to solve problems 
+                they hadn't seen before. In service of this, we dedicated a third of our contact time to solving
+                problems in small groups with my oversight.
+              </p><br />
+              <p>
+                My initial course structure wasn't adequately meeting the needs of the class (which I determined 
+                from soliciting feedback), so after the first midterm we pivoted to having more worked-out examples 
+                in class, for which the students were thankful.
+              </p><br />
+              <p>
+                In order to encourage students to investigate how linear algebra was used in the real world, 
+                the students were assigned a poster project. Topics included applications of linear algebra in 
+                medical imaging, computer graphics, and in the social sciences.
+              </p>
+            </li>
+          </ul><br />
+          <li><strong>As a TA:</strong> Participated  in  several  aspects  of  instruction  including 
+            demonstration of problem-solving techniques, student evaluation, and the administrative process.</li>
+          <ul>
+            <li>Math 112 (Sp 20)</li>
+            <li>Math 120 (Au 17)</li>
+            <li>Math 124 (Wi 17, Wi 19)</li>
+            <li>Math 125 (Au 16, Sp 17)</li>
+            <li>Math 126 (Su 17, Wi 18, Sp 18)</li>
+            <li>Math 327 (Su 19)</li>
+            <li>Math 381 (Au 18)</li>
+            <li>Math 403 (Wi 20)</li>
+          </ul>
+        </ul><br />
+        <p><em>Lead Teaching Assistant</em></p>
+        <p><a href="https://www.scsnoonan.org/">SCS Noonan Scholars</a> (previously South Central Scholars), Los Angeles, CA</p>
+        <p>Summer 2016</p>
+        <ul>
+          <li>Independently developed and delivered approximately 50 hours of instruction
+              and five exams to gifted university-bound students in calculus 2 and 3.</li>
+              <li>Total of 100 contact hours, including daily supervised worksheet sessions.</li>
+              <li>Took the initiative to deliver weekly lectures in higher mathematics (number
+                  theory, knot theory, differential equations, etc.)  along with entry-level problems
+                  that allowed students to get a sense of the “flavor” of these fields.</li>
+        </ul>
+        <p><em>Various Positions</em></p>
+        <p>Citrus College, Glendora, CA</p>
+        <p>Spring 2012 - Summer 2013</p>
+        <ul>
+          <li><strong>PAGE Program Tutor.</strong> Assisted a licensed teacher in the education of a class
+            of middle school children intended to reinforce the previous year’s learning and
+            to prevent “backsliding”.  Personally instructed a small group of students who
+            were prepared to learn more advanced topics in intermediate algebra.</li>
+          <li><strong>SIGMA Mentor.</strong> Took on a small group of students each semester utilizing
+            a holistic approach to education – supplementing standard tutoring with more
+            in-depth educational guidance and planning.</li>
+          <li><strong>Math Tutor.</strong> Instructed students in the fast-paced Math Success Center where
+            I provided homework help in all math classes through linear algebra and differential equations.</li>
+        </ul>
+      </div>
+  </div>
+  <div class="section">
+    <div class="title"><h3>Leadership &amp;<br> Service</h3></div>
+    <div class="content">
+      <p><em>Graduate Student Representative</em></p>
+      <p>UW Math Department</p>
+      <p>2019-2020 Academic Year</p>
+      <ul>
+        <li>
+          Planned and organized a variety of events and lectures for the graduate students as 
+          well as the department at large. 
+        </li>
+        <li>
+          Served as an advocate for the graduate students 
+          in several capacities.
+        </li>
+      </ul><br />
+      <p><em>(Unpaid) Organizer and Mentor</em></p>
+      <p><a href='https://sites.uw.edu/wdrp/'>Washington Directed Reading Program</a></p>
+      <p>2019-2020 Academic Year</p>
+      <ul>
+        <li>
+          Was part of a small group of graduate students responsible for running the WDRP. This program 
+          paired undergraduate students with graduate students with the goal of increasing diversity in mathematics 
+          and mentoring the next generation of mathematicians.
+        </li>
+        <li>
+          My role largely consisted of looking for funding and reaching out to different groups to encourage the participation 
+          of under-represented minorities in math.
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class='section'>
+    <div class='title'><h3>Talks Given</h3></div>
+    <div class='content'>
+      <p><em>Special Colloquium Series for Mathematical Sciences</em></p>
+      <p>Schur Algebras &amp; Duality (<a href='/talks/schur-weyl/'>slides</a>)</p>
+      <p>November 20, 2020</p>
+      <p>Georgia Southern University (online)</p>
+    </div>
+  </div>
+  <div class='section'>
+    <div class='title'><h3>Conferences &amp;<br /> Workshops<br /> Attended</h3></div>
+    <div class='content'>
+      <p><em><a href="http://tianyuan.scu.edu.cn/portal/article/index/id/283/pid/13/cid/30.html">Conference on Lie and Jordan Algebras, Their Representations and Applications</a></em></p>
+      <p>January 6-11, 2020</p>
+      <p>Sichuan University, Chengdu, P. R. China</p><br />
+      <p><em><a href="http://mathofml.cs.washington.edu/">The Mathematics of Machine Learning</a></em></p>
+      <p>MSRI</p>
+      <p>July 29 - August 9, 2019</p>
+      <p>University of Washington, Seattle</p>
+      <p>(<a href="https://github.com/NicoCourts/Algebra/tree/master/MSRI%20ML%20Notes">my notes</a>)</p><br />
+      <p><em><a href="https://sites.google.com/site/ausreptheory/workshop-2019">Triangulated Categories in Geometry and Representation Theory</a></em></p>
+      <p>June 24-28, 2019</p>
+      <p>University of Sydney, NSW, Australia</p>
+      <p>(<a href="https://github.com/NicoCourts/Algebra/tree/master/Workshop%20Notes">my notes</a>)</p><br />
+      <p><em><a href="http://www.pims.math.ca/scientific-event/181110-aaw">ABC Algebra Workshop</a></em></p>
+      <p>November 10-11, 2018</p>
+      <p>University of Washington, Seattle</p>
+    </div>
+  </div>
+  <div class='section'>
+      <div class='title'><h3>Skills &amp;<br />Hobbies</h3></div>
+      <div class='content'>
+        <em>Languages known:</em>
+        <ul>
+          <li><strong>English</strong> This is my native language.</li>
+          <li><strong>German</strong> Ich kann ziemlich gut Deutsch sprechen, lesen, und verstehen!</li>
+          <li><strong>Russian</strong> Я немного понимаю по-русски.</li>
+          <li><strong>Programming</strong> Go, Haskell, Java, LaTeX, Python, Typescript.</li>
+        </ul>
+        <p><em>Computer Skills:</em> Web/Application Development, Server Administration, Sage, Mathematica, Windows, Linux, FreeBSD.</p><br />
+        <p><em>Life Skills:</em> Critical Thinking, Abstract Reasoning, Communication, Objectivity, Empathy.</p><br />
+        <p><em>Hobbies:</em> Hiking, Jogging, Sailing, Rollerskating, Appreciating the Wonders of the PNW.</p>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<br>
+  <a href="javascript:void(0)" id='leave-comment'>Leave a comment</a>
+  <div id='respond' style="display:none;">
+  <form class="js-form form" method="post" action="{{ site.staticman_url }}" autocomplete="off">
+    <input type="hidden" name="options[origin]" value="{{ page.url | absolute_url }}">
+    <input type="hidden" name="options[parent]" value="{{ page.url | absolute_url }}">
+    <input type="hidden" id="comment-replying-to-uid" name="fields[replying-to]" value="">
+    <input type="hidden" name="options[slug]" value="{{ post_slug }}">
+    <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.reCaptcha.siteKey }}">
+    <input type="hidden" name="options[reCaptcha][secret]"  value="{{ site.reCaptcha.secret }}">
+  
+    <fieldset>
+    <div class="textfield">
+      <label for="comment-form-message"><h2>Leave a reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ page.url | absolute_url }}#respond" style="display:none;">(cancel reply)</a></small></h2>
+        <textarea class="textfield__input" name="fields[message]" type="text" id="comment-form-message" placeholder="Type your message here..."></textarea>
+      </label>
+      <p style="margin:0;font-size:10pt;color:gray;">You can use <a href="https://kramdown.gettalong.org/quickref.html">kramdown-flavored markdown</a> as well as $inline$ 
+      and $$display-style$$ LaTeX syntax in your comments. Comments will be manually reviewed before posting.</p>
+    </div>
+    </fieldset>
+  
+    <fieldset>
+      <div class="textfield">
+        <label for="comment-form-name">Name<span style="color:red">*</span>
+          <input class="textfield__input" name="fields[name]" type="text" id="comment-form-name" placeholder="Your name (required)"/>
+        </label>
+      </div>
+    </fieldset>  
+    <fieldset>
+      <div class="textfield">
+        <label for="comment-form-email">URL
+          <input class="textfield__input" name="fields[url]" type="text" id="comment-form-email" placeholder="Your URL (optional)"/>
+        </label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <div class="g-recaptcha" data-sitekey='{{ site.reCaptcha.siteKey }}'></div>
+    </fieldset>
+  
+    <fieldset>
+      <button class="button" id="comment-form-submit"> <!-- add id for Spinner -->
+        Submit
+      </button>
+    </fieldset>
+    </form>
+  <article class="modal" style="display:none;">
+      <div class="text">
+        <h3 class="js-modal-title"></h3>
+        <div class="js-modal-text"></div>
+      <div class="close-modal">
+        <button class="js-close-modal">Close</button>
+      </div></div>
+    </article>
+  
+</div>
+  

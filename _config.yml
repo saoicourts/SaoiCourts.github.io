@@ -1,0 +1,38 @@
+plugins:
+  - jekyll-katex
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-paginate-v2
+  - jekyll-scholar
+
+exclude: [vendor]
+
+defaults:
+  - 
+    scope:
+      path: "/share/*"
+    values:
+      sitemap: false
+
+staticman_url: https://api.4n1.co/v2/entry/NicoCourts/jekyll-website/master/comments
+
+reCaptcha:
+    siteKey: 6LdjH_0UAAAAAKAv0pN3g1lmE8CyuL85o6RNh9-F
+    secret: A/ASVNi/XSKJdE6EcMUzyHpj5bMCFbWi+5ao7+SZbWtpMUwYT1prR5wZqlasbFM0KK2K/2Nu3YVopRf0kgcWT2bWP9lEJjmtQKAamQrVvGXdOk9f371oFuM8w/Y/MeYEGAWBA9L3a47wzPaZGjo52IWTfbQ6gHp6VkBSj/d1F9GxlPlr70EeVAreKndrVeNBmtmC8P+EfxcF4c3IhHJqmRXetyqTztlWrGRVXdrED9whnljZMo8OQ7w+wZfhyHywygCrMtKrV/6Evh6Lj7RehNkEsHGio3gcjcLza1HH0/mluPu3u36R7TdduyT9ApMI0/Pey/UAv4VQs9h1ZHoZ0Kt3bppsvsDrhTji0V7fMebr16IUJFYZoN4V46vX02FpsopX4hFH5TDNKflSvTTPwfE+DU2PecaFH5tbfckOzZ7l/g4jK2CME0fy3315rKpZgEywJdxqvGHs4UsNr35b8N/WU9ZzsrUT7NtqQ65kyTL0JNEEWlHph/0L119jyZ3ORzgpeyTrvVbSyN4XnHUifsUZyh+WVkmcgdn5G4qlSRiEDXLndFKOzWFBKgh6xzUTD7XTULg7GmjAt/+2L/uQLWqtgn8REpubljw+Ml+AQH6YopPgeOAEor11rRIdBpq4YYZVWmVNP6peFr7JBMvNsUUbX6nvmjfYrK1rFN/x0ok=
+
+pagination:
+  enabled: true
+  sort_reverse: true
+  per_page: 5
+  permalink: '/:num/'
+
+scholar:
+  style: springer-socpsych-author-date
+  source: _bibliography
+  bibliography: '*.bib'
+  sort_by: author
+
+katex:
+  rendering_options:
+    macros: {}

@@ -1,0 +1,24 @@
+<div id="comment-block" style="width:80%; margin: 0 auto">
+{% include comment_form.html %}
+
+<br>
+{% assign comments = site.data.comments | where:'_parent', page.url | where:'replying-to', '' %}
+{% assign length = comments | size %}
+{% if length > 0 %}
+<!-- Existing comments -->
+<div class="comments__existing">
+  <h2>Comments</h2>
+  {% assign comments_by_date = comments | sort: 'date' | reverse %}
+  <!-- List main comments in reverse date order, newest first. List replies in date order, oldest first. -->
+  {% for comment in comments_by_date %}
+  {%- assign email           = comment.email %}
+  {%- assign name            = comment.name %}
+  {%- assign url             = comment.url %}
+  {%- assign date            = comment.date %}
+  {%- assign message         = comment.message %}
+  {%- assign uid             = comment._id %}
+  {% include comment.html is_reply=false uid=uid replying_to=0 name=name url=url date=date message=message uid=uid %}
+  {% endfor %}
+</div>
+{% endif %}
+</div>
