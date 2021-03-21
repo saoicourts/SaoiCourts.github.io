@@ -10,7 +10,9 @@ body { background-image: url("/assets/images/what-the-hex.png"); }
 
 div.container { box-sizing: border-box; width: 50%; margin: 10px 10px 10px 0; float: left; }
 
-@media only screen and (max-width: 800px) { div.wrapper { flex-direction: column; } div.container { width: auto; } }
+div.wrapper { margin: 15px 25px; }
+
+.post { width: 80%; margin: auto; line-height: 1.8; }
 
 h2 { margin: 0; }
 
@@ -58,7 +60,7 @@ div.flexbox { display: flex; flex-direction: row; justify-content: space-between
 
 #overlay { position: fixed; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 2; cursor: pointer; }
 
-#credits { position: absolute; margin: auto; background-color: white; top: 0; right: 0; bottom: 0; left: 0; width: 50%; height: 20%; z-index: 3; padding: 10px 20px; border-radius: 5px; }
+#credits { position: fixed; margin: auto; background-color: white; top: 0; right: 0; bottom: 0; left: 0; width: 50%; height: 20%; z-index: 3; padding: 10px 20px; border-radius: 5px; }
 
 div.prediv { margin: auto; max-width: 600px; background-color: #EEE; padding: 15px 25px; overflow-x: scroll; font-size: 10pt; }
 
@@ -92,7 +94,7 @@ div#footer { box-sizing: border-box; width: 100%; font-size: small; text-align: 
 
 span.nav { margin: 0 20px; padding: 3px 10px; }
 
-li:not(.selected) span:hover { color: #136BCC; background-color: #FFD69D; }
+span.nav:hover { color: #136BCC; background-color: #FFD69D; }
 
 li.selected span { color: #CC3F13; }
 
@@ -103,8 +105,6 @@ li { margin: 5px 0; }
 ul.nav { margin: 3px; padding: 0; }
 
 a.nav { text-decoration: none; color: #000; }
-
-@media only screen and (max-width: 800px) { div#navbar { flex-direction: column; } li.nav { display: block; text-align: center; } div.postBody-short { max-width: 100%; } .wrap .section { flex-direction: column; } .wrap .title { text-align: center; } .wrap ul { padding-left: 5px; } }
 
 div.wrap { padding: 15px; display: flex; justify-content: center; flex-direction: column; }
 
@@ -124,6 +124,70 @@ div.wrap { padding: 15px; display: flex; justify-content: center; flex-direction
 
 div.smolp p { margin: 0; }
 
+div.smolp em { font-size: 12pt; color: darkslategray; }
+
+#postlist { list-style: none; padding: 0 15px; }
+
 #postlist h3 { margin: 20px 0 0 0; }
+
+h4 { margin: 5px 0; }
+
+.footnotes { font-size: 12pt; }
+
+.footnotes p { margin: 5px 0; }
+
+.footnotes ol { margin: 0; }
+
+#tags { font-size: 11pt; }
+
+span.tag { border-radius: 7px; border-style: solid; border-width: 1px; border-color: #CC3F13; background-color: #ffe9c7; padding: 0 4px 1px 4px; }
+
+#pagination { margin: 3px; padding: 0; }
+
+#pagination li { margin: 5px 2px; display: inline; }
+
+span.small { font-size: smaller; }
+
+.comment { padding: 5px; background-color: #EEE; margin: 10px 0; }
+
+.comment.child { margin-left: 30px; }
+
+.comment__reply-link { font-size: 12pt; color: #CC3F13; }
+
+.comment__reply-link:hover { cursor: pointer; }
+
+.comment__author { color: #666666; font-size: 12pt; }
+
+.comment__date { font-size: 12pt; }
+
+.comment__body { margin: 0 0 0 10px; }
+
+fieldset { border: none; }
+
+#comment-form-message { width: 100%; }
+
+.textfield__input { border-width: 0 0 2px 0; height: 15px; font-family: "EB Garamond"; font-size: 12pt; }
+
+#respond { position: relative; max-width: 620px; width: 90%; margin: auto; padding: 0 0 15px; box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 #f5ac46; }
+
+article.modal { position: absolute; z-index: 3; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(80, 80, 80, 0.192); overflow: wrap; margin: auto; font-size: 12pt; }
+
+article.modal h3 { margin: 0; }
+
+article.modal .text { background-color: white; position: static; width: 50%; margin: 10% auto; padding: 10px; }
+
+article.modal .close-modal { margin: 10px auto; }
+
+.disabled input, .disabled textarea { pointer-events: none; background-color: #CCC; }
+
+blockquote { line-height: normal; }
+
+ol.bibliography { font-size: 12pt; padding-left: 22px; text-indent: -22px; list-style: none; }
+
+@media only screen and (max-width: 800px) { div#navbar { flex-direction: column; } li.nav { display: block; text-align: center; } div.postBody-short { max-width: 100%; } .wrap .section { flex-direction: column; } .wrap .title { text-align: center; } .wrap ul { padding-left: 5px; } div.wrapper { flex-direction: column; margin: 10px; } div.container { width: auto; } .post { width: auto; line-height: 1.8; } }
+
+.video-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; }
+
+.video-container iframe, .video-container object, .video-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 /*# sourceMappingURL=styles.css.map */
