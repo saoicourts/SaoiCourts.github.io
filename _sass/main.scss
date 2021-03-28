@@ -480,6 +480,17 @@ blockquote {
 	line-height: normal;
 }
 
+.theorem{
+	width: 90%;
+	margin: auto;
+	border-left: #888;
+	border-width: 0 0 0 7px;
+	border-style: groove;
+	background-color: #EEE;
+	padding: 10px 20px;
+	line-height: normal;
+}
+
 ol.bibliography {
 	font-size: 12pt;
 	padding-left: 22px ;
@@ -517,6 +528,9 @@ ol.bibliography {
 	.post {
 		width: auto;
 		line-height: 1.8;
+	}
+	.theorem {
+		width: auto;
 	}
 }
 
