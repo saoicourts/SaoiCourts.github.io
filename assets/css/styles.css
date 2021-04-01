@@ -182,9 +182,25 @@ article.modal .close-modal { margin: 10px auto; }
 
 blockquote { line-height: normal; }
 
+.theorem { width: 90%; margin: auto; border-left: #888; border-width: 0 0 0 7px; border-style: groove; background-color: #EEE; padding: 10px 20px; line-height: normal; }
+
 ol.bibliography { font-size: 12pt; padding-left: 22px; text-indent: -22px; list-style: none; }
 
-@media only screen and (max-width: 800px) { div#navbar { flex-direction: column; } li.nav { display: block; text-align: center; } div.postBody-short { max-width: 100%; } .wrap .section { flex-direction: column; } .wrap .title { text-align: center; } .wrap ul { padding-left: 5px; } div.wrapper { flex-direction: column; margin: 10px; } div.container { width: auto; } .post { width: auto; line-height: 1.8; } }
+.center-img { margin: auto; width: 5in; max-width: 100%; display: block; }
+
+.warning { background-color: #ffe2b9; width: 90%; display: flex; padding: 0 10px; margin: auto; }
+
+.warning img { width: 0.75in; height: 0.75in; margin-top: 20px; margin-bottom: auto; margin-right: 10px; }
+
+.aside { width: 90%; margin: auto; padding: 0 10px; border-width: 1px; border-style: solid; border-color: black; color: #333; }
+
+.show-aside { margin: 0; color: #CC3F13; cursor: pointer; }
+
+.show-aside:hover { color: #136BCC; }
+
+.hidden-aside p { margin: 0 0 5px 0; }
+
+@media only screen and (max-width: 800px) { div#navbar { flex-direction: column; } li.nav { display: block; text-align: center; } div.postBody-short { max-width: 100%; } .wrap .section { flex-direction: column; } .wrap .title { text-align: center; } .wrap ul { padding-left: 5px; } div.wrapper { flex-direction: column; margin: 10px; } .warning .center-img .theorem div.container .aside { width: auto; } }
 
 .video-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; }
 

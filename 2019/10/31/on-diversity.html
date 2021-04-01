@@ -21,7 +21,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-10-31T00:00:00+00:00" />
 <script type="application/ld+json">
-{"description":"Thoughts on where I as a white man fit into the discussion on race and equity.","headline":"On Diversity","dateModified":"2019-10-31T00:00:00+00:00","datePublished":"2019-10-31T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"/2019/10/31/on-diversity.html"},"url":"/2019/10/31/on-diversity.html","@context":"https://schema.org"}</script>
+{"description":"Thoughts on where I as a white man fit into the discussion on race and equity.","@type":"BlogPosting","headline":"On Diversity","dateModified":"2019-10-31T00:00:00+00:00","datePublished":"2019-10-31T00:00:00+00:00","url":"/2019/10/31/on-diversity.html","mainEntityOfPage":{"@type":"WebPage","@id":"/2019/10/31/on-diversity.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
         <!--Page- and layout-specific head includes-->
@@ -180,6 +180,18 @@ Tagged:
 
 <hr />
 
+<script>
+  $('.show-aside').click(function(){
+    if ($(this).html() == 'Show') {
+      $(this).html('Hide');
+      $(this).siblings('.hidden-aside').show(750)
+    } else {
+      $(this).html('Show');
+      $(this).siblings('.hidden-aside').hide(250)
+    }
+  })
+</script>
+
 
                 </div>
 
@@ -196,6 +208,7 @@ Tagged:
             <ul>
                 <li>Background: <em>"What the Hex"</em> - <a href="https://www.toptal.com/designers/subtlepatterns/what-the-hex/">Angel Micevski</a></li>
                 <li>Website fonts (unicode fonts based on Donald Knuth's <em>Computer Modern</em> font family) provided by <a href="http://cm-unicode.sourceforge.net">Andrey V. Panov</a></li>
+                <li>"Dangerous Bend" symbol based on Knuth's Dangerous Bend symbol, which is in turn based on that of Bourbaki.</li>
             </ul>
         </div>
         <script type="text/javascript">
