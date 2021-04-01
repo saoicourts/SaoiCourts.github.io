@@ -498,6 +498,53 @@ ol.bibliography {
 	list-style: none
 }
 
+.center-img {
+	margin: auto;
+	width: 5in;
+	max-width: 100%;
+	display: block;
+}
+
+.warning {
+	img {
+		width: 0.75in;
+		height: 0.75in;
+		margin-top: 20px;
+		margin-bottom: auto;
+		margin-right: 10px;
+	}
+	background-color: #ffe2b9;
+	width: 90%;
+	display: flex;
+	padding: 0 10px;
+	margin: auto;
+}
+
+.aside {
+	width: 90%;
+	margin: auto;
+	padding: 0 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	color: #333
+}
+
+.show-aside {
+	margin: 0;
+	color: #CC3F13;
+	cursor: pointer;
+}
+.show-aside:hover {
+	color: #136BCC;
+}
+
+.hidden-aside {
+	p {
+		margin: 0 0 5px 0;
+	}
+}
+
 @media only screen and (max-width: 800px) {
 	div#navbar {
 		flex-direction: column;
@@ -522,14 +569,7 @@ ol.bibliography {
 		flex-direction: column;
 		margin: 10px;
 	}
-	div.container{
-		width: auto;
-	}
-	.post {
-		width: auto;
-		line-height: 1.8;
-	}
-	.theorem {
+	.warning .center-img .theorem div.container .aside {
 		width: auto;
 	}
 }

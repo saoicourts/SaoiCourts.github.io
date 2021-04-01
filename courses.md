@@ -30,6 +30,7 @@ title: "Nico Courts :: Courses"
 ### Computer Science Courses
 - CSE 143x---Accelerated Computer Programming I/II
 - CSE 373---Data Structures and Algorithms
+- CSE 512---Data Visualization
 - CSE 517---Natural Language Processing
 
 ### Statistics Courses

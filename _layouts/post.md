@@ -29,3 +29,14 @@ Tagged:
   {% include comments.html %}
 {% endif %}
 
+<script>
+  $('.show-aside').click(function(){
+    if ($(this).html() == 'Show') {
+      $(this).html('Hide');
+      $(this).siblings('.hidden-aside').show(750)
+    } else {
+      $(this).html('Show');
+      $(this).siblings('.hidden-aside').hide(250)
+    }
+  })
+</script>
