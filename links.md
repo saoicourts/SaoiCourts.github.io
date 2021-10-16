@@ -6,6 +6,7 @@ title: "Nico Courts :: Links & Writing"
 Here are the places you can find me and my work around the 'net:
 
 - [My page](https://math.washington.edu/people/nicolas-courts) on the [UW math website](https://math.washington.edu/)
+- [My Linkedin](https://www.linkedin.com/in/nico-courts-41159149)
 - You can also take a look at my [Github account](https://github.com/NicoCourts) where you can find (among many other things) the code for [this website](https://github.com/NicoCourts/jekyll-website).
 
 ----

@@ -2,66 +2,87 @@
 layout: default
 title: "Nico Courts :: CV"
 ---
+
+*Below is an HTML recreation of my CV.*
+{: style="text-align: center; margin-bottom:0;"}
+*You can view a PDF version of this document [here](/assets/pdf/CV.pdf) that is slightly better formatted but less linky.*
+{: style="text-align: center; margin-top:0;"}
+
+---
+
 <div class='wrap'>
   <div class='section'>
       <div class='contact'>
         <strong>Nico Courts</strong><br />
-        University of Washington<br />
-        Department of Mathematics<br />
-        Box 354350<br />
-        Seattle, WA 98195-4350
+        Ph.D. Candidate<br />
+        Department of Mathematics, University of Washington
       </div>
   </div>  
-  <div class='section'>
-      <div class='title'><h3>Objective</h3></div>
-      <div class='content'><span>To pursue my passion for mathematics and to understand how to better the world through its proliferation and application.</span></div>
-  </div>
-  <div class='section'>
-      <div class='title'><h3>Research<br /> Interests</h3></div>
-      <div class='content'><span>I am a student of <a href="https://sites.math.washington.edu/~julia/">Julia Pevtsova</a> studying the <a href="https://en.wikipedia.org/wiki/Representation_theory">representation theory</a>
-      of <a href="https://ncatlab.org/nlab/show/quantum+group">quantum groups</a>, leveraging insights from classical commutative algebra. I am also interested in computational
-      approaches to algebra and using these techniques to understand the homological data associated to an algebra.</span></div>
-  </div>
   <div class='section'>
     <div class='title'><h3>Education<br />History</h3></div>
     <div class='content'>
       <p><strong>Ph.D in Mathematics</strong> University of Washington, Seattle</p>
-        <p>Spring 2022 (expected)</p>
+        <p>June 2022 (expected)</p>
         <p>See <a href='/courses'>this page</a> for a list of my graduate coursework.</p><br />
         <p><strong>Masters of Science in Mathematics</strong> University of Washington, Seattle</p>
         <p><em>Exam Topic:</em> Schur Duality and Strict Polynomial Functors (<a href="https://github.com/NicoCourts/General-Exam-Paper">view paper</a>)</p>
-        <p>Winter 2020</p><br />
+        <p>March 2020</p><br />
         <p><strong>Budapest Semesters in Mathematics</strong> Budapest, Hungary</p>
         <p>Algebraic Topology, Conjecture &amp; Proof, Cryptography, Differential Geometry.</p>
-        <p>Autumn 2015</p><br />
+        <p>May 2016</p><br />
         <p><strong>Bachelors of Science in Mathematics</strong> University of Southern California</p>
         <p><em>Magna Cum Laude</em>, Dean's list, Departmental Honors</p>
         <p>Autumn 2015</p><br />
         <p><strong>Associates of Science in Mathematics</strong> Citrus College</p>
         <p>Key of Knowledge, Dean's List, Honors Program</p>
-        <p>Spring 2013</p>
+        <p>June 2013</p>
       </div>
   </div>
+
+  <div class='section'>
+      <div class='title'><h3>Research<br /> Interests</h3></div>
+      <div class='content'>
+        <span><strong>Representation Theory</strong><br />I am a student of Prof.  Julia Pevtsova studying the representation theory of certain Hopf Algebras called bosonized quantum complete intersections.  As their names suggest, they are close noncommutative relatives of complete intersection rings and have a similar flavor to their classical cousins.  I am interested in particular in studying different notions of support for these algebras in the hopes of establishing an incarnation of the beloved tensor product property of support.</span><br /><br />
+        <span><strong>Machine Learning</strong><br />I am also an intern with Pacific Northwest National Laboratory under the instruction of Dr.  Henry Kvinge.  I am particularly interested in using my familiarity with concepts  from  algebra,  category  theory,  and  geometry  to  enhance  the  current  understanding  of  deep  learning  models  with  a  focus  towards  providing  more  robust interpretability.  Thus far my experience has included few-shot learning and generative models (specifically invertible NNs for normalizing flows), both of which have resulted in papers.</span>
+      </div>
+  </div>
+  
   <div class='section'>
       <div class='title'><h3>Internships</h3></div>
       <div class='content'>
-        <strong>Pacific Northwest National Lab</strong><br />
+        <p><strong>Pacific Northwest National Lab</strong><br />
         PhD Intern (Data Science &amp; Analytics)&mdash;<em>National Security Internship Program</em><br />
-        June 2020 - Present
+        June 2020 - Present</p><br />
+        <p>A full-time summer internship spanning 2020 and 2021 including part-time work over the intervening school year. Our first 10 week project was focused on machine learning algorithms that could incorporate user input at inference time to hone results. Few-shot learning was the natural place to focus our energy and we developed and implemented <em>Fuzzy Simplicial Networks</em>, a metric-based model that we showed was able to make strong inferences on transfer tasks without fine-tuning by exploiting the geometry of feature space.</p><br />
+        <p>During the 2020/2021 year, some of my work on out-of-support detection for few-shot learning culminated in a paper along with my collaborators, although my contribution to this work was limited due to my scholarly responsibilities.</p><br />
+        <p>Finally, in summer 2021 we joined a team of data scientists who were interested in helping material scientists at the lab understand and refine their fabrication methods. Inspired by the idea of fiber bundles from topology, we developed a new generative architecture based on invertible neural nets like RNVP and GIN that used local trivializations to achieve superior density estimations than several GANs. In addition, our architecture was able to sample from the ``fiber'' over a point (all the points in input space that map to a particular point) much more effectively than simply conditioning on the output.</p>
       </div>
   </div>
   <div class='section'>
       <div class='title'><h3>Publications</h3></div>
       <div class='content'>
-        <em>Fuzzy Simplicial Networks: A Topology-Inspired Model to Improve Task Generalization in Few-shot Learning.</em> (2020).<br />
-        Kvinge, H., New, Z., <strong>Courts, N.</strong>, Lee, J.H., Phillips, L.A., Corley, C., Tuor, A., Avila, A., &amp; Hodas, N.O.<br />
-        <a href="https://arxiv.org/abs/2009.11253">arXiv:2009.11253</a> (to appear in the Proceedings of Machine Learning Research)
+        <strong>Fuzzy Simplicial Networks: A Topology-Inspired Model to Improve Task Generalization in Few-shot Learning</strong><br />
+        Henry Kvinge, Zachary New, Nico Courts, Jung H. Lee, Lauren A. Phillips, Courtney D. Corley, Aaron Tuor, Andrew Avila, Nathan O. Hodas<br />
+        <em>AAAI Workshop on Meta-Learning and MetaDL Challenge</em>, PMLR 140:77-89, 2021.<br />
+        Available at <a href="https://proceedings.mlr.press/v140/kvinge21a.html">https://proceedings.mlr.press/v140/kvinge21a.html</a>
+      </div>
+  </div>
+  <div class='section'>
+      <div class='title'><h3>Preprints</h3></div>
+      <div class='content'>
+        <div><strong>Bundle Networks: Fiber Bundles, Local Trivializations, and a Generative Approach to Exploring Many-to-one Maps</strong><br />
+        Nico Courts and Henry Kvinge<br />
+        <em>Submitted to ICLR 2022</em><br />
+        Available at <a href="https://arxiv.org/abs/2110.06983">arXiv:2110.06983</a></div><br />
+        <div><strong>One Representation to Rule Them All: Identifying Out-of-Support Examples in Few-shot Learning with Generic Representations</strong><br />
+        Henry Kvinge, Scott Howland, Nico Courts, Lauren A. Phillips, John Buckheit, Zachary New, Elliott Skomski, Jung H. Lee, Sandeep Tiwari, Jessica Hibler, Courtney D. Corley, Nathan O. Hodas<br />
+        Available at <a href="https://arxiv.org/abs/2106.01423">arXiv:2106.01423</a></div>
       </div>
   </div>
   <div class='section'>
       <div class='title'><h3>Teaching<br /> History</h3></div>
       <div class='content'>
-        <p><em>Graduate Teaching Assistant</em></p>
+        <p><strong>Graduate Teaching Assistant</strong></p>
         <p>University of Washington, Seattle, WA</p>
         <p>Autumn 2016 - Present</p>
         <ul>
@@ -70,7 +91,7 @@ title: "Nico Courts :: CV"
             <li>
               <em>Math 124: Calculus I (Summer 2018)</em>
             </li><li>
-              <em>Math 308: Matrix Algebra (Spring 2019)</em>
+              <em>Math 308 (now Math 208): Matrix Algebra (Spring 2019)</em>
             </li>
           </ul><br />
           <li><strong>As a TA:</strong> Participated  in  several  aspects  of  instruction  including 
@@ -81,15 +102,16 @@ title: "Nico Courts :: CV"
             <li>Math 124 (Wi 17, Wi 19, Sp 21)</li>
             <li>Math 125 (Au 16, Sp 17, Wi 21)</li>
             <li>Math 126 (Su 17, Wi 18, Sp 18, Au 20)</li>
+            <li>Math 208 (Au 21)</li>
             <li>Math 327 (Su 19)</li>
             <li>Math 381 (Au 18)</li>
             <li>Math 403 (Wi 20)</li>
           </ul>
         </ul><br />
-        <p><em>Lead Teaching Assistant</em></p>
+        <p><strong>Lead Teaching Assistant</strong></p>
         <p><a href="https://www.scsnoonan.org/">SCS Noonan Scholars</a> (previously South Central Scholars), Los Angeles, CA</p>
         <p>Summer 2016</p><br />
-        <p><em>Various Mentorship Positions</em></p>
+        <p><strong>Various Mentorship Positions</strong></p>
         <p>Citrus College, Glendora, CA</p>
         <p>Spring 2012 - Summer 2013</p>
       </div>
@@ -97,35 +119,77 @@ title: "Nico Courts :: CV"
   <div class="section">
     <div class="title"><h3>Leadership &amp;<br> Service</h3></div>
     <div class="content">
-      <p><em>Graduate Student Representative</em></p>
-      <p>UW Math Department</p>
+    <p><a href='https://sites.uw.edu/wdrp/'>Washington Directed Reading Program</a></p>
+      <ul style="margin-top:0">
+        <li><strong>Co-organizer</strong> (Autumn 2019&ndash;Spring 2021)</li>
+        <ul>
+          <li>
+          Helped run the WDRP along with two other students. Each quarter we read applications, made acceptance and pairing decisions, held several events for enrichment and networking, and handled the administrivia required to keep projects running smoothly.
+          </li>
+          </ul>
+        <li><strong>Mentor</strong></li>
+        <ul>
+          <li>
+          Introduced a student to group representation theory based on Artin's <em>Algebra</em> as well as Fulton &amp; Harris' <em>Representation Theory</em> (Autumn 2021).
+          </li>
+          <li>
+            Supervised an undergraduate student in a reading course based around Rebecca Weber's book <em>Computability Theory</em> (Autumn 2018).
+          </li>
+          </ul>
+      </ul>
+      <p><a href="https://qsideinstitute.org/">Institute for the Quantitative Study of Inclusion, Diversity, and Equity (QSIDE)</a></p>
+      <p><strong>Datathon4Good Team Leader</strong></p>
+      <p>October 2021</p>
+      <ul style="margin-top:0">
+        <li>Served alongside a faculty member to help guide a team of 13 students and faculty from across the country in applying data analysis and visualization tools in service of social justice.</li>
+        <li>Brought in my experience in math, computer science, and data visualization to help guide the team in their analysis of two datasets related to incarceration and criminal justice.</li>
+      </ul>
+      <p><a href="https://math.washington.edu/">UW Math Department</a></p>
+      <p><strong>Graduate Student Representative</strong></p>
       <p>2019-2020 Academic Year</p>
-      <ul>
-        <li>
-          Planned and organized a variety of events and lectures for the graduate students as 
-          well as the department at large. 
-        </li>
-        <li>
-          Served as an advocate for the graduate students in several capacities.
-        </li>
+      <ul style="margin-top:0">
+        <li>Planned and organized a variety of events and lectures for the graduate students as well as the department at large.</li>
+        <li>Served as an advocate for the graduate students in several capacities. </li>
+        <li>Worked on promoting better communication between the students and faculty.</li>
+        <li>Empowered students to make changes to the department while promoting respect for the wishes of the faculty and administration.</li>
       </ul>
-      <p><em>Organizer and Mentor</em></p>
-      <p><a href='https://sites.uw.edu/wdrp/'>Washington Directed Reading Program</a></p>
-      <p>Autumn 2019 - Spring 2021</p>
-      <ul>
-        <li>
-          Was part of a small group of graduate students responsible for running the WDRP. This program 
-          paired undergraduate students with graduate students with the goal of increasing diversity in mathematics 
-          and mentoring the next generation of mathematicians.
-        </li>
-      </ul>
+      <p><a href='https://www.uaw4121.org/'>UAW Local 4121</a></p>
+      <p><strong>Organizer and Department Steward</strong></p>
+      <p>Winter 2020&ndash;present</p><br />
+      <p><a href='https://sites.math.washington.edu/~mathcircle/mathhour/olympiad.html'>Math Hour Olympiad</a></p>
+      <p><strong>Volunteer Judge</strong></p>
+      <p>Spring 2018</p><br />
+      <p><a href='https://depts.washington.edu/uwconf/wordpress/mathday/'>UW Math Day</a></p>
+      <p><strong>Volunteer</strong></p>
+      <p>2017 &amp; 2018</p><br />
+    </div>
+  </div>
+  <div class='section'>
+    <div class='title'><h3>Seminars Organized</h3></div>
+    <div class='content'>
+      <p><a href="https://sites.google.com/view/tag-ds/home">Pacific Northwest Seminar on Topology, Algebra, and Geometry in Data Science (TAG-DS)</a></p>
+      <p><em>Co-organizer</em></p>
+      <p>Joint seminar between UW and PNNL platforming speakers who work at the intersection of pure math and data science.</p>
+      <p>Autumn 2021&ndash;present</p><br>
+      <p>Departmental Current Topics Seminar</p>
+      <p><em>Organizer</em></p>
+      <p>Internal seminar for professors to talk about their research with the hopes of joining students with potential advisors.</p>
+      <p>Autumn 2019</p>
     </div>
   </div>
   <div class='section'>
     <div class='title'><h3>Talks Given</h3></div>
     <div class='content'>
-      <p><em>Special Colloquium Series for Mathematical Sciences</em></p>
-      <p>Schur Algebras &amp; Duality (<a href='/talks/schur-weyl/'>slides</a>)</p>
+      <p><strong>Fuzzy Simplicial Networks: A Topology-Inspired Model to Improve Task Generalization in Few-shot Learning</strong></p>
+      <p><em><a href="https://www.cs.utah.edu/~jeffp/WaGoML/index.html">5th Workshop on Geometry and Machine Learning</a></em></p>
+      <p>International Symposium on Computational Geometry (online)</p>
+      <p>June 8, 2021</p><br />
+      <p><strong>Geometry of the Loss Landscape</strong> (presenter/discussion leader)</p>
+      <p><em>PNNL Math of Machine Learning Reading Group</em></p>
+      <p>Pacific Northwest National Laboratory (online)</p>
+      <p>March 24, 2021</p><br />
+      <p><strong>Schur Algebras &amp; Duality</strong> (<a href='/talks/schur-weyl/'>slides</a>)</p>
+      <p><em><a href="https://cosm.georgiasouthern.edu/math/southern-georgia-mathematics-conference/">Special Colloquium Series for Mathematical Sciences</a></em></p>
       <p>November 20, 2020</p>
       <p>Georgia Southern University (online)</p>
     </div>
@@ -133,6 +197,12 @@ title: "Nico Courts :: CV"
   <div class='section'>
     <div class='title'><h3>Conferences &amp;<br /> Workshops<br /> Attended</h3></div>
     <div class='content'>
+      <p><em><a href="https://icml.cc/">International Conference on Machine Learning</a></em></p>
+      <p>June 2021</p>
+      <p>Online</p><br />
+      <p><em><a href="https://www.math.uni-bielefeld.de/birep/activities/icras/">International Conference on the Representations of Algebras</a></em></p>
+      <p>November 2020</p>
+      <p>Online</p><br />
       <p><em><a href="http://tianyuan.scu.edu.cn/portal/article/index/id/283/pid/13/cid/30.html">Conference on Lie and Jordan Algebras, Their Representations and Applications</a></em></p>
       <p>January 6-11, 2020</p>
       <p>Sichuan University, Chengdu, P. R. China</p><br />
@@ -158,11 +228,11 @@ title: "Nico Courts :: CV"
           <li><strong>English</strong> This is my native language.</li>
           <li><strong>German</strong> Ich kann ziemlich gut Deutsch sprechen, lesen, und verstehen! (proficient)</li>
           <li><strong>Russian</strong> Я немного понимаю по-русски. (beginner)</li>
-          <li><strong>Programming</strong> Go, Haskell, Java, LaTeX, Python, Typescript.</li>
+          <li><strong>Programming</strong> Go, Haskell, Java, Javascript, LaTeX, Python.</li>
         </ul>
-        <p><em>Computer Skills:</em> Web/Application Development, Server Administration, Sage, Mathematica, Windows, Linux, FreeBSD.</p><br />
-        <p><em>Life Skills:</em> Critical Thinking, Abstract Reasoning, Communication, Objectivity, Empathy.</p><br />
-        <p><em>Hobbies:</em> Hiking, Jogging, Sailing, Rollerskating, Appreciating the Wonders of the PNW.</p>
+        <p><em>Computer Skills:</em> Web/application development, server administration, Sage, Mathematica, Windows, Linux, FreeBSD.</p><br />
+        <p><em>Life Skills:</em> Critical thinking, abstract reasoning, communication, objectivity, empathy.</p><br />
+        <p><em>Hobbies:</em> Hiking, jogging, sailing, rollerskating, appreciating the wonders of the Pacific Northwest.</p>
       </div>
   </div>
 </div>

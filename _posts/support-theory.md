@@ -260,7 +260,7 @@ I am going to throw a few more definitions out at this point, but hopefully we c
 use our intuition to guide us through this part.
 
 {% def Spectrum of a ring %}
-The <em>spectrum $\operatorname{Spec}(R)$ of a ring $R$ is the set of prime ideals
+The <em>spectrum $\operatorname{Spec}(R)$ of a ring $R$ is the set of prime ideals of $R$.
 {% enddef %}
 
 {% endkatexmm %}
