@@ -312,27 +312,146 @@
 						<p>
 							In (<a href="http://proceedings.mlr.press/v37/rezende15.html">Rezende and Mohammed, 2015</a>), 
 							the authors suggest an approach to density estimation (i.e. posterior approximation) 
-							using the framework of normalizing flows. Here, given some choice of prior $p$ on space $X$, 
-							we learn a function $\Phi:Y\to X$ which gives posterior $q$ on $Y$:
+							using the framework of normalizing flows. 
+						</p><p>
+							Here, given some choice of prior $p$ on space $X$, 
+							we learn a function $\Phi:Y\to X$ which gives distribution $q$ on $Y$ <span class="green-highlight">parameterized by $p$</span>:
 						</p>
-						$$q(y')=p(\Phi(y'))\left|\frac{\partial \Phi(y)}{\partial y}\right|_{y=y'}$$
+						$$q(y')=p(\Phi(y'))|D\Phi(y')|$$
 					</section>
 					<section>
 						<h4>References</h4>
-						<span style="font-size:25px"><strong>Danilo Rezende, Shakir Mohamed</strong> <em>Proceedings of the 32nd International Conference on Machine Learning</em>, PMLR 37:1530-1538, 2015.
+						<span style="font-size:25px"><strong>Danilo Rezende, Shakir Mohamed</strong> "Variational Inference with Normalizing Flows" <em>Proceedings of the 32nd International Conference on Machine Learning</em>, PMLR 37:1530-1538, 2015.
 						(<a href="http://proceedings.mlr.press/v37/rezende15.html">link</a>)</span>
 					</section>
 				</section>
 				<section>
-					<h3>Density estimation using normalizing flows</h3>
+					<section>
+						<h3>Invertible neural nets</h3>
 						<p>
-							If the map $\Phi:Y\to X$ is invertible, say with inverse $\Psi:X\to Y$, this can be computed via
+							INNs are a class of NN blocks that are, by construction, invertible. They were first used by <a href="https://arxiv.org/abs/1410.8516">(Dinh et al., 2015)</a> to perform a 
+							kind of ICA and then in <a href="https://arxiv.org/abs/2001.04872">(Dinh et al., 2017)</a> to perform density estimation.
 						</p>
-						$$q(y')=p(f(y'))\left|\frac{\partial \Phi(y)}{\partial y}\right|_{y=y'}=p(f(y'))\left|\frac{\partial\Psi(\Phi(y))}{\partial y}\right|_{y=y'}$$
+						<p>
+							The work in <a href="https://arxiv.org/abs/2001.04872">(Sorrenson et al., 2019)</a> served as an inspiration for the power of this approach 
+							in their <span class="blue-highlight">automated feature discovery and isolation</span> applied to MNIST.
+						</p>
+					</section>
+					<section>
+						<h4>References</h4>
+						<span style="font-size:25px">
+							<strong>Laurent Dinh, David Krueger, and Yoshua Bengio</strong> 
+							"NICE: Non-linear Independent Components Estimation" 
+							<em>arXiv preprint arXiv:1410.8516</em>, 2015
+							(<a href="https://arxiv.org/abs/1410.8516">link</a>)
+						</span><br /><br />
+
+						<span style="font-size:25px">
+							<strong>Peter Sorrenson, Carsten Rother, and Ullrich Köthe</strong>
+							"Disentanglement by Nonlinear ICA with General Incompressible-flow Networks (GIN)" 
+							<em>International Conference on Learning Representations</em>, 2019
+							(<a href="https://arxiv.org/abs/2001.04872">link</a>)
+						</span><br /><br />
+
+						<span style="font-size:25px">
+							<strong>Laurent Dinh, Jascha Sohl-Dickstein, and Samy Bengio</strong>
+							"Density estimation using real NVP"
+							<em>International Conference on Learning Representations</em>, 2017
+							(<a href="https://arxiv.org/abs/2001.04872">link</a>)
+						</span>
+					</section>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Overview
+						We use <span class="orange-highlight">fiber bundles</span> to address the fact we expect the local data distribution is 
+						simpler than the global.
+
+						We use <span class="green-highlight">normalizing flows</span> to perform density estimation in trivial neighborhoods.
+
+						We use <span class="red-highlight">invertible neural nets</span> to implement our model, allowing simultaneous forward and backward
+						training, as well as lossless connection between $\pi^{-1}(U)$ and $U\times F$.
+					</textarea>
+				</section>
+				<section data-markdown data-auto-animate>
+					<textarea data-template>
+						### Model architecture
+						**Input:** Data in the total space $\mathcal{D}_\text{bundle}\subseteq X$ and base space $\mathcal{D}_\text{base}\subseteq Y$.
+						- Compute <span class="blue-highlight">neighborhoods $\\{U_i\\}_{i\in\mathcal I}$</span> in $\mathcal{D}_\text{base}$, 
+						each with a <span class="red-highlight">representative point $r_i\in U_i$</span>.
+						- To run the model, <span class="red-highlight">condition on nearest $r\in \mathcal{R}=\\{r_i\\}_{i\in\mathcal I}$</span>.
+						- Loss encourages <span class="blue-highlight">bundle data to lie in the proper fiber</span> as well as <span class="green-highlight">general shape and density</span>
+						of points in each neighborhood.
+					</textarea>
+				</section>
+				<section data-markdown data-auto-animate>
+					<textarea data-template>
+						### Model architecture
+						![model](images/model.png)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Notation
+						In the following we use
+						- $\Phi:X\times \mathcal R\to Y\times \mathcal D$ is our model
+							- $\Phi_i=\Phi(-,r_i):X\to Y\times\mathcal D$
+
+						- $x$ is a point in $\mathcal{D}_\text{bundle}$ lying over $y\in\mathcal{D}_\text{base}$.
+						- $r_i$ is $\operatorname{argmin}_\{r_j\in\mathcal R\}\\|y-r_j\\|$
+						- $p_Z$ is projection onto the $Z$ component
+						- Sample $z_k\sim\mathcal D$ and let $\widetilde X=\\{\Phi_i^{-1}(y, z_k)\\}$
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Loss terms
+						- Forward loss
+							- **Mean squared error**: $\\|y-p_Y(\Phi(x))\\|^2$
+						- Backward loss 
+							- **KL-fwd**: $D_\text{KL}(\pi^\{-1\}(y)||\widetilde X)$
+							- **KL-bwd**: $D_\text{KL}(\widetilde X||\pi^\{-1\}(y))$
+							- **Mean squared minimum distance (MSMD)**:
+							$$\frac{1}{|\widetilde X|}\sum_{\tilde x\in\widetilde X}\min_{x\in\pi^{-1}(y)}\\|x-\tilde x\\|$$
+					</textarea>
 				</section>
 				<section>
 					<h2>Part III: Bundle Networks</h2>
 					<h3><span class='red-highlight'>Performance &amp; analysis</span></h3>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Models tested
+						- Our model, <span class="blue-highlight">BundleNet</span>
+						- <span class="green-highlight">WGAN</span>&mdash;Wasserstein GAN 
+						- <span class="red-highlight">CGAN</span>&mdash;Conditional GAN 
+							- Conditioned on individual base points 
+							- Batches drawn from global distribution
+						- <span class="orange-highlight">CGAN-local</span>&mdash;A CGAN that
+							- is conditioned on finitely many neighborhood representatives
+							- is trained with batches drawn from a single neighborhood at a time
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Datasets
+						- <span class="blue-highlight">Torus</span>, points drawn from a torus in $\mathbb R^3$ lying over a circle.
+						- <span class="green-highlight">Möbius Band</span>, points drawn from a Möbius band in $\mathbb R^3$ lying over a circle.
+						- <span class="orange-highlight">Wine Quality</span>, a real dataset consisting of 11 measured quantities, with each being assigned a (color, quality) pair.
+						- <span class="red-highlight">Airfoil Noise</span>, a real dataset consisting of five parameters and their measured effect on sound pressure.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Results
+						![bundlenet results](images/bn-results.png)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Reconstructions
+						<div id='bn-torus'></div>
+					</textarea>
 				</section>
 				
 
@@ -348,6 +467,9 @@
 		<script src="../plugin/markdown/markdown.js"></script>
 		<script src="../plugin/highlight/highlight.js"></script>
 		<script src="../plugin/zoom/zoom.js"></script>
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<script src="https://cdn.plot.ly/plotly-2.6.3.min.js"></script>
+
 
 		<script>
 			// More info about initialization & config:
@@ -359,6 +481,54 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealMath, RevealZoom ]
 			});
+
+			// helper function for plotly
+			function unpack(rows, key) {
+				return rows.map(function(row) { return row[key]; });
+			}
+
+			// Load data and populate graph
+			fetch('data/BN_torus.json')
+				.then(response => response.json())
+				.then(function(data){
+					var unpacked = [{
+						x: unpack(data, 'bundle_x'),
+						y: unpack(data, 'bundle_y'),
+						z: unpack(data, 'bundle_z'),
+						mode: 'markers',
+						type: 'scatter3d',
+						
+						marker: {
+						color: unpack(data, 'angle'),
+						size: 2,
+						colorscale: 'Jet',
+						}
+					}];
+
+					layout = {
+						scene:{
+							aspectmode: "manual",
+							aspectratio: {
+							x: 1, y: 1, z: 1,
+							},
+							xaxis: {
+							nticks: 9,
+							range: [-10, 10],
+							},
+							yaxis: {
+							nticks: 7,
+							range: [-10, 10],
+							},
+							zaxis: {
+							nticks: 10,
+							range: [-10, 10],
+							}
+						}
+					};
+
+					// plot!
+					Plotly.newPlot('bn-torus', unpacked, layout);
+				})
 		</script>
 	</body>
 </html>
