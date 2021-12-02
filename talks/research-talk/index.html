@@ -450,7 +450,31 @@
 				<section data-markdown>
 					<textarea data-template>
 						### Reconstructions
-						<div id='bn-torus'></div>
+						<div style="display:flex; justify-content: center;"><div id='bn-torus' style="width:50%"></div><div id='cgan-torus' style="width:50%"></div></div>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Reconstructions
+						<div style="display:flex; justify-content: center;"><div id='bn-moeb' style="width:50%"></div><div id='cgan-moeb' style="width:50%"></div></div>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Observation: Circular vs Gaussian priors
+						![priors](images/prior_pictures.png)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Observation: Circular priors may work better?
+						![priors](images/priors.png)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Observation: Fibers need not be uniform
+						<div id='bn-sliced'></div>
 					</textarea>
 				</section>
 				
@@ -506,6 +530,7 @@
 					}];
 
 					layout = {
+						title: "BundleNet Torus Reconstruction",
 						scene:{
 							aspectmode: "manual",
 							aspectratio: {
@@ -528,6 +553,178 @@
 
 					// plot!
 					Plotly.newPlot('bn-torus', unpacked, layout);
+				})
+				// CGAN torus
+				fetch('data/CGAN_triv_torus.json')
+				.then(response => response.json())
+				.then(function(data){
+					var unpacked = [{
+						x: unpack(data, 'bundle_x'),
+						y: unpack(data, 'bundle_y'),
+						z: unpack(data, 'bundle_z'),
+						mode: 'markers',
+						type: 'scatter3d',
+						
+						marker: {
+						color: unpack(data, 'angle'),
+						size: 2,
+						colorscale: 'Jet',
+						}
+					}];
+
+					layout = {
+						title: "CGAN-local Torus Reconstruction",
+						scene:{
+							aspectmode: "manual",
+							aspectratio: {
+							x: 1, y: 1, z: 1,
+							},
+							xaxis: {
+							nticks: 9,
+							range: [-10, 10],
+							},
+							yaxis: {
+							nticks: 7,
+							range: [-10, 10],
+							},
+							zaxis: {
+							nticks: 10,
+							range: [-10, 10],
+							}
+						}
+					};
+
+					// plot!
+					Plotly.newPlot('cgan-torus', unpacked, layout);
+				})
+			// moeb
+			fetch('data/BN_moebius.json')
+				.then(response => response.json())
+				.then(function(data){
+					var unpacked = [{
+						x: unpack(data, 'bundle_x'),
+						y: unpack(data, 'bundle_y'),
+						z: unpack(data, 'bundle_z'),
+						mode: 'markers',
+						type: 'scatter3d',
+						
+						marker: {
+						color: unpack(data, 'angle'),
+						size: 2,
+						colorscale: 'Jet',
+						}
+					}];
+
+					layout = {
+						title: "BundleNet Moebius Band Reconstruction",
+						scene:{
+							aspectmode: "manual",
+							aspectratio: {
+							x: 1, y: 1, z: 1,
+							},
+							xaxis: {
+							nticks: 9,
+							range: [-10, 10],
+							},
+							yaxis: {
+							nticks: 7,
+							range: [-10, 10],
+							},
+							zaxis: {
+							nticks: 10,
+							range: [-10, 10],
+							}
+						}
+					};
+
+					// plot!
+					Plotly.newPlot('bn-moeb', unpacked, layout);
+				})
+				// CGAN moeb
+				fetch('data/CGAN_triv_moebius.json')
+				.then(response => response.json())
+				.then(function(data){
+					var unpacked = [{
+						x: unpack(data, 'bundle_x'),
+						y: unpack(data, 'bundle_y'),
+						z: unpack(data, 'bundle_z'),
+						mode: 'markers',
+						type: 'scatter3d',
+						
+						marker: {
+						color: unpack(data, 'angle'),
+						size: 2,
+						colorscale: 'Jet',
+						}
+					}];
+
+					layout = {
+						title: "CGAN-local Moebius Band Reconstruction",
+						scene:{
+							aspectmode: "manual",
+							aspectratio: {
+							x: 1, y: 1, z: 1,
+							},
+							xaxis: {
+							nticks: 9,
+							range: [-10, 10],
+							},
+							yaxis: {
+							nticks: 7,
+							range: [-10, 10],
+							},
+							zaxis: {
+							nticks: 10,
+							range: [-10, 10],
+							}
+						}
+					};
+
+					// plot!
+					Plotly.newPlot('cgan-moeb', unpacked, layout);
+				})
+			// sliced
+			fetch('data/BN_sliced.json')
+				.then(response => response.json())
+				.then(function(data){
+					var unpacked = [{
+						x: unpack(data, 'bundle_x'),
+						y: unpack(data, 'bundle_y'),
+						z: unpack(data, 'bundle_z'),
+						mode: 'markers',
+						type: 'scatter3d',
+						
+						marker: {
+						color: unpack(data, 'angle'),
+						size: 2,
+						colorscale: 'Jet',
+						}
+					}];
+
+					layout = {
+						title: "BundleNet Sliced Torus Reconstruction",
+						scene:{
+							aspectmode: "manual",
+							aspectratio: {
+							x: 1, y: 1, z: 1,
+							},
+							xaxis: {
+							nticks: 9,
+							range: [-10, 10],
+							},
+							yaxis: {
+							nticks: 7,
+							range: [-10, 10],
+							},
+							zaxis: {
+							nticks: 10,
+							range: [-10, 10],
+							}
+						}
+					};
+
+					// plot!
+					Plotly.newPlot('bn-sliced', unpacked, layout);
 				})
 		</script>
 	</body>
