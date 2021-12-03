@@ -52,7 +52,7 @@
 				<section>
 					<h2>Part I: Representation Theory</h2>
 				</section>
-				<section data-markdown data-auto-animate>
+				<!--<section data-markdown data-auto-animate>
 					<textarea data-template>
 						### What is rep. theory?
 						- The study of symmetries
@@ -60,7 +60,7 @@
 						- The study of how things (e.g. groups) act
 						- The study of $R$-$\operatorname{mod}$ for a ring $R$
 					</textarea>
-				</section>
+				</section>-->
 				<section data-markdown data-auto-animate>
 					<textarea data-template>
 						### What is rep. theory?
@@ -176,19 +176,19 @@
 				</section>
 				<section data-markdown>
 					<textarea data-template>
+						### What's happening?
+						We created a UMAP projection of the SNS dataset (irrespective of labels) then colored the data according to the Fruits 360 labels (left) and Stem/No-Stem labels (right) to visualize the pathology.
+
+						![our paper](images/SNS.png)<!--.element: style="width:70%"-->
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
 						### The problem: Orthogonal labels
 						Our team identified a failure mode of fewshot models wherein they perform well on datasets with a particular label set, but fail when an "orthogonal" label set is used.
 						![stem/no-stem](images/orthogonal-labels.png)<!--.element: style="width:80%"-->
 
 						<span style="font-size:15px">Examples from our three constructed datasets: Stem/No-Stem, Back/No-Back, One/Many</span>
-					</textarea>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
-						### What's happening?
-						We created a UMAP projection of the SNS dataset (irrespective of labels) then colored the data according to the Fruits 360 labels (left) and Stem/No-Stem labels (right) to visualize the pathology.
-
-						![our paper](images/SNS.png)<!--.element: style="width:70%"-->
 					</textarea>
 				</section>
 				<section data-markdown>
@@ -200,6 +200,12 @@
 						of simplicial complexes
 						- <span class="orange-highlight">that are not necessarily downward-closed</span>
 						- <span class="blue-highlight">in which each simplex is assigned a continuous (instead of binary) membership value</span>.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Results
+						![our results](images/SNS_results.png)<!--.element: style="width:70%"-->
 					</textarea>
 				</section>
 				<section data-markdown>
@@ -264,7 +270,7 @@
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						### Fiber bundles
+						### Idea: Fiber bundles
 						![bundles](images/bundle.png)<!--.element: style="width:60%"-->
 
 						A <span class="blue-highlight">fiber bundle</span> is a base space $X$, a total space $E$, and a surjection $\pi:E\to X$ satisfying <span class="red-highlight">local triviality.</span>
@@ -304,6 +310,18 @@
 						#### Expected difficulties <!--.element: style="margin-top:30px"-->
 						- Data will be sparse (finite) in general
 						- Global data distribution may be too complicated for traditional architectures to model
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Overview
+						We use <span class="orange-highlight">fiber bundles</span> to address the fact we expect the local data distribution is 
+						simpler than the global and that local structure will be somewhat homogeneous.
+
+						We use <span class="green-highlight">normalizing flows</span> to perform density estimation in trivial neighborhoods.
+
+						We use <span class="red-highlight">invertible neural nets</span> to implement our model, allowing simultaneous forward and backward
+						training, as well as lossless connection between $\pi^{-1}(U)$ and $U\times F$.
 					</textarea>
 				</section>
 				<section>
@@ -360,18 +378,6 @@
 							(<a href="https://arxiv.org/abs/2001.04872">link</a>)
 						</span>
 					</section>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
-						### Overview
-						We use <span class="orange-highlight">fiber bundles</span> to address the fact we expect the local data distribution is 
-						simpler than the global.
-
-						We use <span class="green-highlight">normalizing flows</span> to perform density estimation in trivial neighborhoods.
-
-						We use <span class="red-highlight">invertible neural nets</span> to implement our model, allowing simultaneous forward and backward
-						training, as well as lossless connection between $\pi^{-1}(U)$ and $U\times F$.
-					</textarea>
 				</section>
 				<section data-markdown data-auto-animate>
 					<textarea data-template>
