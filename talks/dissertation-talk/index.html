@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Dissertation Defense</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/night.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+
+		<style>
+			.olive {color:olive}
+			.purple {color:blueviolet}
+			.rust {color:#d8400e}
+			.small-text {font-size: 25pt;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown data-state="no-toc-progress">
+					<textarea data-template>
+						**Representations and Support Theory for Bosonized Quantum Complete Intersections** <!-- .element: class="rust" style="font-size:35pt"-->
+
+						Nico Courts<!-- .element: class="small-text"-->
+						
+						Dissertation Defense<!-- .element: class="small-text"-->
+						
+						May 26, 2022<!-- .element: class="small-text"-->
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						Slides for this presentation can be found at
+
+						https://4n1.co/phd-talk
+
+						A repository for my dissertation can be found at
+
+						https://4n1.co/dissertation
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Outline
+						- What is support?
+						- BQCIs and related algebras
+						- Matrix factorizations
+						- Support for QCIs
+						- Bosonizing support
+					</textarea>
+				</section>
+
+				<!-- PART I - SUPPORT -->
+				<section data-markdown>
+					<textarea data-template>
+						### What is support? <!-- .element: class="part-title" -->
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Support 
+						Support takes several different (but related) forms in math, including
+						- support of a <span class="olive">function</span> on (e.g.) a topological space
+						- support of a <span class="rust">quasicoherent sheaf</span> on a scheme $X$
+						- support of a <span class="purple">module</span> over an algebra
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Functions on a topological space
+						If $X$ is a topological space and $f:X\to \mathbb{R}$ is a continuous map,
+						we can define the <span class="olive">closed support</span>
+						$$\operatorname{supp}(f)=\overline{\\{x\in X|f(x)\ne0\\}}$$
+						![support of a module](images/support.png)
+					</textarea>
+				</section>
+				<section data-markdown data-auto-animate>
+					<textarea data-template>
+						#### Module support
+						Let $R$ be a ring and $M$ an $R$-module. Then the <span class="purple">support of $M$</span> is 
+						$$\operatorname{supp}_R(M)=\\{\mathfrak p \| M_\mathfrak{p}\ne 0, \mathfrak p\lhd R\text{ prime}\\}$$
+					</textarea>
+				</section>
+				<section data-markdown data-auto-animate>
+					<textarea data-template>
+						#### Module support
+						Let $R$ be a ring and $M$ an $R$-module. Then the <span class="purple">support of $M$</span> is 
+						$$\operatorname{supp}_R(M)=\\{\mathfrak p \| M_\mathfrak{p}\ne 0, \mathfrak p\lhd R\text{ prime}\\}$$
+
+						When $M$ is f.g., defines a <span class="olive">closed</span> subset of $\operatorname{Spec}(R)$
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Abstracting away details 
+						Building on our intuition, a notion of support is a way of associating
+						to an object some data that captures a notion of <span class="rust">where it is interesting.</span>
+
+						In general, we should expect this to be a <span class="purple">lossy</span> process.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Support in representation theory
+						This <span class="purple">lossiness</span> should be seen as a *feature,* not a bug!
+
+						Traditionally, representation theorists are generally interested in understanding 
+						$\mathbf{Mod}(R)$ for some ring $R$. But even in relatively simple cases this becomes unwieldy!
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Examples of wild representation type
+						- $k\langle x, y\rangle$ for algebraically closed $k$
+						- $kG$ for $G=\mathbb{Z}/p\mathbb Z\times\mathbb{Z}/p\mathbb Z$ with $\operatorname{char}(k)=p$.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Example: Balmer spectrum
+						One incarnation of support arises in the <span class="olive">spectrum of a tensor-triangulated category</span>
+						defined by Balmer<sup>1</sup>.
+
+						In this work, the support of $X\in\mathcal C$ is defined to be the collection of *prime, thick tensor ideals* in $\mathcal C$ containing $X$.
+
+						<span style="font-size:12pt">[1] Paul Balmer. <em>The spectrum of prime ideals in tensor triangulated categories.</em> Journal für die Reine und Angewandte Mathematik 588 (2005), pp. 149-168. <a href="https://www.math.ucla.edu/~balmer/Pubfile/Spectrum.pdf">(pdf)</a>.</span>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Example: Balmer spectrum (cont.)
+						Examples of TTCs to which the Balmer spectrum have been applied include
+						- $\operatorname{stmod}(kG)$ for a finite group (scheme) $G$
+						- $\mathbf{D}^{perf}(X)$ for a Noetherian scheme $X$
+
+						In both cases support <span class="rust">induces a topology on the collection of primes $\mathcal P$</span> that 
+						recovers the scheme structure of $\operatorname{Proj}(H^\ast(G,k))$ and $X$, respectively.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Cohomological support
+						Now let $R$ be a Hopf algebra over $k.$ Recall that the Hopf algebra cohomology is defined to be $S=H^\ast(R,k)=\operatorname{Ext}^\ast_R(k,k)$.
+						Then we can define<span class="purple">
+						$$\operatorname{supp}^\text{coh}(M)=\mathcal{Z}(\operatorname{Ann}_S(\operatorname{Ext}_R^\ast(M,M)))$$
+						</span>as a subset of $\operatorname{Proj}(S).$
+					</textarea>
+				</section>
+
+
+				<section data-markdown>
+					<textarea data-template>
+						#### title
+					</textarea>
+				</section>
+				
+
+				<!-- PART II - BQCIS AND RELATED ALGEBRAS -->
+				<section data-markdown>
+					<textarea data-template>
+						### BQCIs and related algebras <!-- .element: class="part-title" -->
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Complete intersection rings
+
+						A <span class="rust">complete intersection</span>
+						is a ring whose completion is the quotient of a regular local ring
+						by a regular sequence.
+
+						For example, let $R=k[x_1,\dots,x_n]/(y_1,\dots,y_n)$ where
+						the images of the $y_i$ form a regular sequence in $\widehat R=k[[x_i]]$.
+					</textarea>
+				</section>
+
+				<!-- PART III - MATRIX FACTORIZATIONS -->
+				<section data-markdown>
+					<textarea data-template>
+						### Matrix factorizations <!-- .element: class="part-title" -->
+					</textarea>
+				</section>
+
+				<!-- PART IV - SUPPORT FOR QCIS -->
+				<section data-markdown>
+					<textarea data-template>
+						### Support for QCIs <!-- .element: class="part-title" -->
+					</textarea>
+				</section>
+
+				<!-- PART V - BOSONIZING SUPPORT -->
+				<section data-markdown>
+					<textarea data-template>
+						### Bosonizing support <!-- .element: class="part-title" -->
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### title
+					</textarea>
+				</section>
+
+				<section>
+					<h2 class="no-toc-progress">Thank you!</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/math/math.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script src="../plugin/zoom/zoom.js"></script>
+		<script src="../plugin/attribution/plugin.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealMath, RevealZoom],
+				dependencies: [{ 
+					src: '../plugin/toc-progress/toc-progress.js', 
+					async: true, 
+					callback: function() { toc_progress.initialize(); toc_progress.create(); } 
+				}]
+			});
+		</script>
+	</body>
+</html>

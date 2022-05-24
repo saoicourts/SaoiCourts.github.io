@@ -5,6 +5,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-paginate-v2
   - jekyll-scholar
+  - jekyll-redirect-from
 
 exclude: [vendor]
 
