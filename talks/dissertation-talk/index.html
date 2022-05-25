@@ -14,10 +14,26 @@
 		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
 
 		<style>
+			h4 {
+				color:sandybrown !important;
+				margin-bottom: 1em !important;
+			}
 			.olive {color:olive}
 			.purple {color:blueviolet}
 			.rust {color:#d8400e}
 			.small-text {font-size: 25pt;}
+			div.thm {
+				border-style:inset;
+				border-width:2px;
+				border-color: cornflowerblue;
+				font-size: 30pt;
+				font-size: 20pt;
+				text-align: left;
+				padding: 10px;
+				width: 90%;
+				margin: auto;
+				color:lightcyan;
+			}
 		</style>
 	</head>
 	<body>
@@ -47,7 +63,7 @@
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						### Outline
+						#### Outline
 						- What is support?
 						- BQCIs and related algebras
 						- Matrix factorizations
@@ -146,19 +162,24 @@
 				<section data-markdown>
 					<textarea data-template>
 						#### Cohomological support
-						Now let $R$ be a Hopf algebra over $k.$ Recall that the Hopf algebra cohomology is defined to be $S=H^\ast(R,k)=\operatorname{Ext}^\ast_R(k,k)$.
+						Now let $R$ be a Hopf algebra over $k.$ Recall that the Hopf algebra cohomology ring is defined to be $S=H^\ast(R,k)=\operatorname{Ext}^\ast_R(k,k)$.
 						Then we can define<span class="purple">
 						$$\operatorname{supp}^\text{coh}(M)=\mathcal{Z}(\operatorname{Ann}_S(\operatorname{Ext}_R^\ast(M,M)))$$
 						</span>as a subset of $\operatorname{Proj}(S).$
 					</textarea>
 				</section>
-
-
 				<section data-markdown>
 					<textarea data-template>
-						#### title
+						#### Connecting algebra with geometry
+						The mantra for support in this talk is <span class="olive">"connecting the (algebraic) properties of 
+						a Hopf algebra with a (geometric) variety."</span>
+
+						Then we can begin to ask: *what theories of support induce a geometry that is useful?*
 					</textarea>
 				</section>
+
+
+				
 				
 
 				<!-- PART II - BQCIS AND RELATED ALGEBRAS -->
@@ -169,8 +190,7 @@
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						### Complete intersection rings
-
+						#### Complete intersection rings
 						A <span class="rust">complete intersection</span>
 						is a ring whose completion is the quotient of a regular local ring
 						by a regular sequence.
@@ -179,6 +199,88 @@
 						the images of the $y_i$ form a regular sequence in $\widehat R=k[[x_i]]$.
 					</textarea>
 				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Complete intersection rings (cont.)
+						Complete intersections have some very nice properties. They are <span class="olive">Gorenstein</span> and thus Cohen-Macaulay,
+						meaning that they have exceedingly nice homological properties.
+
+						Generally one can use the regular sequence to "hand off" from a regular local ring to the CI.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Setting notation
+						For what follows, we fix the following notation:
+						- a positive integers $n$ and $\ell$
+						- a primitive $\ell^{th}$ root of unity $q$ 
+						- an $n\times n$ skew-symmetric matrix $A=(a_{ij})$ over $\mathbb Z$
+						- for all $1\le i,j\le n$, set $q_{ij}=q^{a_{ij}}$.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Skew polynomial algebras
+						Let $k$ be any field containing $q$. Then we can define the <span class="rust">skew (or quantum) polynomial algebra $Q_0=k_q[x_1,\dots,x_n]$</span>
+						to be
+						$$Q_0=k\langle x_1,\dots,x_n\rangle/(x_ix_j-q_{ji}x_jx_i).$$
+
+						As a set, $Q_0=k[x_1,\dots,x_n]$ and it should be thought of as a non-commutative analog.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Quantum complete intersections
+						Using our quantum analog of a polynomial algebra, we can define a quantum CI!
+
+						In this work, we are interested in the particular regular sequence $(x_1^\ell,\dots, x_n^\ell)$, so 
+						our <span class="purple">(unbosonized) quantum complete intersection $R_0$</span> is $R_0=Q_0/(x_i^\ell),$ or
+						$$R_0=k\langle x_1,\dots,x_n\rangle/(x_ix_j-q_{ji}x_jx_i, x_i^\ell, x_j^\ell)$$
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Parameterizing algebra 
+						Set $Z=k[y_1,\dots,y_n]$ and consider the sequence of $k$-algebras
+						$$Z\xrightarrow{y_i\mapsto x_i^\ell} Q_0\twoheadrightarrow R_0.$$
+						Notice that <span class="rust">$Z$ is central in $Q_0$</span>, giving us a way to port commutative techniques to our algebras.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Completion
+						There are several technical areas where assuming that our ring $Q_0$ is local will be beneficial, 
+						so we set $\mathfrak{m}_Z=(y_1,\dots,y_n)\subset Z$ and then complete with respect to this ideal:
+						$$\widehat{Z}\to \widehat{Q_0}\to R_0.$$
+
+						Notice that $R_0$ remains unchanged after taking the completion, meaning these local algebras <span class="olive">still parameterize the correct algebra</span>.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Hypersurfaces
+						Eventually we will study support by pulling back modules to <span class="purple">hypersurfaces</span>, which are homologically-simple
+						quotients of $Q_0$. Specifically, for $\alpha\in\mathbb P^{n-1}$, define $f_\alpha=\sum_i \alpha_ix_i^\ell$. Then let 
+						$$Q_{0,\alpha}=Q_0/(f_\alpha)$$
+						be the hypersurface corresponding to $\alpha$.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Pulling back modules
+						We have the sequence of algebras 
+						$$Q_0\twoheadrightarrow Q_{0,\alpha} \twoheadrightarrow R_0$$
+						and we will primarily be interested in modules $M$ over $R_0$. 
+						
+						These maps give us a natural way to realize $M$ as a module over these algebras. In particular, we write
+						$M_{0,\alpha}$ to denote the <span class="rust">pullback of $M$ to $Q_{0,\alpha}$</span>. 
+					</textarea>
+				</section>
+
+
+				
+
+
 
 				<!-- PART III - MATRIX FACTORIZATIONS -->
 				<section data-markdown>
@@ -186,11 +288,203 @@
 						### Matrix factorizations <!-- .element: class="part-title" -->
 					</textarea>
 				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Commutative vs. noncommutative
+						Throughout this section, we will use both commutative algebras as well
+						as their noncommutative cousins to describe our contributions as well as their history.
+						
+						As such, we will place (<span class="olive">C</span>) in the title of the slide if the objects 
+						are over commutative rings and (<span class="rust">NC</span>) otherwise.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Matrix factorizations in CIs (<span class="olive">C</span>)
+						In his work on the homological algebra over a complete intersection $R,$ Eisenbud<sup>2</sup> defined a <span class="purple">matrix factorization</span>
+						for a regular element $x\in R$ is a pair of matrices $A,B\in M_k(R)$ (some $k$) such that 
+						$$AB=BA=x\cdot I_k.$$
+						<span style="font-size: 12pt;">[2] David Eisenbud. *Homological Algebra on a Complete Intersection, with an Application to Group Representations.* Transactions of the American Mathematical Society 260, no. 1 (1980): 35–64. <a href="https://www.ams.org/journals/tran/1980-260-01/S0002-9947-1980-0570778-7/S0002-9947-1980-0570778-7.pdf">(pdf)</a></span>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Matrix factorizations in CIs (<span class="olive">C</span>)
+						Perhaps unsurprisingly, a matrix factorization $(A,B)$<span class="purple"> defines a chain complex</span> over $S =R/(x)$ via
+						$$\cdots \xrightarrow{B} S^k\xrightarrow{A} S^k\xrightarrow{B}S^k\to \operatorname{coker}(B)\to 0$$
+						and it can be shown that this is actually a *free resolution of $\operatorname{coker}(B)$*!
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### CM modules over hypersurfaces (<span class="olive">C</span>)
+						Let $S$ be a regular local ring, $f\in S$ and $R=S/(f)$ the hypersurface defined by $f$. Then if $M$ is a 
+						Cohen-Macaulay module over $R$, Auslander-Buchsbaum tells us that 
+						$$\operatorname{projdim}_S(M)=\operatorname{depth}(S)-\operatorname{depth}_R(M)=1$$
+						And in this way we can <span class="rust">construct a 2-periodic resolution</span> of $M$ over $R$.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Equivalence of categories (<span class="olive">C</span>)
+						Using the preceding facts and $R=S/(f),$ Eisenbud proves
+						$$\underline{\mathbf{MF}}_S(f)\simeq \mathfrak C(R)$$
+						where $\underline{\mathbf{MF}}_S(f)$ is the stable category of matrix factorizations of $f$ over $S$
+						and $\mathfrak{C}(R)$ are the Cohen-Macaulay modules.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Generalization to noncommutative rings (<span class="rust">NC</span>)
+						It is proved in a work of Cassidy et al.<sup>4</sup> that this extends to the noncommutative world as well. Here 
+						if $A$ is AS-regular and $B=A/(f)$,
+						$$hTMF_A(f)\simeq \underline{MCM}(B)$$
+
+						<span style="font-size: 12pt;">[4] Thomas Cassidy et al. *Periodic free resolutions from twisted matrix factorizations*. Journal of Algebra 455 (2016): 137-163. <a href="https://arxiv.org/pdf/1307.8415.pdf">(pdf)</a></span>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Explicit factorizations (<span class="rust">NC</span>)
+						Now let us return to our picture: let $f_\alpha=\sum \alpha_ix_i^\ell\in Q_0,$ then our goal is to factor this element using matrices. 
+						
+						For now we set $\alpha=[1:\dots:1]$ and define matrices iteratively: let $A_1=x_1^{\ell-1}$ and $B_1=x_1$. These <span class="olive">give us a matrix factorization of $x_1^\ell$</span>.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Explicit factorizations (<span class="rust">NC</span>)
+						Define <span class="purple">helper matrices</span>
+						<span style="font-size:18pt">$$C_1^j = -\sqrt{q_{1j}}x_j \qquad D_1^j=\sqrt{q_{1j}}x_j^{\ell-1} \qquad \widetilde{C_1^j}=\sqrt{q_{j1}}x_j \qquad \widetilde{D_1^j}=-\sqrt{q_{j1}}x_j^{\ell-1}$$</span>
+						<span style="font-size:18pt">$$C_i^j=\operatorname{diag}\left(\sqrt{q_{ji}}C_{i-1}^j,-\sqrt{q_{ij}}\widetilde{C_{i-1}^j}\right)\quad D_i^j=\operatorname{diag}\left(\sqrt{q_{ij}}D_{i-1}^j,-\sqrt{q_{ji}}\widetilde{D_{i-1}^j}\right)$$</span>
+						<span style="font-size:18pt">$$\widetilde{C_i^j}=\operatorname{diag}\left(\sqrt{q_{ji}}\widetilde{C_{i-1}^j},-\sqrt{q_{ij}}{C_{i-1}^j}\right)\quad D_i^j=\operatorname{diag}\left(\sqrt{q_{ij}}\widetilde{D_{i-1}^j},-\sqrt{q_{ji}}{D_{i-1}^j}\right)$$</span>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Our first result (<span class="rust">NC</span>)
+						<div class="thm"><strong>Theorem.</strong> Let $\alpha=[1:\cdots:1]$ and $n,\ell,Q_0,f_\alpha$ be as usual. Then the matrices defined iteratively by $A_1=x_1^{\ell-1}$, $B_1=x_1$,
+							$$A_n=\begin{pmatrix}A_{n-1} & C_{n-1}^n \\\\ D_{n-1}^n & B_n\end{pmatrix}\quad\text{and}\quad B_n=\begin{pmatrix}B_{n-1} & \widetilde{C_{n-1}^n} \\\\ \widetilde{D_{n-1}^n} & A_{n-1}\end{pmatrix}$$
+							give a matrix factorization for $f_\alpha$ over $Q_0$.
+						</div>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Our second result (<span class="rust">NC</span>)
+						Everything we have done so far was with a particular $\alpha$, but we can extend it given a suitably large field. 
+						Let $A_n^\alpha$ and $B_n^\alpha$ denote the result of replacing $x_i$ with $\sqrt[\ell]{\alpha_i}x_i$ in each.
+						<div class="thm"><strong>Corollary.</strong> Given any $\alpha\in\mathbb{P}^{n-1}$, if each $\alpha_i$ has a $p^{th}$
+							root in $k$, $A_n^\alpha$ and $B_n^\alpha$ are a matrix factorization for $f_\alpha$ over $Q_0.$
+						</div>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Looking to resolutions (<span class="rust">NC</span>)
+						Eventually we are interested in computing using a resolution of $k$ over $Q_\alpha$, so we are interested in the following
+						<div class="thm" style="margin-bottom:30px"><strong>Lemma.</strong> If $n=2$ or $n=3$, the matrices $A_n^\alpha$ and $B_n^\alpha$ correspond to the 2-periodic
+							part of a free resolution of $k$ over $Q_{0,\alpha}$.
+						</div>
+						<div class="thm">
+							<strong>Conjecture.</strong> The above lemma holds for all $n$.
+						</div>
+					</textarea>
+				</section>
+
+				
+
+
+				
 
 				<!-- PART IV - SUPPORT FOR QCIS -->
 				<section data-markdown>
 					<textarea data-template>
 						### Support for QCIs <!-- .element: class="part-title" -->
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Notions of support 
+						Now that we have some computational tools at our disposal, we define some notions 
+						of support for modules over $R_0$. 
+						
+						The <span class="olive">hypersurface support</span>
+						will be defined in terms of a homological condition, while <span class="rust">rank support</span>
+						will depend on the matrix factorizations from the last part.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Hypersurface support
+						Hypersurface support, as defined for *formally smooth deformations* in Negron and Pevtsova<sup>5</sup> is, in our case
+						<span style="font-size: 28px">$$\operatorname{supp}^\text{hyp}\_{R\_0}(M)=\\{\alpha\in\mathbb{P}^{n-1} | \operatorname{projdim}\_{\widehat{Q\_{0,\alpha}}}(M\_{0,\alpha}) =\infty \\}$$</span>
+
+						<span style="font-size: 12pt;">[5] Cris Negron and Julia Pevtsova. *Support for integrable hopf algebras via non-commutative hypersurfaces*. 2020. <a href="https://arxiv.org/pdf/2005.02965.pdf">(pdf)</a></span>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Gorenstein rings are nice
+						A lemma we prove is the following
+						<div class="thm">
+							<strong>Lemma.</strong> Let $R$ be a Gorenstein algebra and $\widehat{R}$ be its completion. Then if $M$ is a finite dimensional $R$-module and $\widehat{M}=\widehat{R}\otimes_R M$,
+							$$\operatorname{projdim}_{\widehat{R}}(\widehat{M})=\infty \quad\Leftrightarrow\quad \operatorname{projdim}_{R}({M})=\infty.$$
+						</div>
+						This allows us to define, alternatively,
+						<span style="font-size: 28px">$$\operatorname{supp}^\text{hyp}_{R_0}(M)=\{\alpha\in\mathbb{P}^{n-1} | \operatorname{projdim}_{{Q_{0,\alpha}}}(M_{0,\alpha}) =\infty \}$$</span>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Using our matrices I
+						Let $M$ be a finite dimensional $R_0$-module and fix some basis for it. Now if $P_\bullet\to k$ is a free resolution for $k$ over $Q_\alpha$, consider the tensor product
+						$$ P_\bullet\otimes_{Q_{0,\alpha}} M = \widetilde{M}_\bullet\to k\otimes M$$
+						where now each $M_i\cong M^{\oplus s_i}$ for some $s_i$.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Using our matrices II
+						In the case we specialize to the $Q_{0,\alpha}$-linear maps corresponding to $A_n^\alpha$ and $B_n^\alpha$, the maps
+						$$ A_n^\alpha\otimes_{Q_{0,\alpha}} \operatorname{id}\_M\quad\text{and}\quad B\_n^\alpha\otimes\_{Q\_{0,\alpha}} \operatorname{id}\_M$$
+						correspond to linear maps $M^{2^{n-1}}\to M^{2^{n-1}}$, and so to $2^{n-1}\cdot\operatorname{dim}_k(M)$ square matrices over $k$.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Using our matrices III
+						Set $C(M_{0,\alpha})$ to be the tensor product of the two $k$-linear maps corresponding to our factorization tensored with $M$. We show
+						<div class="thm">
+							<strong>Lemma.</strong> The rank of $C(M_{0,\alpha})$ is at most $2^{n-1}\cdot\operatorname{dim}_k(M)$.
+						</div>
+						which motivates the following definition:
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Rank support
+						Given an $R_0$ module, we define the <span class="rust">rank support</span> of $M$ to be
+						<span style="font-size: 28px">$$\operatorname{supp}^\text{rnk}\_{R\_0}(M)=\\{\alpha\in\mathbb{P}^{n-1}| \operatorname{rank}C(M\_{0,\alpha}) < 2^{n-1}\cdot\operatorname{dim}\_k(M)\\}$$</span>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### They are the same!
+						The major result of this section is the following:
+						<div class="thm">
+							<strong>Theorem.</strong> For any $\alpha\in\mathbb{P}^{n-1}$,
+							$$\alpha\in\operatorname{supp}_{R_0}^\text{hyp}(M)\quad\Leftrightarrow\quad \alpha\in\operatorname{supp}_{R_0}^\text{rnk}(M).$$
+							Since the topology on each support variety is determined by the supports of modules, the varieties themselves are homeomorphic.
+						</div>
+					</textarea>
+				</section>
+
+
+
+				<section data-markdown>
+					<textarea data-template>
+						#### title
 					</textarea>
 				</section>
 
@@ -202,7 +496,7 @@
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						### title
+						### What is bosonization?
 					</textarea>
 				</section>
 
