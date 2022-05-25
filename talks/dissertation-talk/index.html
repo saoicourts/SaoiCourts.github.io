@@ -391,6 +391,24 @@
 						</div>
 					</textarea>
 				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Examples of matrix factorizations (<span class="rust">NC</span>)
+						<span style="font-size:25pt">Let $n=3$ and $\alpha=[a^\ell:b^\ell:c^\ell]$. Then a factorization for $a^\ell x_1^\ell+b^\ell x_2^\ell+c^\ell x_3^\ell$ is</span>
+						<span style="font-size:16pt">$$A_n^\alpha=\begin{pmatrix}
+							a^6x_1^6 & -\sqrt{q_{12}}bx_2 & -\sqrt{q_{32}q_{13}}cx_3 & 0\\\\ 
+							\sqrt{q_{12}}b^6x_2^6 & ax_1 & 0 & -\sqrt{q_{23}q_{31}}cx_3\\\\
+							\sqrt{q_{23}q_{13}}c^6x_3^6 & 0 & ax_1 & \sqrt{q_{21}}bx_2\\\\
+							0 & \sqrt{q_{32}q_{31}}x_3^6c^6 &-\sqrt{q_{21}}b^6x_2^6 & a^6x_1^6
+						\end{pmatrix}$$</span>
+						<span style="font-size:16pt">$$B_n^\alpha=\begin{pmatrix}
+							ax_1 & \sqrt{q_{21}}bx_2 & \sqrt{q_{32}q_{31}}cx_3 & 0\\\\ 
+							-\sqrt{q_{21}}b^6x_2^6 & a^6x_1^6 & 0 & \sqrt{q_{23}q_{13}}cx_3\\\\
+							-\sqrt{q_{23}q_{31}}c^6x_3^6 & 0 & a^6x_1^6 & -\sqrt{q_{12}}bx_2\\\\ 
+							0 & -\sqrt{q_{32}q_{13}}c^6x_3^6 & \sqrt{q_{12}}b^6x_2^6 & ax_1
+						\end{pmatrix}$$</span>
+					</textarea>
+				</section>
 
 				
 
@@ -479,14 +497,39 @@
 						</div>
 					</textarea>
 				</section>
-
-
-
 				<section data-markdown>
 					<textarea data-template>
-						#### title
+						#### Proof ideas
+						The gist of the previous proof is the following:
+						<div style="font-size:25pt">
+							<ul>
+								<li>The rank of $C(M_{0,\alpha})$ is deficient exactly when the homology of $P_\bullet\otimes M_{0,\alpha}$ is nontrivial.</li>
+								<li>The homology of $P_\bullet\otimes M_{0,\alpha}$ is $\operatorname{Tor}^{Q_{0,\alpha}}_\bullet(k,M_{0,\alpha})$</li>
+								<li>Since $P_\bullet$ is chosen to be 2-periodic, $\operatorname{Tor}_i$ vanishes for large $i$ iff the periodic part is exact.</li>
+								<li>Since all algebras involved are Gorenstein, vanishing of $\operatorname{Tor}_i$ for large $i$ is equivalent to finite projective dimension</li>
+							</ul>
+						</div>
 					</textarea>
 				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Support computation example
+						<span style="font-size:24pt">Let $n=2$ and $\ell=7$and $M=R_0/(x)$ with basis $\\{1,y,\dots,y^6\\}.$ Then $A_2^{[1:1]}\otimes \operatorname{id}_M$ corresponds to</span>
+						![big matrix](./images/big_matrix.jpg)
+
+						<span style="font-size:24pt">which has rank 12 when $b\ne 0$. The same is true for $B_2^{[1:1]}\otimes \operatorname{id}_M.$</span>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Support computation example (cont)
+						Now since $2^{n-1}\cdot \operatorname{dim}\_k(M)=2^1\cdot 7=14$, $C(M_{0,\alpha})$ has rank $24$ if $b\ne 0$ and rank 0 otherwise. Thus 
+						$$\operatorname{supp}\_{R\_0}^\text{rnk}(M)=\operatorname{supp}\_{R_0}^\text{hyp}(M)=\\{[1:0]\\}.$$
+					</textarea>
+				</section>
+
+
+
 
 				<!-- PART V - BOSONIZING SUPPORT -->
 				<section data-markdown>
@@ -496,12 +539,143 @@
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						### What is bosonization?
+						#### What is bosonization?
+						The definition in our case is relatively simple. Let $G=(\mathbb{Z}/\ell\mathbb{Z})^n$ and $\Gamma=kG$ be the group algebra.
+						Then the <span class="rust">bosonization of $R_0$ by $\Gamma$</span> is the Radford biproduct
+						$$R = R_0 \\# \Gamma.$$
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### There's got to be more... 
+						In fact, bosonization gives us a way to *turn our algebra $R_0$ into a Hopf algebra.* 
+
+						It ends up that $R_0$ indeed has a product and coproduct by making elements primitive, 
+						but these maps are <span class="rust">not compatible in the usual sense</span>.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### The Yetter-Drinfel'd category
+						Let $\Gamma$ be any Hopf algebra. Then let $^\Gamma_\Gamma\mathcal{Y}\mathcal{D}$ denote <span class="olive">the Yetter-Drinfel'd category:</span> the category 
+						of triples $(M,\cdot,\rho)$ making $M$ into a (left) $\Gamma$-module and -comodule subject to the condition 
+						$$\rho(g\cdot m)=g_1 m_{-1} S(g_3)\otimes g_2\cdot m_0$$
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### The bosonization functor
+						Let $\mathcal C\subseteq{^\Gamma_\Gamma\mathcal{Y}\mathcal{D}}$ be the full subcategory of Hopf objects (or *braided Hopf algebras*) in $\mathcal C$.
+						The Radford biproduct $-\\# \Gamma$ defines a functor
+						$$\mathcal C \to \mathbf{HopfAlg}\_k$$
+						where, for instance, the coproduct on $R=R_0\\#\Gamma$ is given by
+						$$\Delta_R(r\\# g)=(r\_{(1)}\\#r\_{(2)(-1)}g)\otimes(r\_{(2)(0)}\\#g).$$
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Debosonization
+						In fact, if any Hopf algebra over $k$ has a Hopf map $\iota:kG\hookrightarrow H$ for some group $G$, along with a section $\pi:H\to kG$
+						satisfying $\pi\circ\iota=\operatorname{id}_{kG}$, we can reverse the process.
+
+						These functors give us an equivalence between Hopf objects in ${^\Gamma_\Gamma\mathcal{Y}\mathcal{D}}$ and Hopf algebras admitting these maps.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Defining more objects
+						As mentioned before, $G=(\mathbb{Z}/\ell\mathbb{Z})^n$ and $\Gamma=kG.$ If $G$ is generated by $\\{e_1,\dots,e_n\\}$,
+						define the action and coaction of $\Gamma$ on $Q_0$ (and therefore $Q_{0,\alpha}$ and $R_0$) by
+						$$e_i\cdot x_j=q_{ji}x_j\qquad\text{and}\qquad\rho(x_j)=e_j\otimes x_j$$
+						and one can verify that these define Yetter-Drinfel'd structures over $\Gamma$.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Defining more objects (cont.)
+						So from now on, we let $R=R_0\\#\Gamma$, $Q=Q_0\\#\Gamma$, and $Q_\alpha=(Q_{0,\alpha}\\#\Gamma)/(f_\alpha),$ though it will sometimes make sense to use the following:
+						<div class="thm">
+							<strong>Lemma.</strong> Let $Q_0, Q_{0,\alpha}$ and $\Gamma$ be as before. Then as algebras
+							$$(Q_{0,\alpha}\#\Gamma)/(f_\alpha)\cong (Q_{0,\alpha}/(f_\alpha))\#\Gamma.$$
+						</div>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Bosonizing cohomological support
+						<span style="font-size:26pt">While $R_0$ was not a Hopf algebra, we can still use it to compute cohomological support 
+						of $R$. A Grothendieck spectral sequence argument using results from Lorenz &amp; Lorenz<sup>6</sup>
+						gives us that 
+						$$ \operatorname{Ext}\_{R_0}^i(V,W)^\Gamma\cong \operatorname{Ext}\_{R}^i(V,W)$$
+						for all $R$-modules $V$ and $W$.</span>
+
+						<span style="font-size: 12pt;">[6] Maria Lorenz and Martin Lorenz. *On Crossed Products of Hopf Algebras.* Proceedings of the American Mathematical Society 123, no. 1 (1995): 33–38. <a href="https://www.math.temple.edu/~lorenz/papers/46.pdf">(pdf)</a></span>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Bosonizing hypersurface support 
+						In the hope of equating cohomological support (which only exists over the bosonized algebra) with hypersurface support,
+						we define <span class="purple">hypersurface support over $R$</span> to be
+						<span style="font-size: 28px">$$\operatorname{supp}^\text{hyp}\_{R}(M)=\\{\alpha\in\mathbb{P}^{n-1} | \operatorname{projdim}\_{Q\_{\alpha}}(M\_{\alpha}) =\infty \\}.$$</span>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Bosonization isn't a problem
+						The heavy lifting of this section is done by the following result, which draws on the 
+						exceptionally nice homological properties of Gorenstein rings along with some tricks:
+						<div class="thm">
+							<strong>Theorem.</strong> Let $R_0$ and $R=R_0\#\Gamma$ be as usual and $M$ be an $R$-module. Then
+							$$\operatorname{supp}_{R_0}^\text{hyp}(M)=\operatorname{supp}_R^\text{hyp}(M).$$
+						</div>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Putting everything together
+						Negron and Pevtsova prove in their work on smooth deformations that there is a morphism from cohomological support to hypersurface 
+						support over $R$ induced from a map in the opposite direction of graded algebras.
+						<span style="font-size:24pt">$$\kappa:\operatorname{Proj}(H^\ast(R,k))\to \operatorname{Proj}(\Sigma^{-2}\operatorname{Sym}(\mathfrak{m}_Z/\mathfrak{m}_Z^2)^\vee) $$</span>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Things are falling into place
+						Using a sufficient condition in [NP], we show that in our case, $\kappa$ gives us all we need
+						<div class="thm">
+							<strong>Lemma.</strong> The map $\kappa$ discussed before is a <strong>closed embedding</strong> for our choice of $R$. Thus, by [NP],
+							$$\operatorname{supp}_R^\text{coh}(M)=\operatorname{supp}_R^\text{hyp}(M)$$
+							for all $M\in R\text{-}\mathbf{mod}.$
+						</div>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### The big result
+						Finally we get to the main result of the work:
+						<div class="thm">
+							<strong>Theorem.</strong> Let $M$ be an $R$-module. Then
+							$$\operatorname{supp}_R^\text{coh}(M)=\operatorname{supp}_R^\text{hyp}(M)=\operatorname{supp}_{R_0}^\text{hyp}(M)=\operatorname{supp}_{R_0}^\text{rnk}(M)$$
+						</div>
 					</textarea>
 				</section>
 
-				<section>
-					<h2 class="no-toc-progress">Thank you!</h2>
+				<section data-markdown>
+					<textarea data-template>
+						#### In summary
+						<span style="font-size:24pt;">Throughout this work we have </span>
+						<ul style="font-size:24pt;">
+							<li>Developed a notion of <span class="rust">rank support</span> for $R_0$</li>
+							<li>Showed the connection between <span class="olive">rank support and other forms of support</span></li>
+							<li>Provided a way to <span class="purple">compute support directly</span> using only linear algebra</li>
+							<li>Provided context for the problem and developed lemmas concerning bosonization and completion</li>
+						</ul>
+					</textarea>
+				</section>
+
+				<section data-state="no-toc-progress">
+					<h2>Thank you!</h2>
 				</section>
 			</div>
 		</div>
