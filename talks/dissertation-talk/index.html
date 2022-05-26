@@ -18,9 +18,9 @@
 				color:sandybrown !important;
 				margin-bottom: 1em !important;
 			}
-			.olive {color:olive}
-			.purple {color:blueviolet}
-			.rust {color:#d8400e}
+			.olive {color:rgb(103, 165, 3)}
+			.purple {color:rgb(17, 135, 231)}
+			.rust {color:#f3de23}
 			.small-text {font-size: 25pt;}
 			div.thm {
 				border-style:inset;
@@ -65,7 +65,7 @@
 					<textarea data-template>
 						#### Outline
 						- What is support?
-						- BQCIs and related algebras
+						- QCIs and related algebras
 						- Matrix factorizations
 						- Support for QCIs
 						- Bosonizing support
@@ -99,14 +99,14 @@
 				<section data-markdown data-auto-animate>
 					<textarea data-template>
 						#### Module support
-						Let $R$ be a ring and $M$ an $R$-module. Then the <span class="purple">support of $M$</span> is 
+						Let $R$ be a ring and $M$ a finitely generated $R$-module. Then the <span class="purple">support of $M$</span> is 
 						$$\operatorname{supp}_R(M)=\\{\mathfrak p \| M_\mathfrak{p}\ne 0, \mathfrak p\lhd R\text{ prime}\\}$$
 					</textarea>
 				</section>
 				<section data-markdown data-auto-animate>
 					<textarea data-template>
 						#### Module support
-						Let $R$ be a ring and $M$ an $R$-module. Then the <span class="purple">support of $M$</span> is 
+						Let $R$ be a ring and $M$ a finitely generated $R$-module. Then the <span class="purple">support of $M$</span> is 
 						$$\operatorname{supp}_R(M)=\\{\mathfrak p \| M_\mathfrak{p}\ne 0, \mathfrak p\lhd R\text{ prime}\\}$$
 
 						When $M$ is f.g., defines a <span class="olive">closed</span> subset of $\operatorname{Spec}(R)$
@@ -134,13 +134,13 @@
 					<textarea data-template>
 						#### Examples of wild representation type
 						- $k\langle x, y\rangle$ for algebraically closed $k$
-						- $kG$ for $G=\mathbb{Z}/p\mathbb Z\times\mathbb{Z}/p\mathbb Z$ with $\operatorname{char}(k)=p$.
+						- $kG$ for $G=\mathbb{Z}/p\mathbb Z\times\mathbb{Z}/p\mathbb Z$ with $\operatorname{char}(k)=p>3$.
 					</textarea>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
 						#### Example: Balmer spectrum
-						One incarnation of support arises in the <span class="olive">spectrum of a tensor-triangulated category</span>
+						One incarnation of support arises in the <span class="olive">spectrum of a tensor-triangulated category (TTC)</span>
 						defined by Balmer<sup>1</sup>.
 
 						In this work, the support of $X\in\mathcal C$ is defined to be the collection of *prime, thick tensor ideals* in $\mathcal C$ containing $X$.
@@ -162,10 +162,10 @@
 				<section data-markdown>
 					<textarea data-template>
 						#### Cohomological support
-						Now let $R$ be a Hopf algebra over $k.$ Recall that the Hopf algebra cohomology ring is defined to be $S=H^\ast(R,k)=\operatorname{Ext}^\ast_R(k,k)$.
+						Now let $R$ be a Hopf algebra over $k$ and $M$ a finitely generated $R$-module. Recall that the Hopf algebra cohomology ring is defined to be $S=H^\ast(R,k)=\operatorname{Ext}^\ast_R(k,k)$.
 						Then we can define<span class="purple">
 						$$\operatorname{supp}^\text{coh}(M)=\mathcal{Z}(\operatorname{Ann}_S(\operatorname{Ext}_R^\ast(M,M)))$$
-						</span>as a subset of $\operatorname{Proj}(S).$
+						</span>as a <span class="rust">closed</span> subset of $\operatorname{Proj}(S).$
 					</textarea>
 				</section>
 				<section data-markdown>
@@ -182,10 +182,10 @@
 				
 				
 
-				<!-- PART II - BQCIS AND RELATED ALGEBRAS -->
+				<!-- PART II - QCIS AND RELATED ALGEBRAS -->
 				<section data-markdown>
 					<textarea data-template>
-						### BQCIs and related algebras <!-- .element: class="part-title" -->
+						### QCIs and related algebras <!-- .element: class="part-title" -->
 					</textarea>
 				</section>
 				<section data-markdown>
@@ -195,7 +195,7 @@
 						is a ring whose completion is the quotient of a regular local ring
 						by a regular sequence.
 
-						For example, let $R=k[x_1,\dots,x_n]/(y_1,\dots,y_n)$ where
+						For example, let $R=k[x_1,\dots,x_n]/(y_1,\dots,y_m)$ where
 						the images of the $y_i$ form a regular sequence in $\widehat R=k[[x_i]]$.
 					</textarea>
 				</section>
@@ -212,7 +212,7 @@
 					<textarea data-template>
 						#### Setting notation
 						For what follows, we fix the following notation:
-						- a positive integers $n$ and $\ell$
+						- positive integers $n$ and $\ell$
 						- a primitive $\ell^{th}$ root of unity $q$ 
 						- an $n\times n$ skew-symmetric matrix $A=(a_{ij})$ over $\mathbb Z$
 						- for all $1\le i,j\le n$, set $q_{ij}=q^{a_{ij}}$.
@@ -235,7 +235,7 @@
 
 						In this work, we are interested in the particular regular sequence $(x_1^\ell,\dots, x_n^\ell)$, so 
 						our <span class="purple">(unbosonized) quantum complete intersection $R_0$</span> is $R_0=Q_0/(x_i^\ell),$ or
-						$$R_0=k\langle x_1,\dots,x_n\rangle/(x_ix_j-q_{ji}x_jx_i, x_i^\ell, x_j^\ell)$$
+						$$R_0=k\langle x_1,\dots,x_n\rangle/(x_ix_j-q_{ji}x_jx_i, x_i^\ell)$$
 					</textarea>
 				</section>
 				<section data-markdown>
@@ -328,9 +328,9 @@
 					<textarea data-template>
 						#### Equivalence of categories (<span class="olive">C</span>)
 						Using the preceding facts and $R=S/(f),$ Eisenbud proves
-						$$\underline{\mathbf{MF}}_S(f)\simeq \mathfrak C(R)$$
+						$$\underline{\mathbf{MF}}_S(f)\simeq \mathbf{MCM}(R)$$
 						where $\underline{\mathbf{MF}}_S(f)$ is the stable category of matrix factorizations of $f$ over $S$
-						and $\mathfrak{C}(R)$ are the Cohen-Macaulay modules.
+						and $\mathbf{MCM}(R)$ are the maximal Cohen-Macaulay modules.
 					</textarea>
 				</section>
 				<section data-markdown>
@@ -374,7 +374,7 @@
 						#### Our second result (<span class="rust">NC</span>)
 						Everything we have done so far was with a particular $\alpha$, but we can extend it given a suitably large field. 
 						Let $A_n^\alpha$ and $B_n^\alpha$ denote the result of replacing $x_i$ with $\sqrt[\ell]{\alpha_i}x_i$ in each.
-						<div class="thm"><strong>Corollary.</strong> Given any $\alpha\in\mathbb{P}^{n-1}$, if each $\alpha_i$ has a $p^{th}$
+						<div class="thm"><strong>Corollary.</strong> Given any $\alpha\in\mathbb{P}^{n-1}$, if each $\alpha_i$ has a $\ell^{th}$
 							root in $k$, $A_n^\alpha$ and $B_n^\alpha$ are a matrix factorization for $f_\alpha$ over $Q_0.$
 						</div>
 					</textarea>
@@ -418,7 +418,8 @@
 				<!-- PART IV - SUPPORT FOR QCIS -->
 				<section data-markdown>
 					<textarea data-template>
-						### Support for QCIs <!-- .element: class="part-title" -->
+						### Support for QCIs <!-- .element: class="part-title" style="margin-bottom:3ex;" -->
+						<span style="font-size:24pt;color:deepskyblue">Recall: for us $R_0=k_q[x_1,\dots,x_n]/(x_i^\ell)$.</span>
 					</textarea>
 				</section>
 				<section data-markdown>
@@ -438,7 +439,9 @@
 						Hypersurface support, as defined for *formally smooth deformations* in Negron and Pevtsova<sup>5</sup> is, in our case
 						<span style="font-size: 28px">$$\operatorname{supp}^\text{hyp}\_{R\_0}(M)=\\{\alpha\in\mathbb{P}^{n-1} | \operatorname{projdim}\_{\widehat{Q\_{0,\alpha}}}(M\_{0,\alpha}) =\infty \\}$$</span>
 
-						<span style="font-size: 12pt;">[5] Cris Negron and Julia Pevtsova. *Support for integrable hopf algebras via non-commutative hypersurfaces*. 2020. <a href="https://arxiv.org/pdf/2005.02965.pdf">(pdf)</a></span>
+						<span style="font-size: 12pt;">[5] Cris Negron and Julia Pevtsova. <em>Support for integrable hopf algebras via non-commutative hypersurfaces</em>. 2020. <a href="https://arxiv.org/pdf/2005.02965.pdf">(pdf)</a></span>
+
+						<span style="font-size: 12pt;">[6] Luchezar L. Avramov and Srikanth B. Iyengar. <em>Restricting homology to hypersurfaces</em>. 2018. <a href="https://arxiv.org/pdf/1803.06715.pdf">(pdf)</a></span>
 					</textarea>
 				</section>
 				<section data-markdown>
@@ -446,7 +449,7 @@
 						#### Gorenstein rings are nice
 						A lemma we prove is the following
 						<div class="thm">
-							<strong>Lemma.</strong> Let $R$ be a Gorenstein algebra and $\widehat{R}$ be its completion. Then if $M$ is a finite dimensional $R$-module and $\widehat{M}=\widehat{R}\otimes_R M$,
+							<strong>Lemma.</strong> Let $R$ be a Gorenstein algebra and $\widehat{R}$ be its completion. Then if $M$ is a finitely generated $R$-module and $\widehat{M}=\widehat{R}\otimes_R M$,
 							$$\operatorname{projdim}_{\widehat{R}}(\widehat{M})=\infty \quad\Leftrightarrow\quad \operatorname{projdim}_{R}({M})=\infty.$$
 						</div>
 						This allows us to define, alternatively,
@@ -456,15 +459,15 @@
 				<section data-markdown>
 					<textarea data-template>
 						#### Using our matrices I
-						Let $M$ be a finite dimensional $R_0$-module and fix some basis for it. Now if $P_\bullet\to k$ is a free resolution for $k$ over $Q_\alpha$, consider the tensor product
-						$$ P_\bullet\otimes_{Q_{0,\alpha}} M = \widetilde{M}_\bullet\to k\otimes M$$
-						where now each $M_i\cong M^{\oplus s_i}$ for some $s_i$.
+						Let $M$ be a finite dimensional $R_0$-module and fix some basis for it. Now if $P_\bullet\to k$ is a free resolution for $k$ over $Q_{0,\alpha}$, consider the tensor product
+						$$ P_\bullet\otimes_{Q_{0,\alpha}} M\to k\otimes M$$
+						where now each $P_i\otimes M\cong M^{\oplus s_i}$ for some $s_i$.
 					</textarea>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
 						#### Using our matrices II
-						In the case we specialize to the $Q_{0,\alpha}$-linear maps corresponding to $A_n^\alpha$ and $B_n^\alpha$, the maps
+						Since $A_n^\alpha$ and $B_n^\alpha$ are endomorphisms of $Q_{0,\alpha}^{2^{n-1}}$,
 						$$ A_n^\alpha\otimes_{Q_{0,\alpha}} \operatorname{id}\_M\quad\text{and}\quad B\_n^\alpha\otimes\_{Q\_{0,\alpha}} \operatorname{id}\_M$$
 						correspond to linear maps $M^{2^{n-1}}\to M^{2^{n-1}}$, and so to $2^{n-1}\cdot\operatorname{dim}_k(M)$ square matrices over $k$.
 					</textarea>
@@ -472,9 +475,9 @@
 				<section data-markdown>
 					<textarea data-template>
 						#### Using our matrices III
-						Set $C(M_{0,\alpha})$ to be the tensor product of the two $k$-linear maps corresponding to our factorization tensored with $M$. We show
+						Set $C(M_{0,\alpha})$ to be the direct sum of the two $k$-linear maps corresponding to our factorization tensored with $M$. Linear algebra shows
 						<div class="thm">
-							<strong>Lemma.</strong> The rank of $C(M_{0,\alpha})$ is at most $2^{n-1}\cdot\operatorname{dim}_k(M)$.
+							<strong>Observation.</strong> The rank of the square $2^n\cdot\operatorname{dim}_k(M)$ dimensional matrix $C(M_{0,\alpha})$ is at most $2^{n-1}\cdot\operatorname{dim}_k(M)$.
 						</div>
 						which motivates the following definition:
 					</textarea>
@@ -482,7 +485,7 @@
 				<section data-markdown>
 					<textarea data-template>
 						#### Rank support
-						Given an $R_0$ module, we define the <span class="rust">rank support</span> of $M$ to be
+						Given an $R_0$ module $M$, we define the <span class="rust">rank support</span> of $M$ to be
 						<span style="font-size: 28px">$$\operatorname{supp}^\text{rnk}\_{R\_0}(M)=\\{\alpha\in\mathbb{P}^{n-1}| \operatorname{rank}C(M\_{0,\alpha}) < 2^{n-1}\cdot\operatorname{dim}\_k(M)\\}$$</span>
 					</textarea>
 				</section>
@@ -500,7 +503,7 @@
 				<section data-markdown>
 					<textarea data-template>
 						#### Proof ideas
-						The gist of the previous proof is the following:
+						The gist of this proof is the following:
 						<div style="font-size:25pt">
 							<ul>
 								<li>The rank of $C(M_{0,\alpha})$ is deficient exactly when the homology of $P_\bullet\otimes M_{0,\alpha}$ is nontrivial.</li>
@@ -514,10 +517,10 @@
 				<section data-markdown>
 					<textarea data-template>
 						#### Support computation example
-						<span style="font-size:24pt">Let $n=2$ and $\ell=7$and $M=R_0/(x)$ with basis $\\{1,y,\dots,y^6\\}.$ Then $A_2^{[1:1]}\otimes \operatorname{id}_M$ corresponds to</span>
+						<span style="font-size:24pt">Let $n=2$ and $\ell=7$ and $M=k_q[x,y]/(x, y^\ell)$ with basis $\\{1,y,\dots,y^6\\}.$ Then $A_2^{[1:1]}\otimes \operatorname{id}_M$ corresponds to</span>
 						![big matrix](./images/big_matrix.jpg)
 
-						<span style="font-size:24pt">which has rank 12 when $b\ne 0$. The same is true for $B_2^{[1:1]}\otimes \operatorname{id}_M.$</span>
+						<span style="font-size:24pt">where $\zeta=\sqrt{q}.$ This has rank 12 when $b\ne 0$. The same is true for $B_2^{[1:1]}\otimes \operatorname{id}_M.$</span>
 					</textarea>
 				</section>
 				<section data-markdown>
@@ -525,6 +528,15 @@
 						#### Support computation example (cont)
 						Now since $2^{n-1}\cdot \operatorname{dim}\_k(M)=2^1\cdot 7=14$, $C(M_{0,\alpha})$ has rank $24$ if $b\ne 0$ and rank 0 otherwise. Thus 
 						$$\operatorname{supp}\_{R\_0}^\text{rnk}(M)=\operatorname{supp}\_{R_0}^\text{hyp}(M)=\\{[1:0]\\}.$$
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						#### Where are we?
+						Now we have defined objects that we have claimed represent support, but we are still missing our connection to the 
+						cohomological support of a Hopf algebra mentioned in the first section. 
+
+						The final section will reconcile this with our work so far.
 					</textarea>
 				</section>
 
@@ -557,7 +569,7 @@
 				<section data-markdown>
 					<textarea data-template>
 						#### The Yetter-Drinfel'd category
-						Let $\Gamma$ be any Hopf algebra. Then let $^\Gamma_\Gamma\mathcal{Y}\mathcal{D}$ denote <span class="olive">the Yetter-Drinfel'd category:</span> the category 
+						Let $G$ be a group and $\Gamma=kG$. Then let $^\Gamma_\Gamma\mathcal{Y}\mathcal{D}$ denote <span class="olive">the Yetter-Drinfel'd category:</span> the category 
 						of triples $(M,\cdot,\rho)$ making $M$ into a (left) $\Gamma$-module and -comodule subject to the condition 
 						$$\rho(g\cdot m)=g_1 m_{-1} S(g_3)\otimes g_2\cdot m_0$$
 					</textarea>
@@ -569,10 +581,10 @@
 						The Radford biproduct $-\\# \Gamma$ defines a functor
 						$$\mathcal C \to \mathbf{HopfAlg}\_k$$
 						where, for instance, the coproduct on $R=R_0\\#\Gamma$ is given by
-						$$\Delta_R(r\\# g)=(r\_{(1)}\\#r\_{(2)(-1)}g)\otimes(r\_{(2)(0)}\\#g).$$
+						$$\Delta_R(r\\# g)=(r\_{(1)}\\#r\_{(2)(-1)}g_1)\otimes(r\_{(2)(0)}\\#g_2).$$
 					</textarea>
 				</section>
-				<section data-markdown>
+				<!--<section data-markdown>
 					<textarea data-template>
 						#### Debosonization
 						In fact, if any Hopf algebra over $k$ has a Hopf map $\iota:kG\hookrightarrow H$ for some group $G$, along with a section $\pi:H\to kG$
@@ -580,23 +592,23 @@
 
 						These functors give us an equivalence between Hopf objects in ${^\Gamma_\Gamma\mathcal{Y}\mathcal{D}}$ and Hopf algebras admitting these maps.
 					</textarea>
-				</section>
+				</section>-->
 				<section data-markdown>
 					<textarea data-template>
 						#### Defining more objects
-						As mentioned before, $G=(\mathbb{Z}/\ell\mathbb{Z})^n$ and $\Gamma=kG.$ If $G$ is generated by $\\{e_1,\dots,e_n\\}$,
-						define the action and coaction of $\Gamma$ on $Q_0$ (and therefore $Q_{0,\alpha}$ and $R_0$) by
+						<span style="font-size:26pt">As mentioned before, $G=(\mathbb{Z}/\ell\mathbb{Z})^n$ and $\Gamma=kG.$ If $G$ is generated by $\\{e_1,\dots,e_n\\}$,
+						define the action and coaction of $\Gamma$ on $Q_0=k_q[x_1,\dots,x_n]$ (and therefore $Q_{0,\alpha}=Q_0/(f_\alpha)$ and $R_0=Q_0/(x_i^\ell)$) by
 						$$e_i\cdot x_j=q_{ji}x_j\qquad\text{and}\qquad\rho(x_j)=e_j\otimes x_j$$
-						and one can verify that these define Yetter-Drinfel'd structures over $\Gamma$.
+						and one can verify that these define Yetter-Drinfel'd structures over $\Gamma$.</span>
 					</textarea>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
 						#### Defining more objects (cont.)
-						So from now on, we let $R=R_0\\#\Gamma$, $Q=Q_0\\#\Gamma$, and $Q_\alpha=(Q_{0,\alpha}\\#\Gamma)/(f_\alpha),$ though it will sometimes make sense to use the following:
+						So from now on, we let $R=R_0\\#\Gamma$, $Q=Q_0\\#\Gamma$, and $Q_\alpha=(Q_{0}\\#\Gamma)/(f_\alpha),$ though it will sometimes make sense to use the following:
 						<div class="thm">
-							<strong>Lemma.</strong> Let $Q_0, Q_{0,\alpha}$ and $\Gamma$ be as before. Then as algebras
-							$$(Q_{0,\alpha}\#\Gamma)/(f_\alpha)\cong (Q_{0,\alpha}/(f_\alpha))\#\Gamma.$$
+							<strong>Lemma.</strong> As algebras
+							$$Q_\alpha=(Q_{0}\#\Gamma)/(f_\alpha)\cong (Q_{0,\alpha})\#\Gamma.$$
 						</div>
 					</textarea>
 				</section>
@@ -634,17 +646,21 @@
 				<section data-markdown>
 					<textarea data-template>
 						#### Putting everything together
-						Negron and Pevtsova prove in their work on smooth deformations that there is a morphism from cohomological support to hypersurface 
-						support over $R$ induced from a map in the opposite direction of graded algebras.
-						<span style="font-size:24pt">$$\kappa:\operatorname{Proj}(H^\ast(R,k))\to \operatorname{Proj}(\Sigma^{-2}\operatorname{Sym}(\mathfrak{m}_Z/\mathfrak{m}_Z^2)^\vee) $$</span>
+						Bezrukavnikov and Ginzburg<sup>7</sup> construct a morphism of graded algebras 
+						<span style="font-size:24pt">$$\phi:\operatorname{Sym}(\Sigma^{-2}(\mathfrak{m}_Z/\mathfrak{m}_Z^2)^\vee)\to H^\ast(R,k) $$</span>
+						that induces a map of projective varieties 
+						<span style="font-size:24pt">$$\kappa:\operatorname{Proj}(H^\ast(R,k))\to \operatorname{Proj}(\operatorname{Sym}(\Sigma^{-2}(\mathfrak{m}_Z/\mathfrak{m}_Z^2)^\vee))$$</span>
+
+						<span style="font-size: 12pt;">[7] Roman Bezrukavnikov and Victor Ginzburg. On deformations of associative algebras. Ann. of Math. 2007. <a href="https://arxiv.org/pdf/math/0503053.pdf">(pdf)</a></span>
+
 					</textarea>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
 						#### Things are falling into place
-						Using a sufficient condition in [NP], we show that in our case, $\kappa$ gives us all we need
+						Using a result from [NP], we show that the induced map of varieties $\kappa$ gives us all we need
 						<div class="thm">
-							<strong>Lemma.</strong> The map $\kappa$ discussed before is a <strong>closed embedding</strong> for our choice of $R$. Thus, by [NP],
+							<strong>Lemma.</strong> The map $\kappa$ discussed before is a <strong>closed embedding</strong> for our choice of $R$. Thus, by a result in [NP],
 							$$\operatorname{supp}_R^\text{coh}(M)=\operatorname{supp}_R^\text{hyp}(M)$$
 							for all $M\in R\text{-}\mathbf{mod}.$
 						</div>
@@ -652,10 +668,10 @@
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						#### The big result
+						#### The main result
 						Finally we get to the main result of the work:
 						<div class="thm">
-							<strong>Theorem.</strong> Let $M$ be an $R$-module. Then
+							<strong>Theorem.</strong> Let $M$ be a finite dimensional $R$-module. Then
 							$$\operatorname{supp}_R^\text{coh}(M)=\operatorname{supp}_R^\text{hyp}(M)=\operatorname{supp}_{R_0}^\text{hyp}(M)=\operatorname{supp}_{R_0}^\text{rnk}(M)$$
 						</div>
 					</textarea>
