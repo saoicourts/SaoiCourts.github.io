@@ -1,18 +1,10 @@
 ---
-layout: default
+layout: archive
 ---
-## Tagged: #{{page.tag}}
-<hr>
-<ul>
-{% for post in site.posts %}
-{% if post.tags contains page.tag %}
-<li>
-    <a class="post" href="{{ post.url }}">{{ post.title }}</a> 
-    <span class="postdate" style="color:#999; font-size:12pt;font-weight:normal;margin: 0 20px;"><em>{{ post.date | date_to_string }}</em></span>
-    <br />
-    <div class="smolp"><em>{{ post.description }}</em></div>
-</li>
-{% endif %}
-{% endfor %}
-</ul>
-<hr>
+
+{{ content }}
+
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+<div class="entries-{{ entries_layout }}">
+  {% include posts-tag.html taxonomy=page.taxonomy type=entries_layout %}
+</div>

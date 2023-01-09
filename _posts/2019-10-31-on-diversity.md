@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "On Diversity"
 description: "Thoughts on where I as a white man fit into the discussion on race and equity."
 tags: diversity math
@@ -21,14 +20,14 @@ After allowing my initial defensiveness to subside and getting used to the idea 
 My knee-jerk reaction to internalizing this realization is that I need to *use my privilege as a tool* in bringing about positive change in the world. I have been given power because of the world I was born into and a lucky roll of the dice, and so the only way to avoid the cognitive dissonance of benefitting from a system I recognize as corrupt and problematic is to channel any such gains into promoting equity and diversity.
 
 But of course there is a much scarier decision: the idea that I should shed the trappings of privilege altogether in the interest of making room for a person from a traditionally disadvantaged community. In my first year of grad school, Piper Harron came and gave a talk shortly after she wrote [an article](https://blogs.ams.org/inclusionexclusion/2017/05/11/get-out-the-way/) on the AMS inclusion/exclusion blog entitled "Get Out The Way" in which she starts with a startling (to me at least) idea:
-><div style="background-color:#EEE;margin=15px;"><em>Not to alarm you, but I probably want you to quit your job, or at least take a demotion. Statistically speaking, you are probably taking up room that should go to someone else. If you are a white cis man (meaning you identify as male and you were assigned male at birth) you almost certainly should resign from your position of power. That’s right, please quit.</em></div>
+><div style="margin=15px;"><em>Not to alarm you, but I probably want you to quit your job, or at least take a demotion. Statistically speaking, you are probably taking up room that should go to someone else. If you are a white cis man (meaning you identify as male and you were assigned male at birth) you almost certainly should resign from your position of power. That’s right, please quit.</em></div>
 
 Whoa.
 
 From there, the tone softens somewhat but she never fully abandons the idea that I, as a white male, am in the way of another person being successful. It puts a pit in my stomach--I want to be liked like any other human and I want to be wanted. But that sequence of statements communicates that I need to, well, Get Out The Way.
 
 Piper ends her post with the following:
-><div style="background-color:#EEE"><em>I know you’re not going to quit your job, but I want you to understand that you should. And to understand that by keeping your job and your other unearned privileges, you are running a continued debt to marginalized people and you should always be seeking ways to pay us back.</em></div>
+><div style=""><em>I know you’re not going to quit your job, but I want you to understand that you should. And to understand that by keeping your job and your other unearned privileges, you are running a continued debt to marginalized people and you should always be seeking ways to pay us back.</em></div>
 
 and my (now bruised) ego desperately clings to the idea that there is some way to even the score. But am I, as she suggests, just rationalizing my desire to keep hold of my ill-gotten gains while absolving myself of guilt? 
 
