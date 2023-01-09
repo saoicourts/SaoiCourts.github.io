@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://nicocourts.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://nicocourts.com/" rel="alternate" type="text/html" /><updated>2023-01-08T20:41:42-08:00</updated><id>https://nicocourts.com/feed.xml</id><title type="html">Nico Courts</title><subtitle>The personal website of Nico Courts, mathematician and data scientist.</subtitle><author><name>Nico Courts</name><email>nico@nicocourts.com</email></author><entry><title type="html">Power and Class</title><link href="https://nicocourts.com/power/" rel="alternate" type="text/html" title="Power and Class" /><published>2020-11-02T00:00:00-08:00</published><updated>2020-11-02T00:00:00-08:00</updated><id>https://nicocourts.com/power</id><content type="html" xml:base="https://nicocourts.com/power/"><![CDATA[<p>The world really seems to have fallen to pieces.</p>
+
+<p>We’re deep into the throes of a global pandemic where hundreds of thousands of Americans have died and millions of people across the world have experienced discomfort, 
+loss of work or wages or housing, and/or loss of loved ones. It also just happens to be a time in our country where there are enormous uprisings to demand that something be done
+to address the inequity in our country and stop our police officers from repeatedly taking black lives.</p>
+
+<p>“Ugh, 2020,” you mutter under your breath, rolling your eyes at the crazy mess that this year has brought on us. But it’s weird it has all happened at the same time, right?
+Yes, stress from one problem can aggravate hurt from other but the connection seems deeper than that. It’s easy to blame Trump for everything that is happening to us, but 
+what else could we possibly have expected from a man like that? All he is is a selfish idiot who was given the keys to the castle. Who gave him those keys? Who decided 
+that the country would best be run by an egotistical millionaire whose largest contribution to society was a reality TV show that netted us precisely one mediocre meme?
+We did. America did.</p>
+
+<p>Before you start to blame this all on our president or bad luck that these things all hit at once, consider the following:</p>
+<ul>
+  <li>Why is it that <a href="https://www.cdc.gov/coronavirus/2019-ncov/covid-data/investigations-discovery/hospitalization-death-by-race-ethnicity.html">black Americans are dying from COVID at twice the rate of white Americans</a>?</li>
+  <li>Look at the <a href="https://www.nasdaq.com/market-activity/index/ixic">YTD graph for the NASDAQ Composite</a>. Did your year recover on June 5th when the stock market did? Are the numbers on that graph accurately measuring your happiness or success?</li>
+  <li>What are the members of groups like the Proud Boys and Patriot Prayer and other white/“western” ultra-nationalist organizations channeling when their response to a pandemic and 
+racial injustice is to arm themselves and hold more rallies than ever?</li>
+</ul>
+
+<h2 id="power-structures">Power structures</h2>
+<blockquote>
+  <p>Warning: I am blending my thoughts an opinions with ones I have heard or read about. It is possible I will mischaracterize some of them at some point and I apologize for that in advance. It’s also possible that my thoughts on this will evolve as I write it or as I reflect on what I wrote. :)</p>
+</blockquote>
+
+<p>I recently was talking to some people about class as it is interpreted in socialist circles. The traditional Marxist view of class is generally thought of a binary divide between
+the <em>bourgeoisie</em> (the ones that own the “means of production”–land, factories, capital, etc) and the <em>proletariat</em> (the people who work the land and and in the factories to earn a 
+wage). A common refrain among Marxists and others is that in a capitalist society the upper class must extract value higher than the wages paid to the lower class in order to make a 
+profit. In other words, the system is, <em>by design</em>, unfair to those in the lower class. And I think any capitalists that are reading this would probably agree that this is an 
+accurate (although perhaps reductive) description of how capitalism is supposed to work.</p>
+
+<p>Anyways, back to our discussion. We were asked to talk about race and sexuality and other issues of identity and to talk about how they fit into discussions of class. My thought
+was something along the following lines: what Marx was talking about was a power differential. People belonging to the upper class (whether you believe that it was given or 
+earned or ordained from God) have an outsized power over the lower class which they can (and generally do) use to control and extort them. But it is not only money that creates 
+power differentials. There have been similar power structures in place separating men and women, white from non-white, straight from gay, and so on for nearly every dimension you 
+can consider.</p>
+
+<p>The messy intersection between class and other identity variables is the reason this is a difficult discussion to nail down (and also why it is worth having). I think the
+only conclusion for an informed, empathetic, and reasonable person is that class is inextricable from race and gender and other signifiers of identity.</p>
+
+<h2 id="power-and-individuals">Power and individuals</h2>
+<p>Let’s start by discussing how individuals view differences between people and how they incorporate these differences into their worldview to inform how they treat others.
+In my opinion, one of our greatest strengths as a species is our ability to form abstractions and quickly generalize experiences (and even stories from others) to apply 
+them to new situations. A necessary part of this skill is to quickly and reliably identify important similarities and differences in objects and situations <em>and people</em> 
+so that one can make inferences about what to expect or how one should act in order to preserve one’s safety and way of life.</p>
+
+<p>It truly is an amazing skill we have. Tech companies and universities have spent untold sums of money and dedicated huge amounts of brain power to solving the problem of how
+to teach machines to reason about new situations as “well” as humans do naturally. But one need look no further than a 
+<a href="https://www.theverge.com/21298762/face-depixelizer-ai-machine-learning-tool-pulse-stylegan-obama-bias">generative model trained to “depixelate” images</a> to realize that the 
+state of the art isn’t up to snuff. A question we should be asking ourselves: if our judgement-making machines distill situations and people down to a handful of discrete
+variables, are we ourselves subject to the same kind of bias as a machine learning algorithm?</p>
+
+<p>I think the answer is yes. And I think there are a lot of people that agree with me. For years people have warned against the danger of stereotypes and of institutional racism
+and what are these other than misclassifications our wonderful meat machines are making in the moments leading up to a decision? I have experienced many times in my life where my 
+gut instinct is wrong and based in troublesome suppositions. In many of these instances I have observed things over time that made me realize just how wrong my instincts were. 
+We have all done this. This is just growing and learning. But if we accept that our impressions of things are malleable and subject to change, it seems wrong to rely on such
+instincts in scenarios where our life and safety is not in question, but that of others is.</p>
+
+<p>Many people are interested in critically examining their own implicit bias and the bias in the systems around them, but some are not. Some are actively opposed to it. 
+I think the two most common manifestations<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> of this mindset are <strong>eradication</strong> and <strong>power assimilation.</strong> Eradication comes from a place of fear: we fear things that are different
+from us because they are not things that we know how to control. We worry that the <em>other</em> people don’t share our values and therefore pose a risk to us and our way of life.
+Eradication doesn’t necessarily mean extermination, but can also mean forcing the foreign group to assimilate (or at least become invisible), largely in hopes that once they become
+“like us,” they will no longer be a threat to us. People who seek eradication include people as violent and aggressive as the KKK and white nationalist groups as well as people who 
+espouse the joys of being “colorblind” or think that everyone should be treated equally, regardless of cultural and/or historical information.</p>
+
+<p>A more callous lot are those that wield labels and divisions in the interest of gaining power. In a way, these people are diametrically opposed to the people that seek eradication
+in that they rely on the existence of these categories to succeed. The most obvious lot here, and the ones that are the subjects of classical Marxism, are the ultra-wealthy
+who rely on the control over the means of production to continue to amass money (and thereby power) by exploiting the working class. I think that politicians, although not 
+always purely driven by money, are another group often deserving of this title. One needs to look no further than the Republican leadership (or the Democratic leadership, but 
+the former has more egregious recent violations of basic morality and humanity) to find examples of people who leverage differences in people to empower themselves. And it’s not
+just the fact that they are more wealthy than the average American (although they certainly are in general) that they leverage, but they can draw on other divides to ignite 
+our lizard brains to act out of fear to give them more of what they want: more campaign donations, another four years, wider powers with less oversight, etc.</p>
+
+<p>I think this last point is the one that some socialists make when they say that we shouldn’t allow ourselves to get caught up in issues of identity politics when what really matters
+are issues of class. And to some extent I get it. One of my pet examples in this arena is gay marriage–it was an enormous step for our country when we made it so that states had to
+officially recognize the love between same-sex partners. And while I am so happy that this occurred (it empowered my sister to get married to her wonderful partner just recently),
+I found myself at the time feeling a bit confused. We had huge debates about whether this should happen and people with strong opinions on both sides arguing about what was “right”,
+but the CEOs and the legislators, I realized, didn’t care one ounce about what was happening. Nabisco couldn’t care less whether you are allowed to marry the person you love. They
+only care about selling more Oreos. If public opinion has swayed in a way that them inserting rainbow frosting into their cookies will cause them to make more money than it costs
+to do it, they will do it. Look no further than the way that politicians’ stances on abortion and gay rights evolve over time as the opinions of their electorates change (let 
+alone the many instances of Republican politicians with anti-gay stances have been exposed for their own secret homosexual relationships). So then are the identity politics games
+we engage in just distractions from the larger discussion of who gets to have (and keep) power?</p>
+
+<h2 id="power-and-society">Power and society</h2>
+<p>While the individual mindset helps us to understand how other people have different views as us, the difference between how the average American views gay marriage as opposed to an 
+enormous conglomerate highlights that there are different levels on which we can view these issues. When we elevate our view to how these biases coalesce into systems around us, 
+we no longer see a distinction between different aims but a <em>superposition</em> of all possible incentives for upholding an idea. It is by definition reductionist to say that racism is
+purely a tool of power assimilation, but it is equally reductionist to say that it is purely a byproduct of individual fears. Hate and fear and desire for control all come together
+to form a messy institution that it is difficult to nail down, let alone address.</p>
+
+<p>Consider for a moment the following plot I created from US Census American Community Survey data for 2019 (some information about sources and some assumptions I made in visualizing this data can be found using this<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> footnote):</p>
+
+<p><img src="/assets/images/racial_income_violin.png" alt="A plot showing family income distributions for Blacks, Hispanics, Whites, and Asians" style="margin:auto; display:block;width:100%;" /></p>
+
+<p>Money is the primary factor we are visualizing here, and while your eyes might be drawn more to the differences between Asians and other groups, it’s worth recognizing the (at first glance) subtle differences between White non-Hispanics and member of the Black and Hispanic/Latino groups. The general trends are the same and the overall range covered ($0 to $250k+) are the same for each group considered, but these distributions are not the same. A simple first metric to consider is the <em>median</em>:</p>
+
+<center>
+<table style="text-align:center"> 
+    <tr>
+        <th>Racial group</th>
+        <th>Median family income (2019)</th>
+    </tr>
+    <tr>
+        <td>Black/African American</td>
+        <td>$44,124</td>
+    </tr>
+    <tr>
+        <td>Asian</td>
+        <td>$94,588</td>
+    </tr>
+    <tr>
+        <td>White (Not Hispanic/Latino)</td>
+        <td>$72,045</td>
+    </tr>
+    <tr>
+        <td>Hispanic/Latino</td>
+        <td>$56,117</td>
+    </tr>
+</table>
+</center>
+
+<p>One could argue that the median is too simple to capture the complexity of the issue and in some ways 
+they are correct. But if you are right in the middle of White America in terms of income, that puts you <strong>above 71% of Black Americans</strong>. If we plot the (experimental) <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function">cumulative distribution functions</a> for all races, 
+we get the following:</p>
+
+<p><img src="/assets/images/racial_income_cdfs.png" alt="A plot showing CDFs for family income distributions for Blacks, Hispanics, Whites, and Asians" style="margin:auto; display:block;width:100%;" /></p>
+
+<p>I like to think about these CDFs in the following way: if you draw a vertical line at any point on the 
+graph, you can consider the points where it intersects two different races’ CDFs. The difference in the y-values you find tell you something about the power differentials between the two groups. The fact above (that 50% of White Americans have more money than 71% (or more!) of their Black counterparts) is just a specific instance of this<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>.</p>
+
+<p>There are a few things to take away from this data: first, <strong>classist policies are inherently racist</strong>. 
+If a policy is enacted that, on average, benefits everyone who makes over the median<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> US salary of $68,703,
+White people could look among themselves and realize that the policy would help 52% of them and therefore
+that the policy was in their best interest. The problem is that this would only help 32% of Black people, so 
+they would see it as a bad and/or ineffective policy. Population statistics (Black people comprise about 13.4%
+of the US population, compared to 61% for non-Hispanic/Latino White people) further complicate the matter in that 
+the 68% of Black people left in the dust by such a policy would only comprise about 9% of the electorate.</p>
+
+<p>On the other hand, <strong>racist policies are inherently classist</strong>. Perhaps I am beating a dead horse, but the fact 
+of the matter is that the correlation between these two variables is high enough that it is very difficult
+or impossible to create a policy which is fair by one measure but not by the other.</p>
+
+<p>To elucidate the problem using numbers: in a preprint I recently wrote with some collaborators (<a href="https://arxiv.org/abs/2009.11253">shameless plug</a>), we investigated whether two sets of labels on the same dataset were independent using the metric of <a href="https://en.wikipedia.org/wiki/Mutual_information">mutual information</a>. Here two variables are independent if and only if their mutual information is zero. We found that two strongly correlated label sets had a mutual information of 2.318 bits. 
+In this dataset (where race is just Black/White and income is grouped by $5,000 brackets) race and income enjoy a robust 3.056 bits.</p>
+
+<h2 id="what-this-means">What this means</h2>
+<p>I would be willing to bet that most people that have made it this far are already (at least partially) sympathetic
+to the cause I a promoting and so I am, to some extent, preaching to the proverbial choir. For all of you, here’s something:
+I picked two variables that are often the subject of disagreement among people when discussing which 
+policies we, as a society, should support. I would be willing to bet most lefty people have had discussions
+about this in the past. The argument is often goes something along the lines of the following</p>
+
+<ul>
+  <li>Alicia: <em>Policy A, which disproportionately benefits billionaires, is racist</em>.</li>
+  <li>Blake: <strong>In America, we have rules that laws can’t be explicitly racist! At worst, Policy A is classist and is decided without any concern for race.</strong></li>
+  <li>Alicia: <em>That’s exactly the problem.</em></li>
+</ul>
+
+<p>at which point we leftists can walk way smugly and all the conservative tears will run in cigar lounges and country clubs across the world.
+But this same analysis tells us that choosing to rebel against the upper class is <em>functionally identical</em> to attacking
+the power structures that protect white, straight, cis, male, “Western”, and Christian people and subvert the 
+wills of the other.</p>
+
+<p>I think it is perfectly possible that a person could read through to this point in my rambling post and agree with most 
+of what I said and come to the following conclusion:</p>
+
+<blockquote>
+  <p>Fighting a war against identity politics is futile, since (as is pointed out above) it is the same as the fight against the class divide. Resolving one is resolving the other, and thus we shouldn’t let issues like race and gender distract us from our quest of attaining a more equitable society.</p>
+</blockquote>
+
+<p>I’ll admit, it’s tempting. But the problem I see with this take is that I don’t view identity politics as something that distracts
+from the issue of class. In fact, consider the following little nugget: <strong>until the fall of capitalism, the class divide will remain.</strong>
+Which, like…. duh. But if we are only interested in eliminating capitalism and the class struggle, these other fights will 
+languish and none of us can be liberated until we all are. And while that makes for a romantic statement to make in solidarity 
+with the subjugated, I would be very upset if all the complicated and venomous power structures that supported our broken 
+society remained in place until the very last moment when everything changed. What a tragedy that we would not be able to 
+alleviate the suffering even of the smallest part of society before we were completely done dismantling gargantuan system of oppression
+that hangs above us all.</p>
+
+<p>Truly a shame.</p>
+
+<h2 id="my-take">My take</h2>
+
+<p>I choose to believe that the best way to attack the whole is to dismantle the pieces that comprise it. “Go for the eyes” in demanding that 
+women be treated and paid fairly to men. “Sweep the leg” in demanding that companies actively counter <a href="https://cos.gatech.edu/facultyres/Diversity_Studies/Bertrand_LakishaJamal.pdf">biases seen in hiring against 
+people with “black sounding names”</a>. Attack the Achilles 
+heel by demanding that trans people deserve human rights and create a culture where they feel less isolated and may be less likely to 
+kill themselves for how they feel.</p>
+
+<p>These are just <em>right</em>. It’s not hard to justify such actions to yourself (or if it is, you should really take a long look at who you are
+and what makes you feel otherwise). And the plus side is that all of these fights <em>are aligned with the socialist struggle.</em> You haven’t
+wasted your time helping your fellow humans become more free and accepted and happy, you have done a good thing. And if we can push 
+the agenda for fairness and equality forward on all the other fronts except for class (which, again, is actually inexorable from these 
+other issues), we will be left in a world founded on equality and mutual empowerment in which one class is unjustly seated in a position
+of power over the other. I can’t help but think that is actually the ideal situation for dismantling the last bastion of power differential
+in society and pushing us forward into the society we all dream of.</p>
+
+<h4 id="footnotes">Footnotes</h4>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>I don’t think that these are the only two kinds of people who avoid engaging with their own implicit biases and I doubt that anyone is purely comprised of one or the other. In reality people are most likely a blend of these mindsets and more. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>I got my data from <a href="https://data.census.gov/cedsci/table?t=Income%20and%20Poverty%3ARace%20and%20Ethnicity&amp;tid=ACSDT1Y2019.B19001B&amp;hidePreview=false">here</a>, <a href="https://data.census.gov/cedsci/table?t=Income%20and%20Poverty%3ARace%20and%20Ethnicity&amp;tid=ACSDT1Y2019.B19001D&amp;hidePreview=false">here</a>, <a href="https://data.census.gov/cedsci/table?t=Income%20and%20Poverty%3ARace%20and%20Ethnicity&amp;tid=ACSDT1Y2019.B19001H&amp;hidePreview=false">here</a>, and <a href="https://data.census.gov/cedsci/table?t=Income%20and%20Poverty%3ARace%20and%20Ethnicity&amp;tid=ACSDT1Y2019.B19001I&amp;hidePreview=false">here</a>. Since we are only given the number of people in each income range, I generated data points uniformly from the range in proportion to the number of people in each range. This likely causes the “waviness” in my charts but the picture is more clear than if I had given every family the same income. Furthermore the last block is for $200k+, which I sampled uniformly from the $200-250k range. Since there are many people who make more than $250k, this is likely what causes the bulges above 200,000 (which is especially pronounced in Asians and Whites). <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>It ends up that what I am doing is a form of the <a href="https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test">Kolmogorov–Smirnov test</a>. The distributions are pretty clearly different, though, so interpreting it this way isn’t much help. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>I realize that basically no one would draw the class divide at the median income, I decided to use this because the number was <a href="https://www.census.gov/library/publications/2020/demo/p60-270.html#:~:text=Median%20household%20income%20was%20%2468%2C703,in%202019">readily available</a> and a reasonable number for illustration’s sake. In the interest of fairness, I should mention that the differences would be less stark if I chose a number closer to the upper end of the spectrum. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Nico Courts</name><email>nico@nicocourts.com</email></author><category term="socialism" /><category term="class" /><category term="power" /><category term="politics" /><summary type="html"><![CDATA[The world really seems to have fallen to pieces.]]></summary></entry><entry><title type="html">Racism and Police Brutality</title><link href="https://nicocourts.com/racism/" rel="alternate" type="text/html" title="Racism and Police Brutality" /><published>2020-06-09T00:00:00-07:00</published><updated>2020-06-09T00:00:00-07:00</updated><id>https://nicocourts.com/racism</id><content type="html" xml:base="https://nicocourts.com/racism/"><![CDATA[<blockquote>
+  <p><em>Warning: This post explicitly discusses the murder of human beings by other human beings.</em></p>
+</blockquote>
+
+<p>As always when broaching such a topic, I must preface this discussion with a disclaimer. I am a white cis male American academic and all of these
+descriptors endow me with privilege that is simply not shared by many other people. I have benefitted from generations 
+and generations of subjugation of populations that society views as “lesser than”. Whether I engage in active participation 
+in this subjugation is not relevant at all in the discussion of how I have benefitted from racist, sexist, and other 
+unjust systems throughout my life and continue to do so to this day.</p>
+
+<p>The only way for me to accept this truth and to still view myself as a good person is to do everything I can to use my 
+privilege to help make the world safer, more loving, and more accepting for the people who have suffered throughout 
+their lives that I may succeed and prosper.</p>
+
+<p>Part of the problem of advocating for the disenfranchised from a position of power is that I cannot truly understand 
+their needs and wants and I risk amplifying the wrong messages. I sincerely hope that I am accurately representing ideas
+and motives and doing what is best for people, but I am always open to listen. Any opinion that is born of an honest desire
+to make the world more equitable and just is welcome in my email inbox.</p>
+
+<p>What lies below is my best attempt to channel my rage and unease into something productive and constructive.</p>
+
+<h2 id="george-floyd">George Floyd</h2>
+<p>George Floyd<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> was murdered. By the police.</p>
+
+<p>A white person who was paid with public money knelt on his neck for eight minutes and 46 seconds despite onlookers’ desperate cries for him to let up. They weren’t calling for his release. They weren’t being hostile. They were concerned for his life and their pleas fell on deaf ears. Meanwhile the nearby police officers, through their inaction and protection of the murderous cop, silently voiced their approval of George Floyd’s asphyxiation and murder.</p>
+
+<p><strong>You don’t have to watch the video<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>—but I encourage you to.</strong> I have spoken with a few people who are generally supportive of the BLM movement and was surprised how few of them watched the video or even clips of it. Those people have never heard George Floyd plead with the officer to let him breathe. They haven’t heard him cry out for his “mama”. They haven’t heard him presciently cry out that the police were about to kill him. They haven’t watched Derek Chauvin’s indifference as he slowly and deliberately squeezed the life out of another human being. Some people didn’t watch because they felt it would be “disrespectful.” But in my opinion the most respectful thing we can do as a community is stand as witnesses to George Floyd’s murder and to then do as much as we can to ensure this never happens again.</p>
+
+<p><em>As a caveat, let me say that I recognize some people have trauma associated to this kind of thing and of course there should be exceptions to this rule. I wouldn’t want George Floyd’s children to watch the video, for instance. But I think that more people should.</em></p>
+
+<h2 id="derek-chauvin">Derek Chauvin</h2>
+
+<p>The murderer in question, Derek Chauvin, <a href="https://www.startribune.com/what-we-know-about-derek-chauvin-and-tou-thao-two-of-the-officers-caught-on-tape-in-the-death-of-george-floyd/570777632/">had shot multiple people</a> while 
+on duty, including one fatal shooting and had <a href="https://abc11.com/6229951/">received commendations</a> for some of them. He had a large 
+number of complaints on his record and a <a href="https://apnews.com/69beaad97dcea2dce6c2184e0f5b5e4e">reputation for being overly aggressive with black people</a>.</p>
+
+<p>I only mention him so that we can get context for the kind of person who is out policing people in a supposed liberal haven like Minneapolis. He was undoubtedly a bad egg among the police, but the problem runs much deeper than that. And the first problem we need to talk about is the “bad egg” mentality.</p>
+
+<h2 id="racist-police">Racist police</h2>
+<p>There are two ways to view the title of this section. One follows the “bad egg” theory: white people (myself included) have been taught throughout their lives that most police out there are there for our protection and that a few “bad eggs” sneak in and cause trouble for everyone. Did you catch the privilege there? It’s not that <em>some</em> cops aren’t in it for the right reasons, but the assumption that police are <em>by default</em> our protectors is steeped in racism.</p>
+
+<p>Many people would view the phrase “racist police” as a tautology, however. The problem is not that bad eggs somehow make it through the system, but that the system was created to enforce classist and racist norms and the police officers we end up hearing about are the ones that simply take this to their logical conclusion.</p>
+
+<p>John Oliver released a great <a href="https://www.youtube.com/watch?v=Wf4cea5oObY">video</a> describing the complicated past of the police in America, and I couldn’t possibly do the history more justice than he and his team of writers and researchers did. Suffice to say, however, that the police have always been a force that protects not all people, but the people in power. Law enforcement officers have evolved from lynch mobs and slave catchers to become official bodies that protect the interests of the powerful and influential people in the world.</p>
+
+<p>Think for a moment about what was happening the day George Floyd died. A six foot six black man walked into a convenience store and bought cigarettes. The shop owners suspected him of using a counterfeit \$20 bill and called the police, who bolted into action. From the moment they were called, they were protecting the property of a business owner. And somehow four individuals on the police force decided that it was more important to protect the interests of the business owner than to protect the life of a human being.</p>
+
+<p>How is it possible that their calculus was so wrong? That they could murder and bear witness to murder without blinking an eye over some lost capital? Without hesitation they committed one of the most heinous acts a human can commit because a store owner lost <em>twenty fucking dollars.</em> The only reasonable conclusion I can draw from this is that the police do not serve the people, but sources of capital in our country.</p>
+
+<h2 id="capitalism-vs-the-people">Capitalism vs. the people</h2>
+<p>Don’t get me wrong. I like the capitalist ideal of “every person gets what they earn.” It seems <em>fair</em>, in some ways. At least as long as you don’t think to hard about the edge cases.</p>
+
+<p>What about disabled people, for instance? They may not be physically or mentally capable of earning their fair share–should they then be forced to be houseless or unfed? Every bone in my body rages against that eventuality. So exceptions must be made. But where does the line get drawn? I suppose this is the root cause of many arguments I have had with many people about social programs. At what point do we say “this life is meaningful and worth investing money into and this one is not”?</p>
+
+<p>I can’t draw the line. I think everyone’s life is meaningful and that a wealthy and successful society such as ours with a surplus of food, land, and resources has no reason to do so except for <strong>greed and antipathy.</strong></p>
+
+<p>But the police are born of a culture that was founded in the naïve idea that capitalism was the best system for everyone and their priorities are clear: they are here to protect against theft and destruction of property and wealth (and crimes against the generators thereof), even if that means they have to maim or kill the would-be perpetrators in doing so.</p>
+
+<p>The corruption of motives reaches far beyond just our police, though, to our entire criminal justice system and beyond. Perceived “capital non-generators” (read: poor and/or non-white) are more frequently arrested for crimes and are given harsher sentences than their “capital generating” (read: rich and/or white) counterparts. But that is for another post.</p>
+
+<p>It is no wonder, then, that some people call for the complete abolishment of police. This is a relatively young idea in many people’s mind (including my own) and many issues need to be addressed, but it is hard to argue that a government-sanctioned militia which primarily serves to protect the interests of the sources of capital in our society at the expense of its people needs to be abolished.</p>
+
+<h2 id="racism-abound">Racism abound</h2>
+<p>Racism is not just present in the police, of course. It is present in our president, for instance, and in thousands of his adherents. It is baked into our society at all different levels in different amounts and in sometimes insidious ways.</p>
+
+<p>My partner and I recently attended a march organized by healthcare professionals where we heard multiple black doctors and patients talk about how the idea that “black people just get more of certain diseases” is racist. On the one hand, it serves as mental baggage that we require all black people to carry around. Medical professionals with fancy degrees and white coats tell us all that black people just get sick and that becomes their burden to bear. Even more seriously, such proclamations serve as conversation enders rather than invitations to sniff out the root cause of these problems. Black neighborhoods are often relegated to “undesirable” places, such as next to freeways. It is hardly surprising that black children being raised in these areas would have a higher prevalence of asthma, then. Black people are more often located in <a href="https://en.wikipedia.org/wiki/Food_desert">food deserts</a> than white people. Is it any wonder that they more frequently develop diabetes?</p>
+
+<p>Another example from that same march: I saw a person with a bright vest with the words “Humanity and Speaking Up $\neq$ Violence, Looting, or <span style="text-decoration:underline">Hooliganism</span>”:</p>
+
+<p><img src="/assets/images/hooliganism.jpg" alt="A vest at the healthcare workers march" style="margin:auto; display:block;width:3in;" /></p>
+
+<p>I think what she meant to convey by her vest is that peaceful protest is distinct from violent protest. And in some ways I can sympathize with her intent. But inherent in her statement is the fact that somehow those that cause violence and looting are not speaking up properly or (worse) are inhuman; it is with this implication that I take umbrage.</p>
+
+<p>Her statement is laced with poison that we have all swallowed wrapped in the promise of the American dream: earning and maintaining control over capital is the only way to be human and to have a voice. Those that destroy property and vandalize are not part of our society.</p>
+
+<p>And to some extent she is right… but she shouldn’t be. To punt to another YouTube video would be irresponsible on my part, but I am going to do it anyways. Trevor Noah had a <a href="https://www.youtube.com/watch?v=v4amCfVbA_c">great video about the social contract</a> we all share as part of society. In this video he explains how we all have an agreement with the police and people in power to follow the laws of the land in exchange for being protected and taken care of. Through years of abuse spanning negligence to murder, the police and the criminal justice system have failed to hold up their end of the deal. Therefore the people have decided that the social contract is void and have begun attacking the property of people with capital.</p>
+
+<p>Notice that they are not burning down homes. The goal of these actions is not to kill people. Even in the depths of their rage and frustration, they never desire that. They attack the police cars and police stations–the tools and refuges of their oppressors. They attack Target and other businesses and take or destroy their property and money. They see the trappings of wealth and success as what they have become in our society: instruments of power. They are manually dismantling the structures that are (literally) killing them. These people are rallying against oppression, not simply wanting the world to burn.</p>
+
+<p>I do not personally enjoy destroying property and haven’t participated in that, but I think it is absolutely wrong to demonize the people on the streets rioting for their lives and to separate them from the movement that we like to highlight as “peaceful protest.” What would you do if the police were literally killing your kind? Pretend the oppressors are foreign invaders or Nazis, if that helps you envision it. Do whatever you need to to understand but don’t you dare call people flailing to protect themselves “hooligans.”</p>
+
+<h2 id="in-conclusion">In conclusion</h2>
+<p>George Floyd wasn’t the first black person to die at the hands of the police and won’t be the last. And while the police are the ones out using their guns and tasers and knees on our fellow humans, they are not an aberration–some cancerous mutation on the otherwise-healthy body of the United States–but a distilled essence of our racism pervading our society.</p>
+
+<p>I don’t expect everyone in the world to agree that raw, unfettered capitalism is to blame for the ills of society. I think that is probably too simplistic a view anyways. But hopefully I have at least enlivened some thoughts in your head about the value one has to place on certain human beings’ lives to decide they are not worth investing in and how that value fuels inequity and leads us down the path to violence and upheaval.</p>
+
+<hr />
+
+<h1 id="how-we-can-help-here-and-now">How we can help (here and now)</h1>
+<p>Setting aside for a moment the deep-set racist ideas in our country and institutions, we are in the middle of a crisis for people of color. I feel like it is necessary to remind people of ways that they can take action right here and now to help our fellow humans to survive this tumultuous time.</p>
+
+<p>There is no one “right” way to help and there are a lot of differing opinions on what we can do to support black Americans in this 
+time. <a href="https://www.reddit.com/r/Seattle/comments/gwbd08/seattle_protests_resource_megathread/?utm_source=share&amp;utm_medium=ios_app&amp;utm_name=iossmf">This</a>, for instance, is a crowdsourced list of resources and ideas you can find on Reddit (which is mostly relevant to the Seattle area). I will also list some ideas that I find meaningful:</p>
+<ul>
+  <li><strong>Go to protests</strong>: Show up in droves and show everyone in the country and the world that this is something we all care about and that this isn’t something we’re willing to accept. Already governments and people in power have begun to take notice. Keep pushing. Make them listen to us.</li>
+  <li><strong>Give money</strong>: Certain people already have the resource pipelines in place to get money where it needs to be to support protestors and advocates for change. Finding a reputable organization can help allocate your money most efficiently. Some ideas:
+    <ul>
+      <li><a href="https://www.aclu.org/">The ACLU</a> has long stood up for the civil liberties of Americans, with special focus put on criminal justice reform and the plight of disenfranchised populations in the country.</li>
+      <li><a href="https://www.naacp.org/">The NAACP</a> is an organization that has rallied around promoting justice and equality for black people.</li>
+      <li><a href="https://www.joincampaignzero.org/">Campaign Zero</a> is an organization with an evidence- and research-based approach to abolishing the police. They are also the ones who began the <a href="https://8cantwait.org/">8 Can’t Wait</a> campaign for police reform, which they view as a first step towards total abolition.</li>
+      <li><strong>Local community-based organizations</strong>: This one requires some research from you if you don’t live in Seattle. For the rest of you, however, some examples I have found include:
+        <ul>
+          <li><a href="https://www.notthistime.global/">Not This Time</a>, an organization founded by the brother of a man who was shot and killed by police who has since turned his life towards ending police brutality and on criminal justice reform as well as supporting the families of those affected by police violence. They also organized a large march in Seattle early on and regularly provides community-building opportunities for black seattleites.</li>
+          <li><a href="https://blacklivesseattle.org/">Black Lives Matter Seattle</a> is a local chapter of the Black Lives Matter movement who focuses on black lives in our community and “dismantl[ing] anti-black systems and policies of oppression.”</li>
+        </ul>
+      </li>
+      <li><strong>Bail funds</strong>: I am not well-versed in which funds are the best to give to, but there are several people online who will gladly point you in the right direction. These funds enable people on the front lines of protests to face down oppression without fear of being put in jail. A case can be made that if you don’t take part in demonstrations you should support those that do. This may be one way to do that.</li>
+    </ul>
+  </li>
+  <li><strong>Vote</strong>: I understand people who find calls to operate within the current system distasteful. It hasn’t been enough in the past and it just isn’t likely to solve our problems alone. But regardless of what you hear, there are still people out there who have faith in the democratic process and they are most likely to be convinced if we band together to vote in people and policies that promote equity and denounce police violence and militarization.</li>
+  <li><strong>Support your black friends and family</strong>: I am not well-enough equipped to give you real advice on how to do this and this is a very delicate situation that you should not barge into blindly. All I can recommend is this: do what you can to make sure that the black people in your life have a support net. Do good, but do not overburden them with your desire to do so. Love your fellow humans. Understand their rage or fear or apathy as human reactions. Ask others who know more than me how you can act supportively.</li>
+</ul>
+
+<p>As I mentioned earlier, I welcome thoughtful and well-intentioned disagreements. Hatred is not welcomed in my space.</p>
+
+<p>Love one another. Take action to help one another. Be a better, more loving person every day.</p>
+
+<h4 id="footnotes">Footnotes</h4>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Of course, there is a long list of black Americans who have been murdered by police and even more that have suffered extreme punishments at the hands of the criminal justice system in this country just because of the color of their skin. George Floyd’s case is simply the most recent and well-documented case at this time. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>I think the <a href="https://www.nytimes.com/2020/05/31/us/george-floyd-investigation.html">video spliced together by the NYT</a> did a good job at portraying this gruesome act, but I expect others will feel differently. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Nico Courts</name><email>nico@nicocourts.com</email></author><category term="diversity" /><category term="blm" /><category term="capitalism" /><category term="politics" /><summary type="html"><![CDATA[Black Lives Matter. We talk about that as well as the term "racist police."]]></summary></entry><entry><title type="html">On Diversity</title><link href="https://nicocourts.com/on-diversity/" rel="alternate" type="text/html" title="On Diversity" /><published>2019-10-31T00:00:00-07:00</published><updated>2019-10-31T00:00:00-07:00</updated><id>https://nicocourts.com/on-diversity</id><content type="html" xml:base="https://nicocourts.com/on-diversity/"><![CDATA[<p>Recently I have been having a lot of thoughts about diversity in mathematics (and STEM at large) and what it means to be a white cis male in favor of diversity. Below are some of my thoughts on the matter. If you have any ideas or input feel free to <a href="mailto:ncourts@uw.edu">email me</a> and let me know what you think.</p>
+
+<h3 id="approaching-from-the-outside">Approaching from the outside</h3>
+<p>Diversity is a complicated subject to talk and think about. I have given a bit of thought to the matter and I truly and honestly believe that basically any population of people can benefit from having a representative slice of the broader population included. All too often in history we see examples of when a group of people (let’s be honest here–usually rich, white men) make a decision that they think is in the best interest of society and it ends up that they either misunderstand or completely undermine the needs of populations other than their own.</p>
+
+<p>From a less pragmatic and more personal point of view, I also just think that variety in thought, experience, temperment, and cultural background is healthy to a functioning society and is what inspires us to be our most creative, compassionate, and most wonderful selves.</p>
+
+<p>As far as my personal background is concerned, I am a white dude who was assigned such at birth who grew up in a upper-middle-class family in a white Christian suburb of LA. I spent all of my childhood surrounded by white people and had lots of white, male role models to look up to. I have always tended to be more comfortable discussing things with women than men, but it has never been difficult for me to see myself in a position of success in my future. I identify as bi-/pansexual but have never felt a sense of belonging in the LGBT community and furthermore have usually had the privilege of presenting as straight (my partner is a woman, for instance). So I have benefitted greatly from the systems in place that favor whiteness, heterosexuality, cisgender identity, and masculinity.</p>
+
+<p>Throughout my development from a child into an adult I have been challenged (and rightfully so) with my privilege and have been asked to think about the fact that my experiences are <em>not universal</em> and that there are people that are just as deserving of success and happiness that are denied access to these because of the configuration of their chromosomes and the way they have been traditionally viewed in society. These are very rarely easy things to think about. I don’t think anyone wants to feel responsible for the pain and suffering of people and the idea that any success I have had has been <em>in direct opposition</em> to the success of others is a tough pill to swallow.</p>
+
+<p>After allowing my initial defensiveness to subside and getting used to the idea that, to some extent, I have profited from corrupt and hateful institutions, the only way forward I see for myself (if I am going to be able to sleep at night) is to be an agent for positive change.</p>
+
+<h3 id="use-it-or-lose-it">Use it or lose it?</h3>
+<p>My knee-jerk reaction to internalizing this realization is that I need to <em>use my privilege as a tool</em> in bringing about positive change in the world. I have been given power because of the world I was born into and a lucky roll of the dice, and so the only way to avoid the cognitive dissonance of benefitting from a system I recognize as corrupt and problematic is to channel any such gains into promoting equity and diversity.</p>
+
+<p>But of course there is a much scarier decision: the idea that I should shed the trappings of privilege altogether in the interest of making room for a person from a traditionally disadvantaged community. In my first year of grad school, Piper Harron came and gave a talk shortly after she wrote <a href="https://blogs.ams.org/inclusionexclusion/2017/05/11/get-out-the-way/">an article</a> on the AMS inclusion/exclusion blog entitled “Get Out The Way” in which she starts with a startling (to me at least) idea:</p>
+<blockquote>
+  <div style="margin=15px;"><em>Not to alarm you, but I probably want you to quit your job, or at least take a demotion. Statistically speaking, you are probably taking up room that should go to someone else. If you are a white cis man (meaning you identify as male and you were assigned male at birth) you almost certainly should resign from your position of power. That’s right, please quit.</em></div>
+</blockquote>
+
+<p>Whoa.</p>
+
+<p>From there, the tone softens somewhat but she never fully abandons the idea that I, as a white male, am in the way of another person being successful. It puts a pit in my stomach–I want to be liked like any other human and I want to be wanted. But that sequence of statements communicates that I need to, well, Get Out The Way.</p>
+
+<p>Piper ends her post with the following:</p>
+<blockquote>
+  <div style=""><em>I know you’re not going to quit your job, but I want you to understand that you should. And to understand that by keeping your job and your other unearned privileges, you are running a continued debt to marginalized people and you should always be seeking ways to pay us back.</em></div>
+</blockquote>
+
+<p>and my (now bruised) ego desperately clings to the idea that there is some way to even the score. But am I, as she suggests, just rationalizing my desire to keep hold of my ill-gotten gains while absolving myself of guilt?</p>
+
+<p>Probably. At least to some degree.</p>
+
+<p>I vacillate between complacence with my current trajectory and questioning my very presence in this program and in society on a pretty regular basis. I think (hope?) that my position as a person who thinks actively about his privilege and tries to act in ways that support changing old institutions of exclusion makes my presence a net positive but sometimes I wonder if that is truly the case.</p>
+
+<p>Certainly my presence is better than that of an outright racist, sexist, or other bigot, but is that really the right yardstick to measure oneself by? At the end of the day, I am another white, cis dude in math perpetuating a stereotype through my very existence.</p>
+
+<h3 id="want-something-done-then-do-it-yourself">Want something done? Then do it yourself…</h3>
+<p>There is a problem in this discussion that lies right beneath the surface of this conversation, and that is the problem of overtaxing people of under-represented minorities in the struggle for better representation. I remember when I first heard someone talk about this feeling being surprised it hadn’t occurred to me before. Of course! The very fact that these populations are under-represented in math means that they are disproportionately called upon to be role models for diversity. Especially in an environment where everyone (at least in theory) supports diversity, these people have a large amount of pressure placed upon them and they can very easily become fatigued and perhaps even burn out and fail to become successful mathematicians themselves in the process.</p>
+
+<p>When the (female) grad students who started the <a href="https://sites.uw.edu/wdrp/">WDRP</a> were considering stepping down last year, there was a discussion about whether their efforts could be more successfully applied in roles where they were more visible to the community. I whole-heartedly supported their transition and this is the main reason I stepped forward to help with the administrative tasks behind the scenes. I saw this as the perfect opportunity to provide a service to the mathematical community as well as to expend some of my free energy towards creating a better, more diverse mathematical population. The very same energy (as well as my past frustrations with prelims and how the grad program was structured) spurred me on to also serve the department and my fellow grad students as graduate student representative.</p>
+
+<p>In this new position of power, I felt like I could use my unique perspective of the student body and of the administration and of diversity efforts to help to allocate resources to people and programs in need. In trying to build some kind of collaboration with minority groups in math, I found what I felt was a major oversight: there was a student chapter of <a href="https://awm-math.org/">AWM</a> to support women in math, but people of color and queer folk and other populations didn’t have a student-oriented group looking out for their well-being. Such a group, I figured, could help programs such as the WDRP that are led by white men but interested in helping in the fight for diversity to figure out the best way to tailor their efforts to help. Furthermore, this group could act by being sensitive to the complaints and needs of under-represented groups and make sure that their voices are being heard at all levels. Support from me as GSR and from the faculty diversity committee could ensure that this committee had a direct line to administration and to faculty at large and empower them to bring about change that could help them most.</p>
+
+<p>I have been (and continue to be!) excited by the prospect of such a group. I don’t think I have much of a role to play on the committee itself, but I figured that I could help organize things and get some initial energy put into it. And so I started talking to people about my ideas.</p>
+
+<h3 id="but-probably-it-should-be-done-by-someone-else">But probably it should be done by someone else</h3>
+<p>Unfortunately (seriously this makes me very sad), the impression I get is that I kind of have no business suggesting this. I have tried floating the idea past a few people in the department who fall into these groups and have gotten mixed responses overall. Mostly people are on-board for the general idea of diversity and representation, but most of my discussions have died off over time.</p>
+
+<p>At first, I attributed this to the fact that I was, in essence, asking students (who are already busy with teaching and learning) to add another meeting to their already-busy schedules to participate in bureaucracy. Fair–it’s not the most glamorous thing in the world.</p>
+
+<p>But this morning I had a discussion with some people who made me think that maybe the entire problem is that I am trying to start something that under-represented groups don’t really want. Were my efforts to reach out to my friends and colleagues to garner support for my ideas actually just a form of oppression hidden under a veil of “wokeness”?</p>
+
+<p>I mean, I get it to some degree. I don’t want to shove my ideas about how to “do diversity” down the throats of those people I am supposed to be helping. I honestly felt that I had a unique perspective that enabled me to see a problem that needed solving. But I suppose the road to hell is paved with good intentions.</p>
+
+<h3 id="a-more-frightening-perspective">A more frightening perspective</h3>
+<p>In my discussion this morning, I felt there was even an implicit question about whether I had a role to play at all in starting such efforts. And so we return to Piper Harron’s blog post. Is my position of privilege immediately a disqualifying attribute in terms of enacting positive change?</p>
+
+<p>It’s a very frustrating proposition. I want to help and the weight of my guilt for profiting off of the backs of the less-fortunate makes me desperately look for ways to help but maybe it’s something I can never do.</p>
+
+<p>It feels somewhat unfair that people who deny their privilege are the only ones that are able to escape the weight of guilt they should carry. To be clear, I categorically denounce anyone who refuses to recognize that their privilege has come at the expense of others’ happiness and success. But I suppose I am frustrated with the fact that these people “get away with it.”</p>
+
+<p>I know that my frustration is, in fact, another manifestation of my privilege—that I don’t feel like I should have to carry its burden. So in the end (the way this train of thought always ends) I am happy that I am empathetic enough to understand the ramifications of my existence and to want for the best for everyone around me (and elsewhere).</p>
+
+<h3 id="moving-forward">Moving forward</h3>
+<p>Of course the main takeaway from this whole experience is to continue to respect the best interests of under-represented populations in every way I can. This includes taking my lumps on my misguided ideas and accepting that I was mistaken in trying to impress my ideas upon the unwilling.</p>
+
+<p>I hope that one day I can get to a point where I can feel useful and empowered in making others feel useful and empowered. It is the best possible world I can imagine and I want so desperately to make that happen. Identity politics is such a difficult topic, and I have no pretense about how to best help rectify the damage that has already been done, but I really want (perhaps selfishly) to find a role where I can be part of making a better future happen.</p>
+
+<p>But is aligning one’s own best interests with the best interests of others truly a selfish act? Perhaps. But maybe it’s the best I can hope for from myself.</p>
+
+<p>I can only hope it is enough.</p>]]></content><author><name>Nico Courts</name><email>nico@nicocourts.com</email></author><category term="diversity" /><category term="math" /><summary type="html"><![CDATA[Thoughts on where I as a white man fit into the discussion on race and equity.]]></summary></entry></feed>
