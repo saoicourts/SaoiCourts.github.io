@@ -93,7 +93,6 @@
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
-
   </head>
 
   <body class="layout--single">
@@ -116,7 +115,13 @@
           
           <span class="site-subtitle"></span>
         </a>
-        <ul class="visible-links"></ul>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/">Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/publications/">Publications</a>
+            </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
@@ -612,33 +617,62 @@ time. <a href="https://www.reddit.com/r/Seattle/comments/gwbd08/seattle_protests
         <div class="page__footer-follow">
   <ul class="social-icons">
     
-      <li><strong>Follow:</strong></li>
+    <li><strong>Follow:</strong></li>
     
 
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
     
-      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    <li><a
+        href="/feed.xml"><i
+          class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
     
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2023 Nico Courts. Happily powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2023 Nico Courts. Happily powered by <a href="https://jekyllrb.com"
+    rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/"
+    rel="nofollow">Minimal Mistakes</a>.</div>
+<script>
+  window.onload = function () {
+    var codeBlocks = document.querySelectorAll('pre.highlight');
 
+    codeBlocks.forEach(function (codeBlock) {
+      var copyButton = document.createElement('button');
+      copyButton.className = 'copy';
+      copyButton.type = 'button';
+      copyButton.ariaLabel = 'Copy code to clipboard';
+      copyButton.innerText = 'Copy';
+
+      codeBlock.append(copyButton);
+
+      copyButton.addEventListener('click', function () {
+        var code = codeBlock.querySelector('code').innerText.trim();
+        window.navigator.clipboard.writeText(code);
+
+        copyButton.innerText = 'Copied';
+
+        setTimeout(function () {
+          copyButton.innerText = 'Copy';
+        }, 2000);
+      });
+    });
+  };
+</script>
       </footer>
     </div>
 

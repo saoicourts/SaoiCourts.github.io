@@ -16,4 +16,40 @@ var store = [{
         "tags": ["socialism","class","power","politics"],
         "url": "/power/",
         "teaser": "/assets/images/vector.webp"
+      },{
+        "title": "Bundle Networks: Fiber Bundles, Local Trivializations, and a Generative Approach to Exploring Many-to-one Maps",
+        "excerpt":"Abstract: Many-to-one maps are ubiquitous in machine learning, from the image recognition model that assigns a multitude of distinct images to the concept of “cat” to the time series forecasting model which assigns a range of distinct time-series to a single scalar regression value. While the primary use of such...","categories": [],
+        "tags": [],
+        "url": "/publications/bundlenets/",
+        "teaser": "/assets/images/vector.webp"
+      },{
+        "title": "Representations and Support Theory for Bosonized Quantum Complete Intersections",
+        "excerpt":"Abstract: Support theories are frequently used by representation theorists when trying to understand module categories with complicated structure. We associate to an algebra A a variety where the topological structure is determined by the support of modules over A. Support comes in many flavors, from the easily described (but computationally...","categories": [],
+        "tags": [],
+        "url": "/publications/dissertation/",
+        "teaser": "/assets/images/vector.webp"
+      },{
+        "title": "Fiber Bundle Morphisms as a Framework for Modeling Many-to-Many Maps ",
+        "excerpt":"Abstract: While it is not generally reflected in the `nice’ datasets used for benchmarking machine learning algorithms, the real-world is full of processes that would be best described as many-to-many. That is, a single input can potentially yield many different outputs (whether due to noise, imperfect measurement, or intrinsic stochasticity...","categories": [],
+        "tags": [],
+        "url": "/publications/fb-morphisms/",
+        "teaser": "/assets/images/vector.webp"
+      },{
+        "title": "Fuzzy Simplicial Networks: A Topology-Inspired Model to Improve Task Generalization in Few-shot Learning",
+        "excerpt":"Abstract: Deep learning has shown great success in settings with massive amounts of data but has struggled when data is limited. Few-shot learning algorithms, which seek to address this limitation, are designed to generalize well to new tasks with limited data. Typically, models are evaluated on unseen classes and datasets...","categories": [],
+        "tags": [],
+        "url": "/publications/fuzzy/",
+        "teaser": "/assets/images/vector.webp"
+      },{
+        "title": "Schur Duality and Strict Polynomial Functors",
+        "excerpt":"Abstract: We begin by going through a considerable amount of domain knowledge concerning representations of GL⁡n\\operatorname{GL}_nGLn​, representations of Sn\\mathfrak S_nSn​, tracing the development from the classical study of group representations by Schur and Weyl and the transformation of this theory in the more robust language of affine group schemes. From...","categories": [],
+        "tags": [],
+        "url": "/publications/masters-thesis/",
+        "teaser": "/assets/images/vector.webp"
+      },{
+        "title": "One Representation to Rule Them All: Identifying Out-of-Support Examples in Few-shot Learning with Generic Representations",
+        "excerpt":"Abstract: The field of few-shot learning has made remarkable strides in developing powerful models that can operate in the small data regime. Nearly all of these methods assume every unlabeled instance encountered will belong to a handful of known classes for which one has examples. This can be problematic for...","categories": [],
+        "tags": [],
+        "url": "/publications/out-of-support/",
+        "teaser": "/assets/images/vector.webp"
       }]
