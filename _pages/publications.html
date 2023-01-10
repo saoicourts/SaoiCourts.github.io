@@ -1,0 +1,41 @@
+---
+layout: single
+title: Publications
+permalink: /publications/
+author_profile: true
+---
+
+{% assign publications = site.publications | sort: "year" | reverse %}
+{% assign pubsByYear = publications | group_by_exp: 'publication', 'publication.year' %}
+{% for year in pubsByYear %}
+<section id="{{ year.name }}" class="taxonomy__section">
+    <h2 class="archive__subtitle">{{ year.name }}</h2>
+    <div class="entries-{{ entries_layout }}">
+        {% for pub in year.items %}
+        <div class="pubitem">
+            <div class="pubteaser">
+                <a href="{{pub.url}}">
+                    {% if pub.img %}
+                    <img src="/assets/images/{{ pub.img }}" alt="{{pub.slug}} publication teaser" />
+                    {% else %}
+                    <img src="/assets/images/vector.webp" alt="{{pub.slug}} publication teaser" />
+                    {% endif %}
+                </a>
+            </div>
+            <div class="pubcontent">
+                <div class="pubtitle">{{ pub.title }}</div>
+                <div class="pubauthors">{{ pub.authors }}</div>
+                <div class="pubinfo">{{ pub.publication }}, {{ pub.year}}</div>
+                <div class="publinks">
+                    {% for link in pub.links %}
+                    <a href="{{ link.url }}"><i class="{{ link.icon }}"></i> {{ link.text }}</a>&nbsp;&nbsp;
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }}
+        &uarr;</a>
+</section>
+{% endfor %}

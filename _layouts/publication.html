@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div id="main" role="main">
+    {% include sidebar.html %}
+
+    <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+
+        <div class="page__inner-wrap">
+            <section class="page__content e-content" itemprop="text">
+                <div class="pubitem">
+                    <div class="pubteaser">
+                        {% if page.img %}
+                        <img src="/assets/images/{{ page.img }}" alt="{{slug}} publication teaser" />
+                        {% else %}
+                        <img src="/assets/images/vector.webp" alt="Placeholder publication teaser" />
+                        {% endif %}
+                    </div>
+                    <div class="pubcontent">
+                        <div class="pubtitle">{{ page.title }}</div>
+                        <div class="pubauthors">{{ page.authors }}</div>
+                        <div class="pubinfo">{{ page.publication }}, {{ page.year}}</div>
+                        <div class="publinks">
+                            {% for link in page.links %}
+                            <a href="{{ link.url }}"><i class="{{ link.icon }}"></i> {{ link.text }}</a>&nbsp;&nbsp;
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class='pubtext'>{{ content }}</div>
+            </section>
+        </div>
+
+    </article>
+</div>
+</div>

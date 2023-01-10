@@ -292,3 +292,15 @@ defaults:
       toc: true
       toc_sticky: true
       toc_icon: map-pin
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: single
+      author_profile: true
+      share: false
+
+collections:
+  publications:
+    output: true 
+    permalink: /:collection/:path/

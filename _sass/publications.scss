@@ -1,0 +1,42 @@
+.pubitem {
+    margin: 2em 0;
+    line-height: 1em;
+}
+
+.pubtitle {
+    margin-bottom: 0.5em;
+    line-height: 1.2em;
+    font-weight: bold;
+}
+
+.pubauthors,
+.pubinfo {
+    font-size: 75%;
+    margin-bottom: 0.75em;
+}
+
+.publinks {
+    font-size: 75%;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.pubteaser {
+    clear: both;
+}
+
+.pubteaser {
+    float: left;
+    margin-right: 2em;
+}
+
+.pubteaser img {
+    width: 100px;
+    border: 1px solid white;
+}
+
+.pubtext {
+    margin-top: 2em;
+}
