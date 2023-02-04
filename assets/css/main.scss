@@ -5,5 +5,24 @@ search: false
 
 @charset "utf-8";
 
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+.center-img {
+    margin: auto;
+    display: block;
+}
+
+span.katex {
+    font-size: 1em;
+}
+
+::selection {
+    background: #3fd5ce47;
+}
+
+.site-title {
+    font-family: "Reenie Beanie";
+    font-size: x-large;
+}
