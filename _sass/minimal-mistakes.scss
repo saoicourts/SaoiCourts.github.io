@@ -40,4 +40,10 @@
 @import "minimal-mistakes/print";
 
 /* Custom CSS for publist */
-@import "publications"
+@import "publications";
+
+/* Custom CSS for definitions etc*/
+@import "theorem";
+
+/* Assorted custom CSS */
+@import "user";

@@ -133,4 +133,9 @@ $(function() {
       $(this).append(anchor);
     }
   });
+
+  // Make the aside "Show" spans functional
+  $('span.show-aside').on("click", function(){
+    $( this ).siblings('span').toggle()
+  })
 });

@@ -8,10 +8,10 @@ img: dissertation.png
 links:
     - text: PDF
       icon: far fa-file-pdf
-      url: https://digital.lib.washington.edu/researchworks/bitstream/handle/1773/49080/Courts_washington_0250E_24203.pdf?sequence=1&isAllowed=y
+      url: https://digital.lib.washington.edu/researchworks/bitstream/handle/1773/49080/Courts_washington_0250E_24203.pdf
     - text: ProQuest
       icon: fas fa-globe
-      url: https://arxiv.org/abs/2106.01423
+      url: https://www.proquest.com/openview/4aac11f5904446f8e82dffd0aca5e84d/
     - text: Source files
       icon: fab fa-fw fa-github
       url: https://github.com/NicoCourts/Dissertation

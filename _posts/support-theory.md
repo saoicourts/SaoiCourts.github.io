@@ -1,9 +1,7 @@
 ---
-layout: post
 title: "Support in Representation Theory and Beyond"
 description: "We talk about the idea of 'support' as it arises in different fields of math and the role it plays in modern representation theory."
 tags: math rep-theory alg-geom
-comments: False
 ---
 For quite a while I have been planning on writing a blog post on something
 that I know about more than the average Joe. My crippling case of impostor syndrome in math, however, has kept me from 
@@ -13,15 +11,13 @@ about issues of race and inequity). I have been feeling relatively good
 about myself recently, however, so I figured I would give this a go.
 
 In what follows, I am going to do the best to trace the idea of "support" 
-through different subjects in math and to then talk about the role it plays
+through different subjects in math and to then talk about the role it plays 
 in modern representation theory. I will do my best to keep things as self-contained
 as possible, but it is possible it will be necessary for the reader to hold their nose at certain 
 points and be willing to accept results at face value. 
 
+{% katexmm %}
 I will assume the reader is okay with (or willing to look up) the following concepts:
-- **Basic set theory** -- Can you grasp the ideas of [functions](https://en.wikipedia.org/wiki/Function_(mathematics)) and
-[sets](https://en.wikipedia.org/wiki/Set_(mathematics)) as well as some common examples
-(e.g. [$\mathbb{R}$](https://en.wikipedia.org/wiki/Real_number) and [$\mathbb{Z}$](https://en.wikipedia.org/wiki/Integer))? Then you're probably fine here.
 - **Basic category theory** -- If you're willing to just look up the definitions of 
 a [category](https://en.wikipedia.org/wiki/Category_(mathematics)) and a 
 [functor between categories](https://en.wikipedia.org/wiki/Functor) (perhaps several times),
@@ -29,13 +25,15 @@ I will try to keep the abstract nonsense to a minimum (at least as much as is po
 - **Abstract algebra** -- If you don't know exactly what I mean by "abstract," you probably
 don't know it. That's okay! I will try to provide descriptions and links as I go in 
 case you aren't familiar with them.
+- **Some light (algebraic) geometry** -- The idea of support (and a lot of interesting
+math, really) includes geometry and I tend to be a visual reasoner so it appeals to me 
+quite a bit to include some talk towards the end about [sheaves](https://en.wikipedia.org/wiki/Sheaf_(mathematics)). 
 
 At the end of the day, I am writing about a topic in research-level math so it 
 is not expected that everyone will understand 100% of what I am saying. That being said, don't
 let that turn you off if you enjoy math and would like to try to learn more! I will do my best to leave
 breadcrumbs whenever I can.
 
-{% katexmm %}
 # Motivation
 We will start by giving some examples of support that many people will have seen before
 and try to motivate why people care about them.
@@ -95,12 +93,13 @@ and a minimum value.
 As a reminder why this is a meaningful result, notice that if we let $[0,1]$ be our interval,
 the function $f(x)=1/x$ doesn't attain its maximum value. As you move $x$ closer
 to $0$, $f(x)$ gets arbitrarily large. Thus it has no maximum value on this interval.
-The reason this example doesn't contradict our theorem is that $f$ is not continuous on $[0,1]$.
+The reason this example doesn't contradict our theorem is that $f$ is not continuous on $[0,1]$,
+since it isn't even defined for $x=0$.
 
 It ends up that this theorem can be easily rephrased in terms of supports!
 {% thm Extreme value theorem 2 %}
 Let $f:\mathbb R\to \mathbb R$ be a continuous function <em>supported on $[a,b]$</em>.
-Then $f$ attains its maximum and minimum values.
+Then $f$ attains its maximum and minimum values (in $[a,b]$).
 {% endthm %}
 This indicates how a function *supported on $[a,b]$* can, in some ways, be treated
 as if it were just *defined on $[a,b]$* (as long as one is careful about what happens
@@ -109,12 +108,12 @@ outside that interval).
 Below we have an example of a (smooth!) function $f:\mathbb R\to \mathbb R$ that is 
 supported on the compact set $[-2,2]$. The blue marks denote where the function is zero.
 This example was constructed using [bump functions](https://en.wikipedia.org/wiki/Bump_function).
-Its minimum value is zero (attained in particular at $x=0$) and its maximum value
-is $1/e$, attained at $\pm 1$.
-[Click here](https://www.desmos.com/calculator/cisqanluwi) or on the image below to 
+Its minimum value is $-1/e$, attained at $x=1$ and its maximum value
+is $1/e$, attained at $x=-1$.
+[Click here](https://www.desmos.com/calculator/grgcb4mzpz) or on the image below to 
 play with it yourself.
 
-[![A function with compact support](/assets/images/support1.png){: class="center-img"}](https://www.desmos.com/calculator/cisqanluwi)
+[![A function with compact support](/assets/images/support1.png){: class="center-img" style="width: 50%;"}](https://www.desmos.com/calculator/grgcb4mzpz)
 
 A natural extension for people who have seen a bit more calculus would be the following:
 {% thm %}
@@ -132,7 +131,7 @@ function is constantly zero).
 The role that support (whether compact or not) plays in all of this is it provides
 a language to talk about this phenomenon.
 
-## Adding depth: Sheaves
+# Adding depth: Sheaves
 [Algebraic geometry](https://en.wikipedia.org/wiki/Algebraic_geometry) is pretty wonderful and interesting, but has a connotation
 for being difficult to understand and full of strange and confusing notation and
 techniques. It is, unfortunately, a necessary step along the way to understand
@@ -152,7 +151,7 @@ with these notions, and just keeps the notion about whether two points are "near
 A good example to keep in mind is "the skin of a donut", what mathematicians
 call a [torus](https://en.wikipedia.org/wiki/Torus).
 
-![A torus](/assets/images/torus.png){: class="center-img" style="width:4in"}
+![A torus](/assets/images/torus.png){: class="center-img" style="width:60%"}
 
 When I say "open set" or "locally" or "in a neighborhood of a point", you should think
 of little oval patches on the surface of this torus.
@@ -260,12 +259,12 @@ I am going to throw a few more definitions out at this point, but hopefully we c
 use our intuition to guide us through this part.
 
 {% def Spectrum of a ring %}
-The <em>spectrum $\operatorname{Spec}(R)$ of a ring $R$ is the set of prime ideals of $R$.
+The <em>spectrum</em> $\operatorname{Spec}(R)$ of a ring $R$ is the set of prime ideals of $R$. 
 {% enddef %}
 
 {% endkatexmm %}
 
----
+asdf
 
 [^1]: Sheaves might be "everyday things" if you're a farmer, I guess.
 [^2]: Notice these aren't exactly the stalks I talked about earlier, but you can phrase those in terms of [germs](https://en.wikipedia.org/wiki/Germ_(mathematics)), which further extends the metaphor of sheaves.
