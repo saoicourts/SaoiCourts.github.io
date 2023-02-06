@@ -19,10 +19,28 @@ span.katex {
 }
 
 ::selection {
-    background: #3fd5ce47;
+    background: rgb(188 9 221 / 24%);
 }
 
 .site-title {
     font-family: "Reenie Beanie";
     font-size: xx-large;
+}
+
+div.aside {
+    background: #3fd5cd21;
+    margin-bottom: 1.3em;
+    padding: 1.3em;
+    .show-aside {
+        color: $link-color;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    border-width: 1px;
+    border-style: solid;
+    border-color: #5f9ea07d;
+}
+
+div.show-aside:hover {
+    color: $link-color-hover;
 }

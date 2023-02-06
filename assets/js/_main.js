@@ -135,7 +135,12 @@ $(function() {
   });
 
   // Make the aside "Show" spans functional
-  $('span.show-aside').on("click", function(){
-    $( this ).siblings('span').toggle()
+  $('div.show-aside').on("click", function(){
+    $( this ).siblings('.hidden-aside').slideToggle(700);
+    if ($( this ).text() == 'Show') {
+      $( this ).text('Hide')
+    } else {
+      $( this ).text('Show')
+    }
   })
 });

@@ -79,9 +79,9 @@ class Aside < Liquid::Block
         content = Liquid::Template.parse(contents).render context
 
         output = "<div class='aside'>"
-        output += "<b>Aside: </b>"
-        output += "<span class='hidden-aside' style='display:none;'><p>#{content.gsub(/\n\n/, "</p><p>")}</p></span>"
-        output += "<span class='show-aside'>Show</span></div>"
+        output += "<div><b>Aside: </b></div>"
+        output += "<div class='hidden-aside' style='display:none;'><p>#{content.gsub(/\n\n/, "</p><p>")}</p></div>"
+        output += "<div class='show-aside'>Show</div></div>"
 
         return output
     end
