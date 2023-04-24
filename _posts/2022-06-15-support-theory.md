@@ -2,6 +2,7 @@
 title: "Support in Representation Theory and Beyond"
 description: "We talk about the idea of 'support' as it arises in different fields of math and the role it plays in modern representation theory."
 tags: math rep-theory alg-geom
+draft: true
 ---
 For quite a while I have been planning on writing a blog post on something
 that I know about more than the average Joe. My crippling case of impostor syndrome in math, however, has kept me from 

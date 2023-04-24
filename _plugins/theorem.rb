@@ -80,7 +80,7 @@ class Aside < Liquid::Block
 
         output = "<div class='aside'>"
         output += "<div><b>Aside: </b></div>"
-        output += "<div class='hidden-aside' style='display:none;'><p>#{content.gsub(/\n\n/, "</p><p>")}</p></div>"
+        output += "<div class='hidden-aside' style='display:none;'><p>#{Kramdown::Document.new(content).to_html}</p></div>"
         output += "<div class='show-aside'>Show</div></div>"
 
         return output
