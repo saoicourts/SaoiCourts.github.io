@@ -28,7 +28,7 @@ don't know it. That's okay! I will try to provide descriptions and links as I go
 case you aren't familiar with them.
 - **Some light (algebraic) geometry** -- The idea of support (and a lot of interesting
 math, really) includes geometry and I tend to be a visual reasoner so it appeals to me 
-quite a bit to include some talk towards the end about [sheaves](https://en.wikipedia.org/wiki/Sheaf_(mathematics)). 
+quite a bit to include some discussion towards the end about [sheaves](https://en.wikipedia.org/wiki/Sheaf_(mathematics)). 
 
 At the end of the day, I am writing about a topic in research-level math so it 
 is not expected that everyone will understand 100% of what I am saying. That being said, don't
