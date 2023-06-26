@@ -110,9 +110,9 @@ author:
   location         : "Seattle, WA"
   email            : "nico@nicocourts.com"
   links:
-    - label: "he/him"
+    - label: "they/he/any pronouns"
       icon: "fas fa-fw fa-transgender-alt"
-      url: "https://pronouns.org/he-him"
+      url: "https://pronouns.org/they-them"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin-in"
       url: "https://www.linkedin.com/in/nico-courts/"
