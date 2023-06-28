@@ -23,10 +23,10 @@ var store = [{
         "url": "/support-theory/",
         "teaser": "/assets/images/cat_teaser.png"
       },{
-        "title": "Stable Democracy",
+        "title": "Reimagining Democracy",
         "excerpt":"I hate politics. Ask my friends or my partner or my parents and you might come to believe that I feel differently. But that’s just because I also happen to think that politics is one of the most important things in our lives. We are social creatures and everything great...","categories": [],
         "tags": ["democracy","politics","essays"],
-        "url": "/society/",
+        "url": "/reimagining-democracy/",
         "teaser": "/assets/images/cat_teaser.png"
       },{
         "title": "Bundle Networks: Fiber Bundles, Local Trivializations, and a Generative Approach to Exploring Many-to-one Maps",
