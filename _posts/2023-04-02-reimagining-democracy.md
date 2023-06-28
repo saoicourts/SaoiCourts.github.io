@@ -1,8 +1,8 @@
 ---
-title: "Stable Democracy"
+title: "Reimagining Democracy"
 description: "How is America anti-democratic and how could it be otherwise?"
 tags: democracy politics essays
-draft: true
+draft: false
 ---
 # I hate politics.
 
@@ -182,16 +182,125 @@ As a first example, imagine a simple meta-issue:
 A very coarse measure of how happy the populace is with the way things are gives us a metric we can use to determine how difficult it is to pass laws!
 We could call the percent of people voting for "change" the **progressivity index.**
 As it stands, our constitution and legislative rules favor inertia: most substantive changes require supermajorities that seem to never materialize, even in times of mass popular support for the issue.
+The progressivity index could allow us to adjust the number of votes needed to pass legislation, making the country move faster when the index is high and vice versa.
 
 Further meta-issues could be a bit more specific: is **\<broad issue x\>** important to you?
 Asking this question for topics such as civil rights, the environment, the economy, infrastructure, etc. can help provide a set of priorities for our leaders to pursue.
 
-## Having our voices heard
+With these changes to the very nature of voting and democracy, I think it only makes sense to completely do away with set voting seasons.
+Voting on candidates is probably we should still do (though we could also allow people to vote for parties and have the parties figure out how to appoint their own representatives), but saying that voting needs to take place during a particular day is a vestigial rule from the time before the internet and personal electronics.
 
-# How do we get there from here?
+So we have a system for measuring the will of the people with a high degree of accuracy, as well as understanding how they feel about the speed and direction of the government at any given moment.
+We could stop there and perhaps use these measures to identify politicians that are not adequately representing their constituents (an idea that I think is a great first step and should be done), but perhaps there is a way to take this information and connect it to the political process so that it actually *drives* political progress, instead of just *evaluating* it.
+
+## Having our voices heard
+This is probably the hardest part of this process.
+How do we turn statistics about the beliefs of the country into tangible policy changes that address these beliefs accordingly?
+I have a couple ideas about how this could proceed.
+
+### Politicians that listen
+The first idea starts simply enough: lawmakers create legislation in response to the priorities and specific beliefs of their constituents.
+In theory, this is how it's supposed to work, but usually politicians lie about their priorities during elections and then immediately disengage from the voters upon election.
+A high-accuracy and publicly-auditable measure of how people a particular politician represents feel about certain issues takes away some of the independence of the politician by opening them up to easy criticism.
+To some extent this still relies on the magnanimity of politicians, though this gives the public some more power.
+
+### Rethinking who writes the laws
+Taking things a step further, we could create an additional government apparatus that uses the will of the people to craft bills and submit them to the legislature for amendments and voting.
+While this could possibly mean that bills more directly address the problems the country faces, the precise makeup and regulations governing this committee is fraught.
+One idea might be to create a bi-/multipartisan committee that is tasked with creating legislation with input from all sides.
+Another idea is to have the party (or coalition) in control of a majority of seats responsible for crafting policy.
+Yet another idea is to have lifetime appointments to the committee to try to avoid partisan politics.
+
+Another idea that is fun to think about, but possibly risky (and contentious): use AI.
+In theory, we could create a machine learning model that takes as input the desires of the country and proposes legislation that would best address them.
+Legislation would still need to be read, debated, edited, and decided upon by politicians, but this could give us some guarantee that real problems get addressed.
+All of these ideas have drawbacks, which we will discuss <a href="#tough-spots">below</a>. 
+
+### Incorporating meta-issues
+The idea behind the progressivity index mentioned above was to provide a way for the people to control how quickly laws can change.
+Rather than just using the index as a thermometer of public sentiment, however, we could incorporate it into a system of laws that attempt to model the populace's tolerance to error and change.
+
+For simplicity, let us focus on the US Senate (though I think it should be abolished in reality).
+There are 100 members, each of which jointly represent a state with another senator and all of which vote on national legislation.
+To consider the two endpoints: if 100% of the voters vote "pro" on issue A and a bill comes up that addresses the "pro" side of issue A (let's say no other issues come into play), it should be relatively easy for the senate to pass it.
+It probably is rife for abuse to allow a small handful of senators to completely override the vast majority, but it may be reasonable to allow 35-45 votes on such an issue to constitute a "pass."
+If the number is this low, however, it should indicate that the senators are not representative or the legislation is not well-crafted to address the issue.
+
+On the other side, if 100% of voters vote against A, the bar to passing the same legislation should be much higher.
+A resonable number may be 55-65 (to make it symmetric around 50), which is approaching the current laws that require 2/3 supermajority for constitutional amendments and the like.
+A simple linear interpolation would be
+{% katex display %} V = 65 - 30*PI {% endkatex %}
+where {% katex %}V{% endkatex %} is the number of votes required to pass and {% katex %}0\le PI\le 1{% endkatex %} is the progressivity index.
+
+## Tough spots
+While I think that the ideas above could go a long way towards encouraging voter participation and in making government more responsive to the people that live in it, there are still several difficult spots.
+This system won't run well unattended.
+
+### Who writes the bills?
+I think the most critical aspect to get right is the connection between the raw will of the people and the legislation that is put before congress.
+A malicious actor could intentionally misinterpret (or ignore) the result of votes to introduce bills that favor them or their patrons.
+One stopgap here may be to have the "drafting committee" a popularly-elected group of people, with recall elections automatically triggered when a member's approval rate drops below some threshold.
+This "mini popular vote" is on the scale that we might expect the average voter to pay attention to them and cast votes accordingly without having to keep track of all the members of congress.
+I think that appointments like what we have in the supreme court are similarly sensitive to packing.
+
+The proposal of "cold, unfeeling" machines to worry about these interpretations is compelling, but subject to issues.
+The first is a practical issue: in order to train a model to generate bills that satisfy the desires of the public require good labelled examples.
+At the moment, all we have is the legislation that has been proposed and (very unreliable and incomplete) polling of the populace on certain topics. 
+And, what's more, the best we could hope from a model trained on our old legislation is more of the same.
+Advancements in AI are going to continue coming and may be very surprising, but I think with the current technology this is an unreasonable choice.
+
+### What about voter fraud?
+There can also be some problems with the voting system.
+The loosening of restrictions of when, where, and how frequently a person may alter their votes brings with it some additional risk.
+PKI is excellent technology, but is only as strong as the humans that weild it.
+A person who loses control of their ID card or shares their PINs with someone else is destroying the privacy and identity guarantees the card gives them.
+There is also a larger attack surface associated with allowing users to use (possibly) unsecured devices and networks to vote.
+To some extent the security issues can be addressed by information campaigns and the development of high-security applications, but it will never be as safe as carefully-monitored paper ballots.
+The tradeoff, however, is that our access to robust and immediate information about the will of the people will very likely that independent events of fraud can be safely ignored.
+
+I am not a security expert, so I will not guess how likely it is that widespread hacking will occur (though it will certainly be a valuable target).
+The public auditability should, in theory, at least notify users if they are being taken advantage of.
+But that requires making an easy and foolproof method for a voter to track their voting history---not a bad idea anyways.
+Another solution to using arbitrary unsecured infrastructure is the creation of "voting stations" in post offices, markets, etc.
+These could be monitored and administered by the government in such a way that they are effectively hardened against intrusion.
+This would be slighly less convenient than the original idea, though, and I think the concept suffers for it.
+
+### Who chooses what we issues vote on?
+This is an idea I completely ignore in the above sections, but is actually very important to consider.
+There are some topics that obviously should be added to the list, but this list should be carefully curated!
+Having too many issues to vote on means that we will get less turnout and benefit less from direct democracy.
+Having too few issues will mean that there will be people that need things to change, but have no way to communicate that to the people in charge.
+
+I think a good solution could be to create another committee, again directly answering to the public, whose only job is to take suggestions from the public alongside issues put forward by domain experts (e.g. on foreign policy and climate).
+One thing to worry about here is that people tend to get up in arms about "culture war" topics, though such things rarely affect their lives in a meaningful way.
+Thus, there should be the ability for the members of such a committee to reject ideas that don't fit some criteria.
+Another way to handle things would be to have a large database of issues a person can vote on, but then to have a curated subset of them that are most relevant to current times.
+This subset could be chosen by utilizing expert input or listening to the messages of popular movements.
+
+## How do we get there from here?
+Okay, first things first: I recognize that this all happening in the US is **unlikely.**
+Doing this requires massively overhauling how the government runs and, ideally, completely eschewing the idea of the Senate in favor of a legislature intended to be representative.
+We've seen huge pushback to even using early and absentee voting in red states, although those methods of voting are exceptionally safe.
+So loosening the reins even more is likely to draw a lot of fire (especially from people who stand to lose out from a true democracy).
+
+So the best way forward in my opinion is to begin by issuing new government-managed ID cards and keys like in Estonia immediately[^7].
+Once people have become accustomed to having these IDs (and perhaps begin to witness how it can reliably be used to verify identity and connect to one another), the next step will be to introduce a sweeping voting reform legislation to make voting more easy and begin to introduce the concept of *voting on concepts rather than implementations.*
+I think that this information could be used, at first, as a way to investigate how poorly the system we currently have works.
+Lots of politics and data nerds (*ahem*) will dive into this data and uncover injustices and begin to undermine the *status quo*, at which point the general population will be more likely to consider alternative systems.
+I think this will be the time to reconsider a revamp of the entire system for drafting legislation according to the ideas laid out above.
+
+# Conclusion
+Thank you for sticking with me this long.
+This idea began to circle my head in the wake of the overturning of Roe v. Wade, when I realized that there wouldn't be legislation to codify bodily autonomy coming out of the legislature, but quickly became about all the issues where our state policy doesn't reflect out values as people.
+When I set out to write this some of the ideas were half-baked and I think even now they're still just 3/4 baked.
+In particular, I think some work can be done to flesh out the "tough spots" above to minimize the burden placed on the voter while ensuring that they remain in control of how the process proceeds.
+
+I am almost certainly too close to the issue right now to fairly adjudicate it, so I definitely welcome input in developing this idea.
+If you have any thoughts or corrections, definitely feel free to shoot me an email and we can chat about it.
 
 <h4>Footnotes:</h4>
 [^1]: We're told that one of the primary concerns of the founding fathers is that they were being unfairly taxed on their commerce without being provided adequate political representation. Another way of saying it: as a colony of the United Kingdom, the US had its surplus value expropriated by the crown, effectively the capital owners. Wait, was the American Revolution a proto-Marxist uprising?!
 [^2]: Source: table 11 of this [2020 Census report](https://www.census.gov/housing/hvs/data/ann20ind.html)
 [^3]: Source: The [2022 Annual Homelessness Assessment Report](https://www.huduser.gov/portal/sites/default/files/pdf/2022-AHAR-Part-1.pdf) issued by the department of Housing and Urban Development (HUD). 
 [^6]: Source: Ibid., p. 10.
+[^7]: This has the added benefit of simplifying the complicated matter of accepting ID across state lines and for having to have two forms of ID if you want to both drive and cross a border. I think that it will be a tough sell if we try to rely on the technical benefits right off the bat.

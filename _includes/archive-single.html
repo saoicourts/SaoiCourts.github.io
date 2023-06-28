@@ -4,6 +4,12 @@
 {% assign teaser = site.teaser %}
 {% endif %}
 
+{% if post.description %}
+{% capture excerpt %}{{ post.description }}{% endcapture %}
+{% else %} 
+{% assign excerpt = post.excerpt %}
+{% endif %}
+
 {% if post.id %}
 {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
@@ -27,7 +33,6 @@
       {% endif %}
     </h2>
     {% include page__meta.html type=include.type %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify |
-      strip_html | truncate: 160 }}</p>{% endif %}
+    <p class="archive__item-excerpt" itemprop="description">{{ excerpt | markdownify | strip_html | truncate: 160 }}</p>
   </article>
 </div>
