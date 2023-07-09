@@ -1,5 +1,5 @@
 ---
-title: "Vivisection of my dating brain"
+title: "An overanalysis of overthinking"
 description: "Is this what 'dating' is? Am I doing something wrong?"
 tags: humour dating real-shit
 draft: false
