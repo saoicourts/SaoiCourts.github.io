@@ -29,10 +29,10 @@ var store = [{
         "url": "/reimagining-democracy/",
         "teaser": "/assets/images/cat_teaser.png"
       },{
-        "title": "Vivisection of my dating brain",
+        "title": "An overanalysis of overthinking",
         "excerpt":"If B or anyone else would like me to take these down, please tell me. This was meant in jest and to poke fun at myself for being ridiculous. B seems genuinely lovely. Buttons are at the left. This is a real conversation I just had on a dating app...","categories": [],
         "tags": ["humour","dating","real-shit"],
-        "url": "/vivisection/",
+        "url": "/overanalysis/",
         "teaser": "/assets/images/cat_teaser.png"
       },{
         "title": "Bundle Networks: Fiber Bundles, Local Trivializations, and a Generative Approach to Exploring Many-to-one Maps",
