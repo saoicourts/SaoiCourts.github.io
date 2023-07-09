@@ -29,6 +29,12 @@ var store = [{
         "url": "/reimagining-democracy/",
         "teaser": "/assets/images/cat_teaser.png"
       },{
+        "title": "Vivisection of my dating brain",
+        "excerpt":"If B or anyone else would like me to take these down, please tell me. This was meant in jest and to poke fun at myself for being ridiculous. B seems genuinely lovely. Buttons are at the left. This is a real conversation I just had on a dating app...","categories": [],
+        "tags": ["humour","dating","real-shit"],
+        "url": "/vivisection/",
+        "teaser": "/assets/images/cat_teaser.png"
+      },{
         "title": "Bundle Networks: Fiber Bundles, Local Trivializations, and a Generative Approach to Exploring Many-to-one Maps",
         "excerpt":"Abstract: Many-to-one maps are ubiquitous in machine learning, from the image recognition model that assigns a multitude of distinct images to the concept of “cat” to the time series forecasting model which assigns a range of distinct time-series to a single scalar regression value. While the primary use of such...","categories": [],
         "tags": [],
