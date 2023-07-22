@@ -107,9 +107,12 @@ author:
   name             : "Nico Courts"
   avatar           : "/assets/images/emei_shan.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Mathematician turned data scientist working in immunology. Lover of people, places, and things."
-  location         : "Seattle, WA"
+  #location         : "Seattle, WA"
   email            : "nico@nicocourts.com"
   links:
+    - label: "Seattle, WA"
+      icon: "fas fa-fw fa-map-marker-alt"
+      url: "https://en.wikipedia.org/wiki/Seattle"
     - label: "they/he/any pronouns"
       icon: "fas fa-fw fa-transgender-alt"
       url: "https://pronouns.org/they-them"
