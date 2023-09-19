@@ -19,8 +19,8 @@ locale                   : "en-US"
 title                    : "Fights of Whimsy"
 title_separator          : "-"
 subtitle                 : "" # site tagline that appears below site title in masthead
-name                     : "Nico Courts"
-description              : "The personal website of Nico Courts, mathematician and data scientist."
+name                     : "Saoirse Courts"
+description              : "The personal website of Saoirse Courts, mathematician and data scientist."
 url                      : "https://nicocourts.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -104,8 +104,8 @@ analytics:
 
 # Site Author
 author:
-  name             : "Nico Courts"
-  avatar           : "/assets/images/emei_shan.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  name             : "Saoi Courts"
+  avatar           : "/assets/images/beanie.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Mathematician turned data scientist working in immunology. Lover of people, places, and things."
   #location         : "Seattle, WA"
   email            : "nico@nicocourts.com"
@@ -113,7 +113,7 @@ author:
     - label: "Seattle, WA"
       icon: "fas fa-fw fa-map-marker-alt"
       url: "https://en.wikipedia.org/wiki/Seattle"
-    - label: "they/he/any pronouns"
+    - label: "she/they pronouns"
       icon: "fas fa-fw fa-transgender-alt"
       url: "https://pronouns.org/they-them"
     - label: "LinkedIn"
@@ -121,7 +121,7 @@ author:
       url: "https://www.linkedin.com/in/nico-courts/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/NicoCourts"
+      url: "https://github.com/SaoiCourts"
 
 # Site Footer
 footer:
