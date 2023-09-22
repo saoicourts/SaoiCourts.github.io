@@ -108,7 +108,7 @@ author:
   avatar           : "/assets/images/beanie.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Mathematician turned data scientist working in immunology. Lover of people, places, and things."
   #location         : "Seattle, WA"
-  email            : "nico@nicocourts.com"
+  email            : "me@saoi.phd"
   links:
     - label: "Seattle, WA"
       icon: "fas fa-fw fa-map-marker-alt"
