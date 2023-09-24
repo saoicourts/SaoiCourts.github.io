@@ -283,8 +283,6 @@ to how ideals intersect in the ring, which is related to ideal factorizations.
 
 ### The spectrum as a scheme
 [Earlier](#function-sheaf) I described sheaves as naturally arising as the functions on a space.
-It ends up that this way of phrasing things helps illustrate the algebro-geometric connection:
-**we can treat every ring as the ring of functions on some affine part of an scheme.**
 
 ### Module sheaves
 
