@@ -18,17 +18,16 @@ as possible, but it is possible it will be necessary for the reader to hold thei
 points and be willing to accept results at face value. 
 
 {% katexmm %}
-I will assume the reader is okay with (or willing to look up) the following concepts:
+We will be talking about some topics in the following that you normally wouldn't see unless you were at least in the later part of a math degree:
 - **Basic category theory** -- If you're willing to just look up the definitions of 
 a [category](https://en.wikipedia.org/wiki/Category_(mathematics)) and a 
 [functor between categories](https://en.wikipedia.org/wiki/Functor) (perhaps several times),
-I will try to keep the abstract nonsense to a minimum (at least as much as is possible for an article that discusses sheaves).
-- **Abstract algebra** -- If you don't know exactly what I mean by "abstract," you probably
-don't know it. That's okay! I will try to provide descriptions and links as I go in 
-case you aren't familiar with them.
+I will try to keep the abstract nonsense to a minimum.
+- **Abstract algebra** -- I bet you didn't know that there was even MORE algebra out there after the one you took in school! Well good news, there is and it's my favorite kind of math.
 - **Some light (algebraic) geometry** -- The idea of support (and a lot of interesting
 math, really) includes geometry and I tend to be a visual reasoner so it appeals to me 
 quite a bit to include some discussion towards the end about [sheaves](https://en.wikipedia.org/wiki/Sheaf_(mathematics)). 
+Normally you wouldn't even hear about these until grad school. 
 
 At the end of the day, I am writing about a topic in research-level math so it 
 is not expected that everyone will understand 100% of what I am saying. That being said, don't
