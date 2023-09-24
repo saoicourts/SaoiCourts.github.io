@@ -17,16 +17,16 @@ var store = [{
         "url": "/power/",
         "teaser": "/assets/images/cat_teaser.png"
       },{
-        "title": "Support in Representation Theory and Beyond",
-        "excerpt":"For quite a while I have been planning on writing a blog post on something that I know about more than the average Joe. My crippling case of impostor syndrome in math, however, has kept me from using this space to write anything related to my work in math (you’d...","categories": [],
-        "tags": ["math","rep-theory","alg-geom"],
-        "url": "/support-theory/",
-        "teaser": "/assets/images/cat_teaser.png"
-      },{
         "title": "Reimagining Democracy",
         "excerpt":"I hate politics. Ask my friends or my partner or my parents and you might come to believe that I feel differently. But that’s just because I also happen to think that politics is one of the most important things in our lives. We are social creatures and everything great...","categories": [],
         "tags": ["democracy","politics","essays"],
         "url": "/reimagining-democracy/",
+        "teaser": "/assets/images/cat_teaser.png"
+      },{
+        "title": "Support in Representation Theory and Beyond",
+        "excerpt":"For quite a while I have been planning on writing a blog post on something that I know about more than the average Joe. My crippling case of impostor syndrome in math, however, has kept me from using this space to write anything related to my work in math (you’d...","categories": [],
+        "tags": ["math","rep-theory","alg-geom"],
+        "url": "/support-theory/",
         "teaser": "/assets/images/cat_teaser.png"
       },{
         "title": "Bundle Networks: Fiber Bundles, Local Trivializations, and a Generative Approach to Exploring Many-to-one Maps",
