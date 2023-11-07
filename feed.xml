@@ -1,4 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://nicocourts.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://nicocourts.com/" rel="alternate" type="text/html" /><updated>2023-10-25T06:59:10-07:00</updated><id>https://nicocourts.com/feed.xml</id><title type="html">Fights of Whimsy</title><subtitle>The personal website of Saoirse Courts, mathematician and data scientist.</subtitle><author><name>Saoi Courts</name><email>me@saoi.phd</email></author><entry><title type="html">Reimagining Democracy</title><link href="https://nicocourts.com/reimagining-democracy/" rel="alternate" type="text/html" title="Reimagining Democracy" /><published>2023-04-02T00:00:00-07:00</published><updated>2023-04-02T00:00:00-07:00</updated><id>https://nicocourts.com/reimagining-democracy</id><content type="html" xml:base="https://nicocourts.com/reimagining-democracy/"><![CDATA[<h1 id="i-hate-politics">I hate politics.</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://nicocourts.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://nicocourts.com/" rel="alternate" type="text/html" /><updated>2023-11-07T00:36:39-08:00</updated><id>https://nicocourts.com/feed.xml</id><title type="html">Fights of Whimsy</title><subtitle>The personal website of Saoirse Courts, mathematician and data scientist.</subtitle><author><name>Saoi Courts</name><email>me@saoi.phd</email></author><entry><title type="html">How a MISTAKE sold off our democracy to the highest bidder</title><link href="https://nicocourts.com/speechnow/" rel="alternate" type="text/html" title="How a MISTAKE sold off our democracy to the highest bidder" /><published>2023-10-25T00:00:00-07:00</published><updated>2023-10-25T00:00:00-07:00</updated><id>https://nicocourts.com/speechnow</id><content type="html" xml:base="https://nicocourts.com/speechnow/"><![CDATA[<h1 id="well-that-was-fun">Well that was fun!</h1>
+<p>I made a video recently for a <a href="https://cancelsuperpacs.com/">contest</a> put on by the kind folks at <a href="https://equalcitizens.us">EqualCitizens.us</a>. There are some rough edges with pacing and animations, but overall I am pretty proud of how it came out. I have a couple other ideas for videos I may try. That was quite a lot of work, but I imagine that I can save myself some work by planning my scripts a little more carefully in the future. I like the fact that it feels personal, though.</p>
+
+<p>I have reproduced (approximately) the script below with some added references for convenience. Hope you enjoy and learn something!</p>
+
+<iframe width="963" height="551" src="https://www.youtube.com/embed/Kt02MhpQHI4" title="How a MISTAKE sold off our democracy to the highest bidder #CancelSuperPACs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+
+<h1 id="annotated-script">Annotated script</h1>
+
+<p><a href="https://hls.harvard.edu/faculty/lawrence-lessig/">Legal experts at Harvard</a> believe that a mistake in our legal code has allowed billionaires to unfairly influence our 
+elections for over a decade. 
+Let’s talk about what happened and what we can do to fix it.</p>
+
+<p>No doubt you’ve heard of super PACs.</p>
+<blockquote>
+  <p><a href="https://www.youtube.com/watch?v=ZdIEmM8Ry9M?t=6">A loophole for limits on the number of donations that can be made…</a></p>
+</blockquote>
+
+<blockquote>
+  <p><a href="https://youtu.be/g_olELiu7LE?t=3">Super PACs have really enabled a supercharging of giving by the extreme wealthy.</a></p>
+</blockquote>
+
+<p>These private special interest groups collect money from individual donors and then used them to make what are called <em>independent expenditures</em> to campaigns. 
+But more on that later.</p>
+
+<p>Their superpower comes from the fact that there are basically <a href="https://www.opensecrets.org/political-action-committees-pacs/super-pacs/2022">no regulations</a> on the type or amount of money that individuals can give to these organizations. 
+By allowing billionaires to make unlimited contributions, Super PACs have caused the amount of outside money spent on elections to skyrocket since their establishment in 2010. (Click through for more information)</p>
+
+<p><a href="https://www.opensecrets.org/outside-spending"><img src="/assets/images/outside-spending.svg" alt="Outside spending by year" /></a></p>
+
+<p>The landmark decision <a href="https://supreme.justia.com/cases/federal/us/424/1/#tab-opinion-1951589"><em>Buckley v. Valeo,</em></a> in 1976, ruled that contribution limits constituted an abridgment to an individual’s right to free speech, but that these regulations were appropriate in the interest of</p>
+<blockquote>
+  <p>…the prevention of corruption, and the appearance of corruption, spawned by the real or imagined coercive influence of large financial contributions.</p>
+</blockquote>
+
+<p>This was a huge step forward for campaign finance reform. 
+But what <em>Buckley</em> effectively did was establish a two track system for individuals who wanted to spend money on a campaign. 
+In the first, the individual simply gives the money directly to the campaign, and the campaign can use that money at their discretion. 
+This type of expenditure is subject to <a href="https://www.fec.gov/help-candidates-and-committees/candidate-taking-receipts/contribution-limits/">FEC regulation</a>.</p>
+
+<p>The other track is to make an <a href="https://www.fec.gov/regulations/100-16/2023-annual-100#100-16">independent expenditure</a> on behalf of, but critically not in consultation with, the campaign. 
+This insulation from the management of the campaign was given as the justification in <em>Buckley</em> for why campaign contributions should be limited, while independent expenditures should not. 
+As long as coordination between these parties was disallowed, the court reasoned, there was no justifiable reason to limit an independent contributor’s speech.</p>
+
+<p>Eventually, an organization called SpeechNow came along that intended to collect individual contributions that were going to be used only for independent expenditures. 
+This was brand new, so went to trial in a case <a href="https://www.fec.gov/legal-resources/court-cases/speechnoworg-v-fec/"><em>SpeechNow v. FEC.</em></a></p>
+
+<p>What’s important to notice here is that this case isn’t actually about whether independent expenditures can be limited. 
+<em>Buckley</em> had already ruled that they couldn’t! 
+What this case hinged on was the question “Are contributions to super PACs independent expenditures and thus immune from campaign finance regulations?”</p>
+
+<p>The judge on the case in the D.C. Circuit Court of Appeals, <a href="https://en.wikipedia.org/wiki/David_B._Sentelle">Judge Sentelle,</a> looked to another huge decision happening at the time: <a href="https://www.oyez.org/cases/2008/08-205"><em>Citizens United.</em></a>
+Under this highly contentious ruling, the Supreme Court decided that companies have the right to free speech. 
+Thus, Sentelle reasoned, since SpeechNow was an organization that was engaging in legally protected speech, the payments must be valid! 
+So case closed!</p>
+
+<blockquote>
+  <p>[Since] independent expenditures do not corrupt…, contributions to groups that make only independent expenditures <em>also</em> cannot corrupt…</p>
+</blockquote>
+
+<p>Except this characterization of super PACs isn’t quite accurate. 
+In our scenario, the only ones taking part in expenditures directly are the campaign and the super PAC. 
+And they’re under heavy scrutiny to ensure that they are indeed independent. 
+But a contribution from an individual to a super PAC is questionably an expenditure. 
+And even if it is, it doesn’t meet the standard of independence we expect between super PACs and campaigns.</p>
+
+<p>In effect, what SpeechNow did was create a <strong>massive</strong> incentive for <em>quid pro quo</em> corruption.
+But this is exactly the kind of perverse incentive that the Buckley court used to justify campaign contribution limits.</p>
+
+<p>What’s more, Senator Menendez of New Jersey, <a href="https://www.cnn.com/2023/09/22/investing/gold-bar-bribe-menendez/index.html">famous gold bar afficionado</a>, was brought up on <a href="https://www.nytimes.com/2015/04/02/nyregion/senator-robert-menendez-indicted-on-corruption-charges.html">charges for corruption</a> before; this time, for precisely the kind of charge that <em>SpeechNow</em> asserts can never happen. 
+In the case, it was alleged that Senator Menendez had, among a slew of other charges, accepted a $300,000 bribe in exchange for advocating for a medical billing procedure that US Health and Human Services employee Jonathan Bloom felt compelled to testify:</p>
+<blockquote>
+  <p>it was [the Centers for Medicare and Medicaid Services’] policy not to pay <em>twice</em> for a drug purchased only <em>once.</em></p>
+</blockquote>
+
+<p>So fun anecdote: the person who actually paid the bribe, Solomon Melgen, an ophthamologist out of Florida, was <a href="https://www.justice.gov/usao-sdfl/pr/south-florida-doctor-convicted-sixty-seven-criminal-counts-related-medicare-fraud">sentenced to a sixteen year sentence</a> for Medicare fraud before scoring a <a href="https://www.palmbeachpost.com/story/news/politics/2021/01/20/trump-commutes-sentence-dr-salomon-melgen-after-medicare-fraud-conviction/4221638001/">last minute pardon</a> from Trump. 
+But there’s no way he bribed this guy…. 
+But…</p>
+
+<p>In the <em>Menendez</em> ruling, the presiding judge includes a section titled “<em>Citizens United</em> Does Not Bar the Prosecution of Bribery Schemes Involving Contributions to Super PACs” where they write</p>
+<blockquote>
+  <p>Here the Government alleges that Defendants engaged in a <em>quid pro quo</em> bribery scheme, not that either defendant violated campaign finance regulations. In other words, the charges in this case concern bribery, not political speech.</p>
+</blockquote>
+
+<p>But if a $300,000 super PAC contribution can result in corruption, that must mean that contributions to a super PAC are fundamentally different from independent expenditures. 
+Therefore, the pivotal deduction in the SpeechNow decision is fundamentally flawed.</p>
+
+<p>Welp, a landmark decision that has massively impacted our political landscape for over a decade contains an essential flaw. 
+So what do we do from here? 
+Vitally, SpeechNow was decided at the district court level back in 2010 and was never successfully appealed to the Supreme Court. 
+But now is its time.</p>
+
+<p><a href="https://freespeechforpeople.org/ron-fein/">Ron Fine,</a> legal director for <a href="https://freespeechforpeople.org/">Free Speech for People,</a> and <a href="https://hls.harvard.edu/faculty/lawrence-lessig/">Lawrence Lessig,</a> the Roy L. Furman professor of law at Harvard, have <a href="https://boston.suffolk.edu/sjc/pop.php?csnum=SJC_13361">worked tirelessly</a> on campaign finance reform and protecting democracy, and believe that this line of reasoning could provide a realistic path forward for getting big money out of politics.</p>
+
+<p>What we need now is to get the word out. 
+So share this message with your friends and let them know it’s time to get big money out of our democracy.</p>]]></content><author><name>Saoi Courts</name><email>me@saoi.phd</email></author><category term="politics" /><category term="campaign-finance" /><category term="democracy" /><category term="videos" /><summary type="html"><![CDATA[We talk about campaign finance law and how some key rulings have led to the creation of super PACs. And how one of them might be flawed.]]></summary></entry><entry><title type="html">Reimagining Democracy</title><link href="https://nicocourts.com/reimagining-democracy/" rel="alternate" type="text/html" title="Reimagining Democracy" /><published>2023-04-02T00:00:00-07:00</published><updated>2023-04-02T00:00:00-07:00</updated><id>https://nicocourts.com/reimagining-democracy</id><content type="html" xml:base="https://nicocourts.com/reimagining-democracy/"><![CDATA[<h1 id="i-hate-politics">I hate politics.</h1>
 
 <p>Ask my friends or my partner or my parents and you might come to believe that I feel differently.
 But that’s just because I also happen to think that politics is one of the most important things in our lives.

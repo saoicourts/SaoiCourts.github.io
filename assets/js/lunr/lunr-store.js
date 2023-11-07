@@ -29,6 +29,12 @@ var store = [{
         "url": "/support-theory/",
         "teaser": "/assets/images/cat_teaser.png"
       },{
+        "title": "How a MISTAKE sold off our democracy to the highest bidder",
+        "excerpt":"Well that was fun! I made a video recently for a contest put on by the kind folks at EqualCitizens.us. There are some rough edges with pacing and animations, but overall I am pretty proud of how it came out. I have a couple other ideas for videos I may...","categories": [],
+        "tags": ["politics","campaign-finance","democracy","videos"],
+        "url": "/speechnow/",
+        "teaser": "/assets/images/cat_teaser.png"
+      },{
         "title": "Bundle Networks: Fiber Bundles, Local Trivializations, and a Generative Approach to Exploring Many-to-one Maps",
         "excerpt":"Abstract: Many-to-one maps are ubiquitous in machine learning, from the image recognition model that assigns a multitude of distinct images to the concept of “cat” to the time series forecasting model which assigns a range of distinct time-series to a single scalar regression value. While the primary use of such...","categories": [],
         "tags": [],
